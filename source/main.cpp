@@ -88,7 +88,7 @@ int main(int argc, char** argv) {
 		});
 
 		lexer.tokenize(data.midRef(0));
-		assembler.outputToFile(QFileInfo(romFile).path() + "tea_out.sfc");
+		assembler.outputToFile(romFile);
 	}
 
 	return 0;
