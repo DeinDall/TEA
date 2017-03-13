@@ -1,0 +1,90 @@
+[
+	{
+		"name": "unit",
+		"type": "unitCode",
+		"next": "unitCode",
+		
+		"size": 20,
+		
+		"components": [
+			{
+				"name": "charId",
+				"type": "index of:character",
+				"size": 2
+			}, {
+				"name": "xStart",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "yStart",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "xMove",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "yMove",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "leaderId",
+				"type": "index of:character",
+				"size": 2
+			}, {
+				"name": "inv1",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"name": "inv2",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"name": "inv3",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"name": "inv4",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"name": "inv5",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"name": "inv6",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"name": "inv7",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"name": "level",
+				"type": "number",
+				"size": 1
+			}, {
+				"name": "ai",
+				"type": "aidata",
+				"size": 4
+			}
+		]
+	}, {
+		"name": "endUnit",
+		"type": "unitCode",
+		"next": "null",
+		
+		"priority": "high",
+		
+		"size": 2,
+		"scopeModifier": "end",
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": 0,
+				"size": 2
+			}
+		]
+	}
+]

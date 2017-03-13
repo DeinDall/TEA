@@ -1,0 +1,345 @@
+[
+	{
+		"name": "yield",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 1,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0xFC",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "end",
+		"type": "eventCode",
+		"next": "null",
+		
+		"size": 1,
+		"scopeModifier": "end",
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0xFE",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "end2",
+		"type": "eventCode",
+		"next": "null",
+		
+		"size": 1,
+		"scopeModifier": "end",
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0xFD",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "nullcode",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 1,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x00",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "waitMove",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 1,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x45",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "callDialogue",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x2B",
+				"size": 1
+			}, {
+				"name": "dialoguePointer",
+				"type": "pointer to:dialogueCode",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "callUnit",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x42",
+				"size": 1
+			}, {
+				"name": "unitPointer",
+				"type": "pointer to:unitCode",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "callAsm",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 6,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x1D",
+				"size": 1
+			}, {
+				"name": "asmPointer",
+				"type": "pointer to:asm",
+				"size": 3
+			}, {
+				"name": "argument",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "callAsm2",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 6,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x1B",
+				"size": 1
+			}, {
+				"name": "asmPointer",
+				"type": "pointer to:asm",
+				"size": 3
+			}, {
+				"name": "argument",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "setShort",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 6,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x10",
+				"size": 1
+			}, {
+				"name": "shortPointer",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "shortValue",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "setPointer",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 7,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x11",
+				"size": 1
+			}, {
+				"name": "pointerPointer",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "pointerValue",
+				"type": "pointer",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "pause",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x1E",
+				"size": 1
+			}, {
+				"name": "duration",
+				"type": "number",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "playSound",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x35",
+				"size": 1
+			}, {
+				"name": "soundId",
+				"type": "index of:sound",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "cameraGoto",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x44",
+				"size": 1
+			}, {
+				"name": "positionPointer",
+				"type": "pointer to:position",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "cameraStart",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x39",
+				"size": 1
+			}, {
+				"name": "camX",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "camY",
+				"type": "coordinate",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "setMusic",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x31",
+				"size": 1
+			}, {
+				"name": "musicId",
+				"type": "index of:music",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "move",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 12,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x41",
+				"size": 1
+			}, {
+				"name": "charId",
+				"type": "index of:character",
+				"size": 2
+			}, {
+				"name": "unknown",
+				"size": 2
+			}, {
+				"name": "xTarget",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "yTarget",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "speed",
+				"type": "number",
+				"size": 1
+			}, {
+				"name": "extraPointer",
+				"type": "pointer",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "position",
+		"type": "position",
+		"next": "null",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"name": "xCoord",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "yCoord",
+				"type": "coordinate",
+				"size": 1
+			}
+		]
+	}
+]

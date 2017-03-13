@@ -1,0 +1,188 @@
+[
+	{
+		"name": "unknownStartScene",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x38",
+				"size": 1
+			}, {
+				"name": "shortValue",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "unknownWaitForFade",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 5,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x24",
+				"size": 1
+			}, {
+				"name": "pointer?",
+				"size": 3
+			}, {
+				"name": "argument",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "unknown0C0B",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0B0C",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "unknown04",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x04",
+				"size": 1
+			}, {
+				"name": "argument1",
+				"size": 1
+			}, {
+				"name": "argument2",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "unknown34",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x34",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "unknown22",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 5,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x22",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 2
+			}, {
+				"name": "argument2",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "unknown25",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x25",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "unknown9",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 10,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x09",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 3
+			}, {
+				"name": "argument2",
+				"size": 3
+			}, {
+				"name": "argument3",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "unknownSetPointer",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 7,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x13",
+				"size": 1
+			}, {
+				"name": "pointerPointer",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "pointerValue",
+				"type": "pointer",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "unknown",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"priority": "low",
+		
+		"size": 1,
+		
+		"components": [
+			{
+				"name": "value",
+				"size": 1
+			}
+		]
+	}
+]

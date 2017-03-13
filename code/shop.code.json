@@ -1,0 +1,77 @@
+[
+	{
+		"name": "shop",
+		"type": "shopCode",
+		"next": "null",
+		
+		"size": 18,
+		
+		"components": [
+			{
+				"name": "xShop",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "yShop",
+				"type": "coordinate",
+				"size": 1
+			}, {
+				"name": "item1",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"fixed": true,
+				"value": 0,
+				"size": 1
+			}, {
+				"name": "item2",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"fixed": true,
+				"value": 0,
+				"size": 1
+			}, {
+				"name": "item3",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"fixed": true,
+				"value": 0,
+				"size": 1
+			}, {
+				"name": "item4",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"fixed": true,
+				"value": 0,
+				"size": 1
+			}, {
+				"name": "item5",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"fixed": true,
+				"value": 0,
+				"size": 1
+			}, {
+				"name": "item6",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"fixed": true,
+				"value": 0,
+				"size": 1
+			}, {
+				"name": "item7",
+				"type": "index of:item",
+				"size": 1
+			}, {
+				"fixed": true,
+				"value": 0,
+				"size": 3
+			}
+		]
+	}
+]

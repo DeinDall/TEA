@@ -1,0 +1,108 @@
+[
+	{
+		"name": "checkTalk",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 5,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x01",
+				"size": 1
+			}, {
+				"name": "charId1",
+				"type": "index of:character",
+				"size": 2
+			}, {
+				"name": "charId2",
+				"type": "index of:character",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "checkByte",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 5,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x05",
+				"size": 1
+			}, {
+				"name": "position",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "value",
+				"type": "raw",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "checkShort",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 6,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x06",
+				"size": 1
+			}, {
+				"name": "position",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "value",
+				"type": "raw",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "checkPointer",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 7,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x09",
+				"size": 1
+			}, {
+				"name": "position1",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "position2",
+				"type": "pointer",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "endEvent",
+		"type": "eventComponent",
+		"next": "eventDefinition",
+		
+		"priority": "high",
+		"scopeModifier": "end",
+		
+		"size": 1,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0xFF",
+				"size": 1
+			}
+		]
+	}
+]

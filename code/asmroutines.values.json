@@ -1,0 +1,19 @@
+[
+	{
+		"name": "pSetUnitStat",
+		"type": "pointer to:asm",
+		"value": "0x8cb0cc"
+	}, {
+		"name": "pPromoteUnitMaybe",
+		"type": "pointer to:asm",
+		"value": "0x8ca36b"
+	}, {
+		"name": "pClearLeafFatigue",
+		"type": "pointer to:asm",
+		"value": "0x83acea"
+	}, {
+		"name": "pRemoveUnit",
+		"type": "pointer to:asm",
+		"value": "0x8ca343"
+	}
+]

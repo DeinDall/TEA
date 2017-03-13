@@ -1,0 +1,51 @@
+[
+	{
+		"name": "nullptr",
+		"type": "pointer",
+		"value": "0x00"
+	}, {
+		"name": "Leaf",
+		"type": "index of:character",
+		"value": "0x01"
+	}, {
+		"name": "Finn",
+		"type": "index of:character",
+		"value": "0x02"
+	}, {
+		"name": "Othin",
+		"type": "index of:character",
+		"value": "0x03"
+	}, {
+		"name": "Halvan",
+		"type": "index of:character",
+		"value": "0x04"
+	}, {
+		"name": "Eyvel",
+		"type": "index of:character",
+		"value": "0x05"
+	}, {
+		"name": "Dagdar",
+		"type": "index of:character",
+		"value": "0x06"
+	}, {
+		"name": "Marty",
+		"type": "index of:character",
+		"value": "0x08"
+	}, {
+		"name": "Tanya",
+		"type": "index of:character",
+		"value": "0x25"
+	}, {
+		"name": "Mareeta",
+		"type": "index of:character",
+		"value": "0x2A"
+	}, {
+		"name": "Leidrick",
+		"type": "index of:character",
+		"value": "0x33"
+	}, {
+		"name": "Weissman",
+		"type": "index of:character",
+		"value": "0x36"
+	}
+]

@@ -1,0 +1,41 @@
+[
+	{
+		"name": "event",
+		"type": "eventDefinition",
+		"next": "eventComponent",
+		
+		"priority": "low",
+		"scopeModifier": "begin",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"name": "eventId",
+				"type": "index of:event",
+				"size": 1
+			}, {
+				"name": "eventPointer",
+				"type": "pointer to:eventCode",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "endSet",
+		"type": "eventDefinition",
+		"next": "null",
+		
+		"priority": "high",
+		"scopeModifier": "end",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0xFFFF",
+				"size": 2
+			}
+		]
+	}
+]
