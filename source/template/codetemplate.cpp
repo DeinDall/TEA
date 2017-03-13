@@ -70,12 +70,22 @@ int CodeTemplate::priority() const {
 	return mPriority;
 }
 
-QList<CodeTemplateComponent> CodeTemplate::components() const {
+const QList<CodeTemplateComponent>& CodeTemplate::components() const {
 	return mComponents;
 }
 
 PrintHint CodeTemplate::printHint() const {
 	return mPrintHint;
+}
+
+uint CodeTemplate::argumentCount() const {
+	uint count = 0;
+
+	for (CodeTemplateComponent component : mComponents)
+		if (!component.isFixed())
+			++count;
+
+	return count;
 }
 
 bool CodeTemplate::checkAgainst(ROMRef ref) const {

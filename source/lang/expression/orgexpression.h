@@ -11,6 +11,7 @@ public:
 
 	QString toString() const;
 	PrintHint printHint() const;
+	AssemblerType assemble(CodeAssembler* assembler) const;
 
 private:
 	uint mOffset;

@@ -6,6 +6,7 @@
 namespace tea {
 
 quint64 readNumber(ROMRef::const_iterator begin, ROMRef::const_iterator end);
+QByteArray makeNumber(quint64 value, uint size);
 
 namespace snes {
 

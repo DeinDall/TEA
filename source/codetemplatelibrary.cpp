@@ -46,6 +46,25 @@ const CodeTemplate& CodeTemplateLibrary::findTemplate(QString name, QString type
 	return mInvalidTemplate;
 }
 
+const CodeTemplate& CodeTemplateLibrary::findTemplate(QString name, uint argCount) const {
+	for (const CodeTemplate& codeTemplate : mTemplates) {
+		if (codeTemplate.argumentCount() != argCount)
+			continue;
+		if (codeTemplate.name() != name)
+			continue;
+		return codeTemplate;
+	}
+
+	return mInvalidTemplate;
+}
+
+const CodeTemplate& CodeTemplateLibrary::findTemplate(QString name) const {
+	for (const CodeTemplate& codeTemplate : mTemplates)
+		if (codeTemplate.name() == name)
+			return codeTemplate;
+	return mInvalidTemplate;
+}
+
 void CodeTemplateLibrary::addFromJsonFile_(QString fileName) {
 	QFile file(fileName);
 

@@ -31,8 +31,10 @@ public:
 	QStringList nextTypes() const;
 	int size() const;
 	int priority() const;
-	QList<CodeTemplateComponent> components() const;
+	const QList<CodeTemplateComponent>& components() const;
 	PrintHint printHint() const;
+
+	uint argumentCount() const;
 
 	bool checkAgainst(ROMRef ref) const;
 	Code makeCodeFrom(ROMRef ref) const;

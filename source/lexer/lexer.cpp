@@ -3,6 +3,8 @@
 #include <QDebug>
 #include <QStringBuilder>
 
+#include "keywords.h"
+
 namespace tea {
 
 Lexer::Lexer() {
@@ -69,9 +71,9 @@ void Lexer::tokenizeIdentifier(QStringRef ref) {
 
 	QStringRef stringRef(ref.left(pos));
 
-//	if (int keywordId = getKeywordFor(stringRef))
-//		emit tokenReady({ Token::Keyword, QVariant(keywordId) });
-//	else
+	if (Keyword keyword = getKeywordFor(stringRef))
+		emit tokenReady({ Token::Keyword, QVariant((int) keyword) });
+	else
 		emit tokenReady({ Token::Identifier, QVariant(stringRef.toString()) });
 
 	tokenize(ref.mid(pos));

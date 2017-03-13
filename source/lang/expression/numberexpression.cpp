@@ -13,4 +13,9 @@ QString NumberExpression::toString() const {
 	return QString::number(mValue, 10);
 }
 
+AssemblerType NumberExpression::assemble(CodeAssembler* assembler) const {
+	Q_UNUSED(assembler);
+	return { AssemblerType::Number, QVariant(mValue) };
+}
+
 } // namespace tea

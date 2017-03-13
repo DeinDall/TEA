@@ -23,7 +23,12 @@ SOURCES += \
     decompiler/codedisassembler.cpp \
     lang/expression/orgexpression.cpp \
     lang/print/printhint.cpp \
-    lexer/lexer.cpp
+    lexer/lexer.cpp \
+    parser/parser.cpp \
+    assembler/codeassembler.cpp \
+    rom/romwriter.cpp \
+    assembler/assemblertype.cpp \
+    lexer/keywords.cpp
 
 HEADERS += \
     template/codetemplate.h \
@@ -44,4 +49,9 @@ HEADERS += \
     lang/expression/orgexpression.h \
     lang/print/printhint.h \
     lexer/lexer.h \
-    lexer/token.h
+    lexer/token.h \
+    parser/parser.h \
+    assembler/codeassembler.h \
+    rom/romwriter.h \
+    assembler/assemblertype.h \
+    lexer/keywords.h

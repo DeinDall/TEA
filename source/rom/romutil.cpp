@@ -11,6 +11,16 @@ quint64 readNumber(ROMRef::const_iterator begin, ROMRef::const_iterator end) {
 	return result;
 }
 
+QByteArray makeNumber(quint64 value, uint size) {
+	QByteArray result;
+	result.reserve(size);
+
+	for (int i=0; i<size; ++i)
+		result.append((value >> 8*i) & 0xFF);
+
+	return result;
+}
+
 namespace snes {
 
 bool isLoRomPointer(uint pointer) {

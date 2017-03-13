@@ -49,6 +49,13 @@ const Value& ValueLibrary::findValueFor(QStringList types, quint64 value) const 
 	return mInvalidValue;
 }
 
+const Value& ValueLibrary::findValueFor(QString name) const {
+	for (const Value& val : mValues)
+		if (val.name() == name)
+			return val;
+	return mInvalidValue;
+}
+
 void ValueLibrary::addFromJsonFile_(QString fileName) {
 	QFile file(fileName);
 
