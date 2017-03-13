@@ -22,7 +22,8 @@ SOURCES += \
     lang/expression/numberexpression.cpp \
     decompiler/codedisassembler.cpp \
     lang/expression/orgexpression.cpp \
-    lang/print/printhint.cpp
+    lang/print/printhint.cpp \
+    lexer/lexer.cpp
 
 HEADERS += \
     template/codetemplate.h \
@@ -41,4 +42,6 @@ HEADERS += \
     lang/expression/numberexpression.h \
     decompiler/codedisassembler.h \
     lang/expression/orgexpression.h \
-    lang/print/printhint.h
+    lang/print/printhint.h \
+    lexer/lexer.h \
+    lexer/token.h
