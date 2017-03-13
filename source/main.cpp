@@ -8,7 +8,8 @@
 #include "valuelibrary.h"
 
 int main(int argc, char** argv) {
-	QCoreApplication(argc, argv);
+	QCoreApplication app(argc, argv);
+	Q_UNUSED(app);
 
 	QString romFile = "FE5_J.sfc";
 	quint64 offset = 0x3E8000;
