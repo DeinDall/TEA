@@ -1,0 +1,597 @@
+[
+    {
+        "name": "socialknight",
+        "type": "index of:class",
+        "value": "0x1"
+    },
+    {
+        "name": "lanceknight",
+        "type": "index of:class",
+        "value": "0x2"
+    },
+    {
+        "name": "archknight",
+        "type": "index of:class",
+        "value": "0x3"
+    },
+    {
+        "name": "axeknight",
+        "type": "index of:class",
+        "value": "0x4"
+    },
+    {
+        "name": "freeknight",
+        "type": "index of:class",
+        "value": "0x5"
+    },
+    {
+        "name": "troubadour",
+        "type": "index of:class",
+        "value": "0x6"
+    },
+    {
+        "name": "lordknight",
+        "type": "index of:class",
+        "value": "0x7"
+    },
+    {
+        "name": "dukeknight",
+        "type": "index of:class",
+        "value": "0x8"
+    },
+    {
+        "name": "masterknight",
+        "type": "index of:class",
+        "value": "0x9"
+    },
+    {
+        "name": "paladin",
+        "type": "index of:class",
+        "value": "0xa"
+    },
+    {
+        "name": "paladinf",
+        "type": "index of:class",
+        "value": "0xb"
+    },
+    {
+        "name": "bowknight",
+        "type": "index of:class",
+        "value": "0xc"
+    },
+    {
+        "name": "forrestknight",
+        "type": "index of:class",
+        "value": "0xd"
+    },
+    {
+        "name": "mageknight",
+        "type": "index of:class",
+        "value": "0xe"
+    },
+    {
+        "name": "greatknight",
+        "type": "index of:class",
+        "value": "0xf"
+    },
+    {
+        "name": "pegasusknight",
+        "type": "index of:class",
+        "value": "0x10"
+    },
+    {
+        "name": "falconknight",
+        "type": "index of:class",
+        "value": "0x11"
+    },
+    {
+        "name": "dragonrider",
+        "type": "index of:class",
+        "value": "0x12"
+    },
+    {
+        "name": "dragonknight",
+        "type": "index of:class",
+        "value": "0x13"
+    },
+    {
+        "name": "dragonmaster",
+        "type": "index of:class",
+        "value": "0x14"
+    },
+    {
+        "name": "bowfighter",
+        "type": "index of:class",
+        "value": "0x15"
+    },
+    {
+        "name": "swordfighter",
+        "type": "index of:class",
+        "value": "0x16"
+    },
+    {
+        "name": "swordmaster",
+        "type": "index of:class",
+        "value": "0x17"
+    },
+    {
+        "name": "sniper",
+        "type": "index of:class",
+        "value": "0x18"
+    },
+    {
+        "name": "forrest",
+        "type": "index of:class",
+        "value": "0x19"
+    },
+    {
+        "name": "general",
+        "type": "index of:class",
+        "value": "0x1a"
+    },
+    {
+        "name": "emperor",
+        "type": "index of:class",
+        "value": "0x1b"
+    },
+    {
+        "name": "baron",
+        "type": "index of:class",
+        "value": "0x1c"
+    },
+    {
+        "name": "lancearmour",
+        "type": "index of:class",
+        "value": "0x1d"
+    },
+    {
+        "name": "axearmour",
+        "type": "index of:class",
+        "value": "0x1e"
+    },
+    {
+        "name": "bowarmour",
+        "type": "index of:class",
+        "value": "0x1f"
+    },
+    {
+        "name": "swordarmour",
+        "type": "index of:class",
+        "value": "0x20"
+    },
+    {
+        "name": "berserker",
+        "type": "index of:class",
+        "value": "0x21"
+    },
+    {
+        "name": "mountainthief",
+        "type": "index of:class",
+        "value": "0x22"
+    },
+    {
+        "name": "mountainthief2",
+        "type": "index of:class",
+        "value": "0x23"
+    },
+    {
+        "name": "warrior",
+        "type": "index of:class",
+        "value": "0x24"
+    },
+    {
+        "name": "hunter",
+        "type": "index of:class",
+        "value": "0x25"
+    },
+    {
+        "name": "pirate",
+        "type": "index of:class",
+        "value": "0x26"
+    },
+    {
+        "name": "juniorlord",
+        "type": "index of:class",
+        "value": "0x27"
+    },
+    {
+        "name": "mageknight2",
+        "type": "index of:class",
+        "value": "0x28"
+    },
+    {
+        "name": "lord",
+        "type": "index of:class",
+        "value": "0x29"
+    },
+    {
+        "name": "prince",
+        "type": "index of:class",
+        "value": "0x2a"
+    },
+    {
+        "name": "mageknightf",
+        "type": "index of:class",
+        "value": "0x2b"
+    },
+    {
+        "name": "baronmessedupbattlesprite",
+        "type": "index of:class",
+        "value": "0x2c"
+    },
+    {
+        "name": "dancer",
+        "type": "index of:class",
+        "value": "0x2d"
+    },
+    {
+        "name": "priest",
+        "type": "index of:class",
+        "value": "0x2e"
+    },
+    {
+        "name": "mage",
+        "type": "index of:class",
+        "value": "0x2f"
+    },
+    {
+        "name": "loptomage",
+        "type": "index of:class",
+        "value": "0x30"
+    },
+    {
+        "name": "thundermage",
+        "type": "index of:class",
+        "value": "0x31"
+    },
+    {
+        "name": "windmage",
+        "type": "index of:class",
+        "value": "0x32"
+    },
+    {
+        "name": "highpriest",
+        "type": "index of:class",
+        "value": "0x33"
+    },
+    {
+        "name": "bishop",
+        "type": "index of:class",
+        "value": "0x34"
+    },
+    {
+        "name": "sage",
+        "type": "index of:class",
+        "value": "0x35"
+    },
+    {
+        "name": "bard",
+        "type": "index of:class",
+        "value": "0x36"
+    },
+    {
+        "name": "sister",
+        "type": "index of:class",
+        "value": "0x37"
+    },
+    {
+        "name": "darkmage",
+        "type": "index of:class",
+        "value": "0x38"
+    },
+    {
+        "name": "darkbishop",
+        "type": "index of:class",
+        "value": "0x39"
+    },
+    {
+        "name": "thief",
+        "type": "index of:class",
+        "value": "0x3a"
+    },
+    {
+        "name": "thieffighter",
+        "type": "index of:class",
+        "value": "0x3b"
+    },
+    {
+        "name": "civilian",
+        "type": "index of:class",
+        "value": "0x3c"
+    },
+    {
+        "name": "longarch",
+        "type": "index of:class",
+        "value": "0x3d"
+    },
+    {
+        "name": "ironarch",
+        "type": "index of:class",
+        "value": "0x3e"
+    },
+    {
+        "name": "killerarch",
+        "type": "index of:class",
+        "value": "0x3f"
+    },
+    {
+        "name": "darkprince",
+        "type": "index of:class",
+        "value": "0x40"
+    },
+    {
+        "name": "axefighter",
+        "type": "index of:class",
+        "value": "0x41"
+    },
+    {
+        "name": "socialknightdismounted",
+        "type": "index of:class",
+        "value": "0x42"
+    },
+    {
+        "name": "lanceknightdismounted",
+        "type": "index of:class",
+        "value": "0x43"
+    },
+    {
+        "name": "archknightdismounted",
+        "type": "index of:class",
+        "value": "0x44"
+    },
+    {
+        "name": "axeknightdismounted",
+        "type": "index of:class",
+        "value": "0x45"
+    },
+    {
+        "name": "freeknightdismounted",
+        "type": "index of:class",
+        "value": "0x46"
+    },
+    {
+        "name": "troubadourdismounted",
+        "type": "index of:class",
+        "value": "0x47"
+    },
+    {
+        "name": "lordknightdismounted",
+        "type": "index of:class",
+        "value": "0x48"
+    },
+    {
+        "name": "dukeknightdismounted",
+        "type": "index of:class",
+        "value": "0x49"
+    },
+    {
+        "name": "masterknightdismounted",
+        "type": "index of:class",
+        "value": "0x4a"
+    },
+    {
+        "name": "paladinmdismounted",
+        "type": "index of:class",
+        "value": "0x4b"
+    },
+    {
+        "name": "paladinfdismounted",
+        "type": "index of:class",
+        "value": "0x4c"
+    },
+    {
+        "name": "bowknightdismounted",
+        "type": "index of:class",
+        "value": "0x4d"
+    },
+    {
+        "name": "forrestknightdismounted",
+        "type": "index of:class",
+        "value": "0x4e"
+    },
+    {
+        "name": "greatknightdismounted",
+        "type": "index of:class",
+        "value": "0x4f"
+    },
+    {
+        "name": "pegasusknightdismounted",
+        "type": "index of:class",
+        "value": "0x50"
+    },
+    {
+        "name": "falconknightdismounted",
+        "type": "index of:class",
+        "value": "0x51"
+    },
+    {
+        "name": "dragonriderdismounted",
+        "type": "index of:class",
+        "value": "0x52"
+    },
+    {
+        "name": "dragonknightdismounted",
+        "type": "index of:class",
+        "value": "0x53"
+    },
+    {
+        "name": "dragonmasterdismounted",
+        "type": "index of:class",
+        "value": "0x54"
+    },
+    {
+        "name": "archknightf",
+        "type": "index of:class",
+        "value": "0x55"
+    },
+    {
+        "name": "archknightfdismounted",
+        "type": "index of:class",
+        "value": "0x56"
+    },
+    {
+        "name": "bowknightf",
+        "type": "index of:class",
+        "value": "0x57"
+    },
+    {
+        "name": "bowknightfdismounted",
+        "type": "index of:class",
+        "value": "0x58"
+    },
+    {
+        "name": "masterknightf",
+        "type": "index of:class",
+        "value": "0x59"
+    },
+    {
+        "name": "masterknightfdismounted",
+        "type": "index of:class",
+        "value": "0x5a"
+    },
+    {
+        "name": "dragonriderf",
+        "type": "index of:class",
+        "value": "0x5b"
+    },
+    {
+        "name": "dragonriderfdismounted",
+        "type": "index of:class",
+        "value": "0x5c"
+    },
+    {
+        "name": "dragonknightf",
+        "type": "index of:class",
+        "value": "0x5d"
+    },
+    {
+        "name": "dragonknightfdismounted",
+        "type": "index of:class",
+        "value": "0x5e"
+    },
+    {
+        "name": "dragonmasterf",
+        "type": "index of:class",
+        "value": "0x5f"
+    },
+    {
+        "name": "dragonmasterfdismounted",
+        "type": "index of:class",
+        "value": "0x60"
+    },
+    {
+        "name": "poisonarch",
+        "type": "index of:class",
+        "value": "0x61"
+    },
+    {
+        "name": "magef",
+        "type": "index of:class",
+        "value": "0x62"
+    },
+    {
+        "name": "thundermagef",
+        "type": "index of:class",
+        "value": "0x63"
+    },
+    {
+        "name": "loptomagef",
+        "type": "index of:class",
+        "value": "0x64"
+    },
+    {
+        "name": "windmagef",
+        "type": "index of:class",
+        "value": "0x65"
+    },
+    {
+        "name": "mageknightf2",
+        "type": "index of:class",
+        "value": "0x66"
+    },
+    {
+        "name": "mageknightfdismounted",
+        "type": "index of:class",
+        "value": "0x67"
+    },
+    {
+        "name": "priestf",
+        "type": "index of:class",
+        "value": "0x68"
+    },
+    {
+        "name": "highpriestf",
+        "type": "index of:class",
+        "value": "0x69"
+    },
+    {
+        "name": "swordfighterf",
+        "type": "index of:class",
+        "value": "0x6a"
+    },
+    {
+        "name": "forrestf",
+        "type": "index of:class",
+        "value": "0x6b"
+    },
+    {
+        "name": "swordmasterf",
+        "type": "index of:class",
+        "value": "0x6c"
+    },
+    {
+        "name": "bowfighterf",
+        "type": "index of:class",
+        "value": "0x6d"
+    },
+    {
+        "name": "sniperf",
+        "type": "index of:class",
+        "value": "0x6e"
+    },
+    {
+        "name": "thieff",
+        "type": "index of:class",
+        "value": "0x6f"
+    },
+    {
+        "name": "thieffighterf",
+        "type": "index of:class",
+        "value": "0x70"
+    },
+    {
+        "name": "mercenary",
+        "type": "index of:class",
+        "value": "0x71"
+    },
+    {
+        "name": "thiefthieffighterbattlesprite",
+        "type": "index of:class",
+        "value": "0x72"
+    },
+    {
+        "name": "pegasusrider",
+        "type": "index of:class",
+        "value": "0x73"
+    },
+    {
+        "name": "pegasusriderdismounted",
+        "type": "index of:class",
+        "value": "0x74"
+    },
+    {
+        "name": "soldier",
+        "type": "index of:class",
+        "value": "0x75"
+    },
+    {
+        "name": "archer",
+        "type": "index of:class",
+        "value": "0x76"
+    },
+    {
+        "name": "mercenaryf",
+        "type": "index of:class",
+        "value": "0x77"
+    }
+]

@@ -1,51 +1,1707 @@
 [
-	{
-		"name": "nullptr",
-		"type": "pointer",
-		"value": "0x00"
-	}, {
-		"name": "Leaf",
-		"type": "index of:character",
-		"value": "0x01"
-	}, {
-		"name": "Finn",
-		"type": "index of:character",
-		"value": "0x02"
-	}, {
-		"name": "Othin",
-		"type": "index of:character",
-		"value": "0x03"
-	}, {
-		"name": "Halvan",
-		"type": "index of:character",
-		"value": "0x04"
-	}, {
-		"name": "Eyvel",
-		"type": "index of:character",
-		"value": "0x05"
-	}, {
-		"name": "Dagdar",
-		"type": "index of:character",
-		"value": "0x06"
-	}, {
-		"name": "Marty",
-		"type": "index of:character",
-		"value": "0x08"
-	}, {
-		"name": "Tanya",
-		"type": "index of:character",
-		"value": "0x25"
-	}, {
-		"name": "Mareeta",
-		"type": "index of:character",
-		"value": "0x2A"
-	}, {
-		"name": "Leidrick",
-		"type": "index of:character",
-		"value": "0x33"
-	}, {
-		"name": "Weissman",
-		"type": "index of:character",
-		"value": "0x36"
-	}
+    {
+        "name": "leaf",
+        "type": "index of:character",
+        "value": "0x1"
+    },
+    {
+        "name": "finn",
+        "type": "index of:character",
+        "value": "0x2"
+    },
+    {
+        "name": "othin",
+        "type": "index of:character",
+        "value": "0x3"
+    },
+    {
+        "name": "halvan",
+        "type": "index of:character",
+        "value": "0x4"
+    },
+    {
+        "name": "eyvel",
+        "type": "index of:character",
+        "value": "0x5"
+    },
+    {
+        "name": "dagudar",
+        "type": "index of:character",
+        "value": "0x6"
+    },
+    {
+        "name": "ralf",
+        "type": "index of:character",
+        "value": "0x7"
+    },
+    {
+        "name": "marty",
+        "type": "index of:character",
+        "value": "0x8"
+    },
+    {
+        "name": "ronan",
+        "type": "index of:character",
+        "value": "0x9"
+    },
+    {
+        "name": "miranda",
+        "type": "index of:character",
+        "value": "0xa"
+    },
+    {
+        "name": "saphy",
+        "type": "index of:character",
+        "value": "0xb"
+    },
+    {
+        "name": "lara",
+        "type": "index of:character",
+        "value": "0xc"
+    },
+    {
+        "name": "brighton",
+        "type": "index of:character",
+        "value": "0xd"
+    },
+    {
+        "name": "felgus",
+        "type": "index of:character",
+        "value": "0xe"
+    },
+    {
+        "name": "eda",
+        "type": "index of:character",
+        "value": "0xf"
+    },
+    {
+        "name": "asvel",
+        "type": "index of:character",
+        "value": "0x10"
+    },
+    {
+        "name": "machyua",
+        "type": "index of:character",
+        "value": "0x11"
+    },
+    {
+        "name": "hicks",
+        "type": "index of:character",
+        "value": "0x12"
+    },
+    {
+        "name": "nanna",
+        "type": "index of:character",
+        "value": "0x13"
+    },
+    {
+        "name": "selfina",
+        "type": "index of:character",
+        "value": "0x14"
+    },
+    {
+        "name": "dalshein",
+        "type": "index of:character",
+        "value": "0x15"
+    },
+    {
+        "name": "carrion",
+        "type": "index of:character",
+        "value": "0x16"
+    },
+    {
+        "name": "shiva",
+        "type": "index of:character",
+        "value": "0x17"
+    },
+    {
+        "name": "pahn",
+        "type": "index of:character",
+        "value": "0x18"
+    },
+    {
+        "name": "glade",
+        "type": "index of:character",
+        "value": "0x19"
+    },
+    {
+        "name": "kein",
+        "type": "index of:character",
+        "value": "0x1a"
+    },
+    {
+        "name": "alba",
+        "type": "index of:character",
+        "value": "0x1b"
+    },
+    {
+        "name": "roberto",
+        "type": "index of:character",
+        "value": "0x1c"
+    },
+    {
+        "name": "fred",
+        "type": "index of:character",
+        "value": "0x1d"
+    },
+    {
+        "name": "oruen",
+        "type": "index of:character",
+        "value": "0x1e"
+    },
+    {
+        "name": "setychapter23",
+        "type": "index of:character",
+        "value": "0x1f"
+    },
+    {
+        "name": "rifis",
+        "type": "index of:character",
+        "value": "0x20"
+    },
+    {
+        "name": "karin",
+        "type": "index of:character",
+        "value": "0x21"
+    },
+    {
+        "name": "dean",
+        "type": "index of:character",
+        "value": "0x22"
+    },
+    {
+        "name": "shanam",
+        "type": "index of:character",
+        "value": "0x23"
+    },
+    {
+        "name": "trewd",
+        "type": "index of:character",
+        "value": "0x24"
+    },
+    {
+        "name": "tanya",
+        "type": "index of:character",
+        "value": "0x25"
+    },
+    {
+        "name": "linonan",
+        "type": "index of:character",
+        "value": "0x26"
+    },
+    {
+        "name": "misha",
+        "type": "index of:character",
+        "value": "0x27"
+    },
+    {
+        "name": "seiram",
+        "type": "index of:character",
+        "value": "0x28"
+    },
+    {
+        "name": "sleuf",
+        "type": "index of:character",
+        "value": "0x29"
+    },
+    {
+        "name": "mareeta",
+        "type": "index of:character",
+        "value": "0x2a"
+    },
+    {
+        "name": "tina",
+        "type": "index of:character",
+        "value": "0x2b"
+    },
+    {
+        "name": "gunnabishopfromdialogue",
+        "type": "index of:character",
+        "value": "0x2c"
+    },
+    {
+        "name": "amalda",
+        "type": "index of:character",
+        "value": "0x2d"
+    },
+    {
+        "name": "conomore",
+        "type": "index of:character",
+        "value": "0x2e"
+    },
+    {
+        "name": "homeros",
+        "type": "index of:character",
+        "value": "0x2f"
+    },
+    {
+        "name": "delmud",
+        "type": "index of:character",
+        "value": "0x30"
+    },
+    {
+        "name": "sara",
+        "type": "index of:character",
+        "value": "0x31"
+    },
+    {
+        "name": "cyas",
+        "type": "index of:character",
+        "value": "0x32"
+    },
+    {
+        "name": "leidrick",
+        "type": "index of:character",
+        "value": "0x33"
+    },
+    {
+        "name": "yuriusdarkmagewithcyasportraitandlife",
+        "type": "index of:character",
+        "value": "0x34"
+    },
+    {
+        "name": "beldo",
+        "type": "index of:character",
+        "value": "0x35"
+    },
+    {
+        "name": "weissmanboss",
+        "type": "index of:character",
+        "value": "0x36"
+    },
+    {
+        "name": "mansterarcher",
+        "type": "index of:character",
+        "value": "0x37"
+    },
+    {
+        "name": "bugsboss",
+        "type": "index of:character",
+        "value": "0x38"
+    },
+    {
+        "name": "jabal",
+        "type": "index of:character",
+        "value": "0x39"
+    },
+    {
+        "name": "rifisgangpirate",
+        "type": "index of:character",
+        "value": "0x3a"
+    },
+    {
+        "name": "rifisganghunter",
+        "type": "index of:character",
+        "value": "0x3b"
+    },
+    {
+        "name": "rifisgangwarrior",
+        "type": "index of:character",
+        "value": "0x3c"
+    },
+    {
+        "name": "robosboss",
+        "type": "index of:character",
+        "value": "0x3d"
+    },
+    {
+        "name": "mansterbowarmor",
+        "type": "index of:character",
+        "value": "0x3e"
+    },
+    {
+        "name": "mansterthundermage",
+        "type": "index of:character",
+        "value": "0x3f"
+    },
+    {
+        "name": "mansterbishop",
+        "type": "index of:character",
+        "value": "0x40"
+    },
+    {
+        "name": "romeonpc",
+        "type": "index of:character",
+        "value": "0x41"
+    },
+    {
+        "name": "lucheanpc",
+        "type": "index of:character",
+        "value": "0x42"
+    },
+    {
+        "name": "yubelnpc",
+        "type": "index of:character",
+        "value": "0x43"
+    },
+    {
+        "name": "corplenpcfe4cameo",
+        "type": "index of:character",
+        "value": "0x44"
+    },
+    {
+        "name": "setychapter4gappearance",
+        "type": "index of:character",
+        "value": "0x45"
+    },
+    {
+        "name": "ishtar",
+        "type": "index of:character",
+        "value": "0x46"
+    },
+    {
+        "name": "reinhartweakversionprobablydialogue",
+        "type": "index of:character",
+        "value": "0x47"
+    },
+    {
+        "name": "rifisgangswordfighter",
+        "type": "index of:character",
+        "value": "0x48"
+    },
+    {
+        "name": "emilynpc",
+        "type": "index of:character",
+        "value": "0x49"
+    },
+    {
+        "name": "murphynpc",
+        "type": "index of:character",
+        "value": "0x4a"
+    },
+    {
+        "name": "bellanpc",
+        "type": "index of:character",
+        "value": "0x4b"
+    },
+    {
+        "name": "krithnpc",
+        "type": "index of:character",
+        "value": "0x4c"
+    },
+    {
+        "name": "boeynpc",
+        "type": "index of:character",
+        "value": "0x4d"
+    },
+    {
+        "name": "leenanpc",
+        "type": "index of:character",
+        "value": "0x4e"
+    },
+    {
+        "name": "mercenaryswordfighter",
+        "type": "index of:character",
+        "value": "0x4f"
+    },
+    {
+        "name": "galzus",
+        "type": "index of:character",
+        "value": "0x50"
+    },
+    {
+        "name": "manstersocialknight",
+        "type": "index of:character",
+        "value": "0x51"
+    },
+    {
+        "name": "mansterpaladin",
+        "type": "index of:character",
+        "value": "0x52"
+    },
+    {
+        "name": "mansterarchknight",
+        "type": "index of:character",
+        "value": "0x53"
+    },
+    {
+        "name": "manstertroubadour",
+        "type": "index of:character",
+        "value": "0x54"
+    },
+    {
+        "name": "izenauboss",
+        "type": "index of:character",
+        "value": "0x55"
+    },
+    {
+        "name": "hannibaldialoguefe4cameo",
+        "type": "index of:character",
+        "value": "0x56"
+    },
+    {
+        "name": "mansteraxeknight",
+        "type": "index of:character",
+        "value": "0x57"
+    },
+    {
+        "name": "banditmountainthief",
+        "type": "index of:character",
+        "value": "0x58"
+    },
+    {
+        "name": "bandithunter",
+        "type": "index of:character",
+        "value": "0x59"
+    },
+    {
+        "name": "banditwarrior",
+        "type": "index of:character",
+        "value": "0x5a"
+    },
+    {
+        "name": "lumeiboss",
+        "type": "index of:character",
+        "value": "0x5b"
+    },
+    {
+        "name": "gomezboss",
+        "type": "index of:character",
+        "value": "0x5c"
+    },
+    {
+        "name": "mallockboss",
+        "type": "index of:character",
+        "value": "0x5d"
+    },
+    {
+        "name": "thraciadragonknight",
+        "type": "index of:character",
+        "value": "0x5e"
+    },
+    {
+        "name": "thraciaswordfighter",
+        "type": "index of:character",
+        "value": "0x5f"
+    },
+    {
+        "name": "thraciaaxefighter",
+        "type": "index of:character",
+        "value": "0x60"
+    },
+    {
+        "name": "althennaenemyonlyfe4cameo",
+        "type": "index of:character",
+        "value": "0x61"
+    },
+    {
+        "name": "torabantdialoguefe4cameo",
+        "type": "index of:character",
+        "value": "0x62"
+    },
+    {
+        "name": "ralgoboss",
+        "type": "index of:character",
+        "value": "0x63"
+    },
+    {
+        "name": "mansterlongarch",
+        "type": "index of:character",
+        "value": "0x64"
+    },
+    {
+        "name": "mansteraxearmor",
+        "type": "index of:character",
+        "value": "0x65"
+    },
+    {
+        "name": "kempfboss",
+        "type": "index of:character",
+        "value": "0x66"
+    },
+    {
+        "name": "oltovboss",
+        "type": "index of:character",
+        "value": "0x67"
+    },
+    {
+        "name": "rosanpc",
+        "type": "index of:character",
+        "value": "0x68"
+    },
+    {
+        "name": "serranpc",
+        "type": "index of:character",
+        "value": "0x69"
+    },
+    {
+        "name": "peternpc",
+        "type": "index of:character",
+        "value": "0x6a"
+    },
+    {
+        "name": "kolhominiboss",
+        "type": "index of:character",
+        "value": "0x6b"
+    },
+    {
+        "name": "ristboss",
+        "type": "index of:character",
+        "value": "0x6c"
+    },
+    {
+        "name": "paluceboss",
+        "type": "index of:character",
+        "value": "0x6d"
+    },
+    {
+        "name": "baldackboss",
+        "type": "index of:character",
+        "value": "0x6e"
+    },
+    {
+        "name": "thracialancearmor",
+        "type": "index of:character",
+        "value": "0x6f"
+    },
+    {
+        "name": "lensterlanceknight",
+        "type": "index of:character",
+        "value": "0x70"
+    },
+    {
+        "name": "lensterarchknight",
+        "type": "index of:character",
+        "value": "0x71"
+    },
+    {
+        "name": "ariondialoguefe4cameo",
+        "type": "index of:character",
+        "value": "0x72"
+    },
+    {
+        "name": "makroiboss",
+        "type": "index of:character",
+        "value": "0x73"
+    },
+    {
+        "name": "koddaboss",
+        "type": "index of:character",
+        "value": "0x74"
+    },
+    {
+        "name": "roputodarkmage",
+        "type": "index of:character",
+        "value": "0x75"
+    },
+    {
+        "name": "civilian",
+        "type": "index of:character",
+        "value": "0x76"
+    },
+    {
+        "name": "thief",
+        "type": "index of:character",
+        "value": "0x77"
+    },
+    {
+        "name": "manstersniper",
+        "type": "index of:character",
+        "value": "0x78"
+    },
+    {
+        "name": "mercenarysocialknight",
+        "type": "index of:character",
+        "value": "0x79"
+    },
+    {
+        "name": "priest",
+        "type": "index of:character",
+        "value": "0x7a"
+    },
+    {
+        "name": "mercenaryswordfighter2",
+        "type": "index of:character",
+        "value": "0x7b"
+    },
+    {
+        "name": "21ironarch",
+        "type": "index of:character",
+        "value": "0x7c"
+    },
+    {
+        "name": "shupelboss",
+        "type": "index of:character",
+        "value": "0x7d"
+    },
+    {
+        "name": "blukeboss",
+        "type": "index of:character",
+        "value": "0x7e"
+    },
+    {
+        "name": "silesiapegasusrider",
+        "type": "index of:character",
+        "value": "0x7f"
+    },
+    {
+        "name": "nikolafboss",
+        "type": "index of:character",
+        "value": "0x80"
+    },
+    {
+        "name": "muuaboss",
+        "type": "index of:character",
+        "value": "0x81"
+    },
+    {
+        "name": "myuraboss",
+        "type": "index of:character",
+        "value": "0x82"
+    },
+    {
+        "name": "reincockboss",
+        "type": "index of:character",
+        "value": "0x83"
+    },
+    {
+        "name": "palmanboss",
+        "type": "index of:character",
+        "value": "0x84"
+    },
+    {
+        "name": "kantoboss",
+        "type": "index of:character",
+        "value": "0x85"
+    },
+    {
+        "name": "gustafboss",
+        "type": "index of:character",
+        "value": "0x86"
+    },
+    {
+        "name": "dancer",
+        "type": "index of:character",
+        "value": "0x87"
+    },
+    {
+        "name": "sister",
+        "type": "index of:character",
+        "value": "0x88"
+    },
+    {
+        "name": "manheimboss",
+        "type": "index of:character",
+        "value": "0x89"
+    },
+    {
+        "name": "phlausboss",
+        "type": "index of:character",
+        "value": "0x8a"
+    },
+    {
+        "name": "semitolboss",
+        "type": "index of:character",
+        "value": "0x8b"
+    },
+    {
+        "name": "zaomboss",
+        "type": "index of:character",
+        "value": "0x8c"
+    },
+    {
+        "name": "koenboss",
+        "type": "index of:character",
+        "value": "0x8d"
+    },
+    {
+        "name": "alphanboss",
+        "type": "index of:character",
+        "value": "0x8e"
+    },
+    {
+        "name": "opisuboss",
+        "type": "index of:character",
+        "value": "0x8f"
+    },
+    {
+        "name": "ferdenboss",
+        "type": "index of:character",
+        "value": "0x90"
+    },
+    {
+        "name": "korutaboss",
+        "type": "index of:character",
+        "value": "0x91"
+    },
+    {
+        "name": "reinhardt",
+        "type": "index of:character",
+        "value": "0x92"
+    },
+    {
+        "name": "nancynpc",
+        "type": "index of:character",
+        "value": "0x93"
+    },
+    {
+        "name": "tahracivilian",
+        "type": "index of:character",
+        "value": "0x94"
+    },
+    {
+        "name": "tahracivilian2",
+        "type": "index of:character",
+        "value": "0x95"
+    },
+    {
+        "name": "tahracivilian3",
+        "type": "index of:character",
+        "value": "0x96"
+    },
+    {
+        "name": "tahracivilian4",
+        "type": "index of:character",
+        "value": "0x97"
+    },
+    {
+        "name": "tahracivilian5",
+        "type": "index of:character",
+        "value": "0x98"
+    },
+    {
+        "name": "tahracivilian6",
+        "type": "index of:character",
+        "value": "0x99"
+    },
+    {
+        "name": "mercenaryswordfighter3",
+        "type": "index of:character",
+        "value": "0x9a"
+    },
+    {
+        "name": "freegelongarch",
+        "type": "index of:character",
+        "value": "0x9b"
+    },
+    {
+        "name": "freegesocialknight",
+        "type": "index of:character",
+        "value": "0x9c"
+    },
+    {
+        "name": "freegetroubadour",
+        "type": "index of:character",
+        "value": "0x9d"
+    },
+    {
+        "name": "freegebowarmour",
+        "type": "index of:character",
+        "value": "0x9e"
+    },
+    {
+        "name": "freegelancearmour",
+        "type": "index of:character",
+        "value": "0x9f"
+    },
+    {
+        "name": "freegeaxearmour",
+        "type": "index of:character",
+        "value": "0xa0"
+    },
+    {
+        "name": "freegearcher",
+        "type": "index of:character",
+        "value": "0xa1"
+    },
+    {
+        "name": "freegemage",
+        "type": "index of:character",
+        "value": "0xa2"
+    },
+    {
+        "name": "rilkewithkempfportrait",
+        "type": "index of:character",
+        "value": "0xa3"
+    },
+    {
+        "name": "mansterlancearmour",
+        "type": "index of:character",
+        "value": "0xa4"
+    },
+    {
+        "name": "civilian2",
+        "type": "index of:character",
+        "value": "0xa5"
+    },
+    {
+        "name": "civilian3",
+        "type": "index of:character",
+        "value": "0xa6"
+    },
+    {
+        "name": "civilian4",
+        "type": "index of:character",
+        "value": "0xa7"
+    },
+    {
+        "name": "civilian5",
+        "type": "index of:character",
+        "value": "0xa8"
+    },
+    {
+        "name": "civilian6",
+        "type": "index of:character",
+        "value": "0xa9"
+    },
+    {
+        "name": "civilian7",
+        "type": "index of:character",
+        "value": "0xaa"
+    },
+    {
+        "name": "manstermage",
+        "type": "index of:character",
+        "value": "0xab"
+    },
+    {
+        "name": "mansterpriest",
+        "type": "index of:character",
+        "value": "0xac"
+    },
+    {
+        "name": "yuriuswithyuriaportrait",
+        "type": "index of:character",
+        "value": "0xad"
+    },
+    {
+        "name": "manfroywithmachyuaportrait",
+        "type": "index of:character",
+        "value": "0xae"
+    },
+    {
+        "name": "manstermage2",
+        "type": "index of:character",
+        "value": "0xaf"
+    },
+    {
+        "name": "mansterswordfighter",
+        "type": "index of:character",
+        "value": "0xb0"
+    },
+    {
+        "name": "envoymercenary",
+        "type": "index of:character",
+        "value": "0xb1"
+    },
+    {
+        "name": "envoywarrior",
+        "type": "index of:character",
+        "value": "0xb2"
+    },
+    {
+        "name": "envoygeneral",
+        "type": "index of:character",
+        "value": "0xb3"
+    },
+    {
+        "name": "envoyswordmaster",
+        "type": "index of:character",
+        "value": "0xb4"
+    },
+    {
+        "name": "envoyberserker",
+        "type": "index of:character",
+        "value": "0xb5"
+    },
+    {
+        "name": "mansterpriest2",
+        "type": "index of:character",
+        "value": "0xb6"
+    },
+    {
+        "name": "bantolboss",
+        "type": "index of:character",
+        "value": "0xb7"
+    },
+    {
+        "name": "loptodarkbishop",
+        "type": "index of:character",
+        "value": "0xb8"
+    },
+    {
+        "name": "tormanboss",
+        "type": "index of:character",
+        "value": "0xb9"
+    },
+    {
+        "name": "manstersoldier",
+        "type": "index of:character",
+        "value": "0xba"
+    },
+    {
+        "name": "banditberserker",
+        "type": "index of:character",
+        "value": "0xbb"
+    },
+    {
+        "name": "mercenaryswordfighter4",
+        "type": "index of:character",
+        "value": "0xbc"
+    },
+    {
+        "name": "magisquadswordfighter",
+        "type": "index of:character",
+        "value": "0xbd"
+    },
+    {
+        "name": "magisquadaxefighter",
+        "type": "index of:character",
+        "value": "0xbe"
+    },
+    {
+        "name": "magisquadbowfighter",
+        "type": "index of:character",
+        "value": "0xbf"
+    },
+    {
+        "name": "magisquadswordfighter2",
+        "type": "index of:character",
+        "value": "0xc0"
+    },
+    {
+        "name": "dragonrider",
+        "type": "index of:character",
+        "value": "0xc1"
+    },
+    {
+        "name": "bishop",
+        "type": "index of:character",
+        "value": "0xc2"
+    },
+    {
+        "name": "tobolzarkboss",
+        "type": "index of:character",
+        "value": "0xc3"
+    },
+    {
+        "name": "mansterbishop2",
+        "type": "index of:character",
+        "value": "0xc4"
+    },
+    {
+        "name": "freegelongarch2",
+        "type": "index of:character",
+        "value": "0xc5"
+    },
+    {
+        "name": "banditmountainthief2",
+        "type": "index of:character",
+        "value": "0xc6"
+    },
+    {
+        "name": "thief2",
+        "type": "index of:character",
+        "value": "0xc7"
+    },
+    {
+        "name": "bowfighter",
+        "type": "index of:character",
+        "value": "0xc8"
+    },
+    {
+        "name": "freegebishop",
+        "type": "index of:character",
+        "value": "0xc9"
+    },
+    {
+        "name": "freegelancearmour2",
+        "type": "index of:character",
+        "value": "0xca"
+    },
+    {
+        "name": "freegebowarmour2",
+        "type": "index of:character",
+        "value": "0xcb"
+    },
+    {
+        "name": "freegemage2",
+        "type": "index of:character",
+        "value": "0xcc"
+    },
+    {
+        "name": "ironarch",
+        "type": "index of:character",
+        "value": "0xcd"
+    },
+    {
+        "name": "freegeaxearmour2",
+        "type": "index of:character",
+        "value": "0xce"
+    },
+    {
+        "name": "aightmanboss",
+        "type": "index of:character",
+        "value": "0xcf"
+    },
+    {
+        "name": "zailboss",
+        "type": "index of:character",
+        "value": "0xd0"
+    },
+    {
+        "name": "swordarmour",
+        "type": "index of:character",
+        "value": "0xd1"
+    },
+    {
+        "name": "soldier",
+        "type": "index of:character",
+        "value": "0xd2"
+    },
+    {
+        "name": "freegelongarch3",
+        "type": "index of:character",
+        "value": "0xd3"
+    },
+    {
+        "name": "eyrios",
+        "type": "index of:character",
+        "value": "0xd4"
+    },
+    {
+        "name": "silesiapegasusrider2",
+        "type": "index of:character",
+        "value": "0xd5"
+    },
+    {
+        "name": "freegemageknight",
+        "type": "index of:character",
+        "value": "0xd6"
+    },
+    {
+        "name": "paladin",
+        "type": "index of:character",
+        "value": "0xd7"
+    },
+    {
+        "name": "freegegreatknight",
+        "type": "index of:character",
+        "value": "0xd8"
+    },
+    {
+        "name": "bowknight",
+        "type": "index of:character",
+        "value": "0xd9"
+    },
+    {
+        "name": "swordarmour2",
+        "type": "index of:character",
+        "value": "0xda"
+    },
+    {
+        "name": "freegesoldier",
+        "type": "index of:character",
+        "value": "0xdb"
+    },
+    {
+        "name": "freegearchknight",
+        "type": "index of:character",
+        "value": "0xdc"
+    },
+    {
+        "name": "freegetroubadour2",
+        "type": "index of:character",
+        "value": "0xdd"
+    },
+    {
+        "name": "freegelanceknight",
+        "type": "index of:character",
+        "value": "0xde"
+    },
+    {
+        "name": "freegesocialknight2",
+        "type": "index of:character",
+        "value": "0xdf"
+    },
+    {
+        "name": "civilian8",
+        "type": "index of:character",
+        "value": "0xe0"
+    },
+    {
+        "name": "mercenary",
+        "type": "index of:character",
+        "value": "0xe1"
+    },
+    {
+        "name": "swordmaster",
+        "type": "index of:character",
+        "value": "0xe2"
+    },
+    {
+        "name": "berserker",
+        "type": "index of:character",
+        "value": "0xe3"
+    },
+    {
+        "name": "berserker2",
+        "type": "index of:character",
+        "value": "0xe4"
+    },
+    {
+        "name": "silesiapegasusrider3",
+        "type": "index of:character",
+        "value": "0xe5"
+    },
+    {
+        "name": "freegeaxearmour3",
+        "type": "index of:character",
+        "value": "0xe6"
+    },
+    {
+        "name": "freegeswordarmour",
+        "type": "index of:character",
+        "value": "0xe7"
+    },
+    {
+        "name": "freegelancearmour3",
+        "type": "index of:character",
+        "value": "0xe8"
+    },
+    {
+        "name": "freegelongarch4",
+        "type": "index of:character",
+        "value": "0xe9"
+    },
+    {
+        "name": "bowfighter2",
+        "type": "index of:character",
+        "value": "0xea"
+    },
+    {
+        "name": "swordfighter",
+        "type": "index of:character",
+        "value": "0xeb"
+    },
+    {
+        "name": "mercenary2",
+        "type": "index of:character",
+        "value": "0xec"
+    },
+    {
+        "name": "xavier",
+        "type": "index of:character",
+        "value": "0xed"
+    },
+    {
+        "name": "xavierslensterarmour",
+        "type": "index of:character",
+        "value": "0xee"
+    },
+    {
+        "name": "xavierslensterarmour2",
+        "type": "index of:character",
+        "value": "0xef"
+    },
+    {
+        "name": "xavierslensterarmour3",
+        "type": "index of:character",
+        "value": "0xf0"
+    },
+    {
+        "name": "xavierslensterarmour4",
+        "type": "index of:character",
+        "value": "0xf1"
+    },
+    {
+        "name": "xavierslensterarmour5",
+        "type": "index of:character",
+        "value": "0xf2"
+    },
+    {
+        "name": "xavierslensterarmour6",
+        "type": "index of:character",
+        "value": "0xf3"
+    },
+    {
+        "name": "xavierslensterarmour7",
+        "type": "index of:character",
+        "value": "0xf4"
+    },
+    {
+        "name": "xavierslensterarmour8",
+        "type": "index of:character",
+        "value": "0xf5"
+    },
+    {
+        "name": "civilian9",
+        "type": "index of:character",
+        "value": "0xf6"
+    },
+    {
+        "name": "civilian10",
+        "type": "index of:character",
+        "value": "0xf7"
+    },
+    {
+        "name": "civilian11",
+        "type": "index of:character",
+        "value": "0xf8"
+    },
+    {
+        "name": "civilian12",
+        "type": "index of:character",
+        "value": "0xf9"
+    },
+    {
+        "name": "civilian13",
+        "type": "index of:character",
+        "value": "0xfa"
+    },
+    {
+        "name": "civilian14",
+        "type": "index of:character",
+        "value": "0xfb"
+    },
+    {
+        "name": "civilian15",
+        "type": "index of:character",
+        "value": "0xfc"
+    },
+    {
+        "name": "civilian16",
+        "type": "index of:character",
+        "value": "0xfd"
+    },
+    {
+        "name": "freegesoldier2",
+        "type": "index of:character",
+        "value": "0xfe"
+    },
+    {
+        "name": "lenstersoldier",
+        "type": "index of:character",
+        "value": "0xff"
+    },
+    {
+        "name": "august",
+        "type": "index of:character",
+        "value": "0x100"
+    },
+    {
+        "name": "resistanceswordfighter",
+        "type": "index of:character",
+        "value": "0x101"
+    },
+    {
+        "name": "barratboss",
+        "type": "index of:character",
+        "value": "0x102"
+    },
+    {
+        "name": "freegegeneral",
+        "type": "index of:character",
+        "value": "0x103"
+    },
+    {
+        "name": "freegeswordarmour2",
+        "type": "index of:character",
+        "value": "0x104"
+    },
+    {
+        "name": "freegepriest",
+        "type": "index of:character",
+        "value": "0x105"
+    },
+    {
+        "name": "freegepoisonarch",
+        "type": "index of:character",
+        "value": "0x106"
+    },
+    {
+        "name": "thraciadragonknight2",
+        "type": "index of:character",
+        "value": "0x107"
+    },
+    {
+        "name": "freegemageknight2",
+        "type": "index of:character",
+        "value": "0x108"
+    },
+    {
+        "name": "freegeaxeknight",
+        "type": "index of:character",
+        "value": "0x109"
+    },
+    {
+        "name": "freegebowknight",
+        "type": "index of:character",
+        "value": "0x10a"
+    },
+    {
+        "name": "freegepaladin",
+        "type": "index of:character",
+        "value": "0x10b"
+    },
+    {
+        "name": "freegelanceknight2",
+        "type": "index of:character",
+        "value": "0x10c"
+    },
+    {
+        "name": "freegesniper",
+        "type": "index of:character",
+        "value": "0x10d"
+    },
+    {
+        "name": "freegemercenary",
+        "type": "index of:character",
+        "value": "0x10e"
+    },
+    {
+        "name": "freegebishop2",
+        "type": "index of:character",
+        "value": "0x10f"
+    },
+    {
+        "name": "freegetroubadour3",
+        "type": "index of:character",
+        "value": "0x110"
+    },
+    {
+        "name": "freegemageknight3",
+        "type": "index of:character",
+        "value": "0x111"
+    },
+    {
+        "name": "alstersocialknight",
+        "type": "index of:character",
+        "value": "0x112"
+    },
+    {
+        "name": "alsterarchknight",
+        "type": "index of:character",
+        "value": "0x113"
+    },
+    {
+        "name": "alsterbowknight",
+        "type": "index of:character",
+        "value": "0x114"
+    },
+    {
+        "name": "alstermageknight",
+        "type": "index of:character",
+        "value": "0x115"
+    },
+    {
+        "name": "freegepriest2",
+        "type": "index of:character",
+        "value": "0x116"
+    },
+    {
+        "name": "freegebowknight2",
+        "type": "index of:character",
+        "value": "0x117"
+    },
+    {
+        "name": "freegepaladin2",
+        "type": "index of:character",
+        "value": "0x118"
+    },
+    {
+        "name": "freegeswordarmour3",
+        "type": "index of:character",
+        "value": "0x119"
+    },
+    {
+        "name": "freegearchknight2",
+        "type": "index of:character",
+        "value": "0x11a"
+    },
+    {
+        "name": "gelbritter",
+        "type": "index of:character",
+        "value": "0x11b"
+    },
+    {
+        "name": "freegegeneral2",
+        "type": "index of:character",
+        "value": "0x11c"
+    },
+    {
+        "name": "mansterdukeknight",
+        "type": "index of:character",
+        "value": "0x11d"
+    },
+    {
+        "name": "mansterbowknight",
+        "type": "index of:character",
+        "value": "0x11e"
+    },
+    {
+        "name": "manstergreatknight",
+        "type": "index of:character",
+        "value": "0x11f"
+    },
+    {
+        "name": "thraciadragonknight3",
+        "type": "index of:character",
+        "value": "0x120"
+    },
+    {
+        "name": "civilian17",
+        "type": "index of:character",
+        "value": "0x121"
+    },
+    {
+        "name": "civilian18",
+        "type": "index of:character",
+        "value": "0x122"
+    },
+    {
+        "name": "civilian19",
+        "type": "index of:character",
+        "value": "0x123"
+    },
+    {
+        "name": "civilian20",
+        "type": "index of:character",
+        "value": "0x124"
+    },
+    {
+        "name": "civilian21",
+        "type": "index of:character",
+        "value": "0x125"
+    },
+    {
+        "name": "civilian22",
+        "type": "index of:character",
+        "value": "0x126"
+    },
+    {
+        "name": "civilian23",
+        "type": "index of:character",
+        "value": "0x127"
+    },
+    {
+        "name": "civilian24",
+        "type": "index of:character",
+        "value": "0x128"
+    },
+    {
+        "name": "civilian25",
+        "type": "index of:character",
+        "value": "0x129"
+    },
+    {
+        "name": "civilian26",
+        "type": "index of:character",
+        "value": "0x12a"
+    },
+    {
+        "name": "civilian27",
+        "type": "index of:character",
+        "value": "0x12b"
+    },
+    {
+        "name": "civilian28",
+        "type": "index of:character",
+        "value": "0x12c"
+    },
+    {
+        "name": "civilian29",
+        "type": "index of:character",
+        "value": "0x12d"
+    },
+    {
+        "name": "civilian30",
+        "type": "index of:character",
+        "value": "0x12e"
+    },
+    {
+        "name": "mercenary3",
+        "type": "index of:character",
+        "value": "0x12f"
+    },
+    {
+        "name": "mercenary4",
+        "type": "index of:character",
+        "value": "0x130"
+    },
+    {
+        "name": "mercenary5",
+        "type": "index of:character",
+        "value": "0x131"
+    },
+    {
+        "name": "sniper",
+        "type": "index of:character",
+        "value": "0x132"
+    },
+    {
+        "name": "eins",
+        "type": "index of:character",
+        "value": "0x133"
+    },
+    {
+        "name": "dreidagudar",
+        "type": "index of:character",
+        "value": "0x134"
+    },
+    {
+        "name": "drei",
+        "type": "index of:character",
+        "value": "0x135"
+    },
+    {
+        "name": "elfsara",
+        "type": "index of:character",
+        "value": "0x136"
+    },
+    {
+        "name": "elf",
+        "type": "index of:character",
+        "value": "0x137"
+    },
+    {
+        "name": "zweigalzus",
+        "type": "index of:character",
+        "value": "0x138"
+    },
+    {
+        "name": "zwei",
+        "type": "index of:character",
+        "value": "0x139"
+    },
+    {
+        "name": "zwlflifis",
+        "type": "index of:character",
+        "value": "0x13a"
+    },
+    {
+        "name": "zwlf",
+        "type": "index of:character",
+        "value": "0x13b"
+    },
+    {
+        "name": "fnfeyvel",
+        "type": "index of:character",
+        "value": "0x13c"
+    },
+    {
+        "name": "fnf",
+        "type": "index of:character",
+        "value": "0x13d"
+    },
+    {
+        "name": "loptodarkmage",
+        "type": "index of:character",
+        "value": "0x13e"
+    },
+    {
+        "name": "loptoaxearmour",
+        "type": "index of:character",
+        "value": "0x13f"
+    },
+    {
+        "name": "loptobowarmour",
+        "type": "index of:character",
+        "value": "0x140"
+    },
+    {
+        "name": "loptolancearmour",
+        "type": "index of:character",
+        "value": "0x141"
+    },
+    {
+        "name": "mansterpoisonarch",
+        "type": "index of:character",
+        "value": "0x142"
+    },
+    {
+        "name": "leidrickagain",
+        "type": "index of:character",
+        "value": "0x143"
+    },
+    {
+        "name": "mansterswordarmour",
+        "type": "index of:character",
+        "value": "0x144"
+    },
+    {
+        "name": "manstersoldier2",
+        "type": "index of:character",
+        "value": "0x145"
+    },
+    {
+        "name": "freegeironarch",
+        "type": "index of:character",
+        "value": "0x146"
+    },
+    {
+        "name": "thraciaarcher",
+        "type": "index of:character",
+        "value": "0x147"
+    },
+    {
+        "name": "thraciabishop",
+        "type": "index of:character",
+        "value": "0x148"
+    },
+    {
+        "name": "thraciadragonrider",
+        "type": "index of:character",
+        "value": "0x149"
+    },
+    {
+        "name": "thraciasoldier",
+        "type": "index of:character",
+        "value": "0x14a"
+    },
+    {
+        "name": "alstersocialknight2",
+        "type": "index of:character",
+        "value": "0x14b"
+    },
+    {
+        "name": "pirate",
+        "type": "index of:character",
+        "value": "0x14c"
+    },
+    {
+        "name": "resistancebowfighter",
+        "type": "index of:character",
+        "value": "0x14d"
+    },
+    {
+        "name": "resistancepriest",
+        "type": "index of:character",
+        "value": "0x14e"
+    },
+    {
+        "name": "resistanceaxefighter",
+        "type": "index of:character",
+        "value": "0x14f"
+    },
+    {
+        "name": "resistancebowfighter2",
+        "type": "index of:character",
+        "value": "0x150"
+    },
+    {
+        "name": "resistanceswordfighter2",
+        "type": "index of:character",
+        "value": "0x151"
+    },
+    {
+        "name": "resistancemage",
+        "type": "index of:character",
+        "value": "0x152"
+    },
+    {
+        "name": "manstergeneral",
+        "type": "index of:character",
+        "value": "0x153"
+    },
+    {
+        "name": "loptodarkmage2",
+        "type": "index of:character",
+        "value": "0x154"
+    },
+    {
+        "name": "thraciaswordarmour",
+        "type": "index of:character",
+        "value": "0x155"
+    }
 ]
