@@ -13,7 +13,7 @@
 namespace tea {
 
 Parser::Parser(const CodeTemplateLibrary* lib, QObject* parent)
-	: mTemplateLibrary(lib), QObject(parent) {}
+	: QObject(parent), mTemplateLibrary(lib) {}
 
 void Parser::parseStatement() {
 	if (mCurrentTokens.isEmpty())
@@ -37,7 +37,7 @@ void Parser::parseStatement() {
 		}
 	} else if (first.type == Token::Identifier) {
 		QString codeName = first.data.toString();
-		uint argCount = mCurrentTokens.size();
+		int argCount = mCurrentTokens.size();
 
 		const CodeTemplate& codeTemplate = mTemplateLibrary->findTemplate(codeName, argCount);
 
