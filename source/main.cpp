@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
 
 	if (decompMode) {
 		tea::CodeDisassembler decompiler(&lib, &valLib);
-		decompiler.decompile(rom.midRef(offset), decompType);
+		decompiler.disassemble(rom.midRef(offset), decompType);
 
 		if (!file.open(QIODevice::WriteOnly))
 			return 1;
@@ -88,7 +88,7 @@ int main(int argc, char** argv) {
 		});
 
 		lexer.tokenize(data.midRef(0));
-		assembler.writeToFile(QFileInfo(romFile).path() + "tea_out.sfc");
+		assembler.outputToFile(QFileInfo(romFile).path() + "tea_out.sfc");
 	}
 
 	return 0;

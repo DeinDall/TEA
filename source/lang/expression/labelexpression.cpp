@@ -14,9 +14,9 @@ QString LabelExpression::toString() const {
 	return mLabelName % ":";
 }
 
-AssemblerType LabelExpression::assemble(CodeAssembler* assembler) const {
+AssemblerValue LabelExpression::assemble(CodeAssembler* assembler) const {
 	assembler->defineValue(mLabelName, snes::loRomPointerFromOffset(assembler->currentOffset()));
-	return { AssemblerType::NullType, QVariant() };
+	return { AssemblerValue::NullType, QVariant() };
 }
 
 PrintHint LabelExpression::printHint() const {

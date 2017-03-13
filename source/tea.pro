@@ -27,8 +27,8 @@ SOURCES += \
     parser/parser.cpp \
     assembler/codeassembler.cpp \
     rom/romwriter.cpp \
-    assembler/assemblertype.cpp \
-    lexer/keywords.cpp
+    lexer/keywords.cpp \
+    assembler/assemblervalue.cpp
 
 HEADERS += \
     template/codetemplate.h \
@@ -53,5 +53,5 @@ HEADERS += \
     parser/parser.h \
     assembler/codeassembler.h \
     rom/romwriter.h \
-    assembler/assemblertype.h \
-    lexer/keywords.h
+    lexer/keywords.h \
+    assembler/assemblervalue.h

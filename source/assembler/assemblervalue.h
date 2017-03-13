@@ -1,11 +1,11 @@
-#ifndef TEA_ASSEMBLERTYPE_H
-#define TEA_ASSEMBLERTYPE_H
+#ifndef TEA_ASSEMBLERVALUE_H
+#define TEA_ASSEMBLERVALUE_H
 
 #include <QVariant>
 
 namespace tea {
 
-struct AssemblerType {
+struct AssemblerValue {
 	enum TypeEnum {
 		NullType,
 
@@ -20,4 +20,4 @@ struct AssemblerType {
 
 } // namespace tea
 
-#endif // TEA_ASSEMBLERTYPE_H
+#endif // TEA_ASSEMBLERVALUE_H

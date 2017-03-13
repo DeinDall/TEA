@@ -16,7 +16,7 @@ public:
 	NumberExpression(quint64 value, BaseEnum base, QObject* parent = nullptr);
 
 	QString toString() const;
-	AssemblerType assemble(CodeAssembler* assembler) const;
+	AssemblerValue assemble(CodeAssembler* assembler) const;
 
 private:
 	quint64 mValue;

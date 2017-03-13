@@ -13,9 +13,9 @@ QString OrgExpression::toString() const {
 	return "org 0x" % QString::number(mOffset, 16);
 }
 
-AssemblerType OrgExpression::assemble(CodeAssembler* assembler) const {
+AssemblerValue OrgExpression::assemble(CodeAssembler* assembler) const {
 	assembler->setCurrentOffset(mOffset);
-	return { AssemblerType::NullType, QVariant() };
+	return { AssemblerValue::NullType, QVariant() };
 }
 
 PrintHint OrgExpression::printHint() const {

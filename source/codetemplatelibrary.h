@@ -13,7 +13,7 @@ public:
 
 	void loadFromDir(QString path);
 
-	const CodeTemplate& findTemplateFor(ROMRef ref, QString type) const;
+	const CodeTemplate& findTemplate(ROMRef ref, QString type) const;
 	const CodeTemplate& findTemplate(QString name, QString type) const;
 	const CodeTemplate& findTemplate(QString name, uint argCount) const;
 	const CodeTemplate& findTemplate(QString name) const;

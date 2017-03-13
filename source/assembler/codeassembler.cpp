@@ -12,7 +12,7 @@ CodeAssembler::CodeAssembler(const ROM* rom, ValueLibrary* valLib, QObject* pare
 		mValueLibrary = ValueLibrary(*valLib);
 }
 
-void CodeAssembler::markValue(uint offset, uint size, QString valueName) {
+void CodeAssembler::markValueUsage(uint offset, uint size, QString valueName) {
 	mMarkedValues[offset] = { size, valueName };
 }
 
@@ -33,12 +33,12 @@ void CodeAssembler::defineValue(QString name, quint64 value) {
 	mValueLibrary.addValue(name, "any", value);
 }
 
-void CodeAssembler::writeToFile(QString fileName) {
+void CodeAssembler::outputToFile(QString fileName) {
 	for (auto it = mMarkedValues.begin(); it != mMarkedValues.end(); ++it) {
 		uint offset = it.key();
 		MarkedValue value = it.value();
 
-		if (const Value& libValue = mValueLibrary.findValueFor(value.name))
+		if (const Value& libValue = mValueLibrary.findValue(value.name))
 			mWriter.writeAt(offset, makeNumber(libValue.value(), value.size));
 	}
 
@@ -46,9 +46,9 @@ void CodeAssembler::writeToFile(QString fileName) {
 }
 
 void CodeAssembler::handleExpression(AbstractExpression* exp) {
-	AssemblerType value = exp->assemble(this);
+	AssemblerValue value = exp->assemble(this);
 
-	if (value.type == AssemblerType::Data)
+	if (value.type == AssemblerValue::Data)
 		writeData(value.data.toByteArray());
 }
 

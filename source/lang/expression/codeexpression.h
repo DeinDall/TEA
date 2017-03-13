@@ -12,7 +12,7 @@ public:
 	CodeExpression(const CodeTemplate* codeTemplate, QList<AbstractExpression*> parameters, QObject* parent = nullptr);
 
 	QString toString() const;
-	AssemblerType assemble(CodeAssembler* assembler) const;
+	AssemblerValue assemble(CodeAssembler* assembler) const;
 	PrintHint printHint() const;
 	uint byteSize() const;
 

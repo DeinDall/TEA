@@ -15,8 +15,8 @@ public:
 
 	void addValue(QString name, QString type, quint64 value);
 
-	const Value& findValueFor(QStringList types, quint64 value) const;
-	const Value& findValueFor(QString name) const;
+	const Value& findValue(QStringList types, quint64 value) const;
+	const Value& findValue(QString name) const;
 
 protected:
 	void addFromJsonFile_(QString file);

@@ -21,7 +21,7 @@ CodeDisassembler::CodeDisassembler(const CodeTemplateLibrary* library, ValueLibr
 		mValueLibrary = (*valLib);
 }
 
-bool CodeDisassembler::decompile(ROMRef ref, QString type) {
+bool CodeDisassembler::disassemble(ROMRef ref, QString type) {
 	if (mCodeMap.contains(ref.offset()))
 		return false; // Already decompiled given offset
 
@@ -34,7 +34,7 @@ bool CodeDisassembler::decompile(ROMRef ref, QString type) {
 		return false;
 
 	while (type != "null") {
-		const CodeTemplate& codeTemplate = mLibrary->findTemplateFor(ref, type);
+		const CodeTemplate& codeTemplate = mLibrary->findTemplate(ref, type);
 
 		if (!codeTemplate.isValid()) {
 			qDebug() << ("Couldn't disassemble at 0x" % QString::number(ref.offset(), 16) % " (next byte: 0x" % QString::number((quint8) ref.at(0), 16) % ")") << endl;
@@ -113,7 +113,7 @@ QList<AbstractExpression*> CodeDisassembler::makeExpressions(QObject* commonPare
 
 		auto paramIt = code.parameterIterator();
 		while (paramIt.next()) {
-			if (const Value& value = mValueLibrary.findValueFor(paramIt.types(), paramIt.value()))
+			if (const Value& value = mValueLibrary.findValue(paramIt.types(), paramIt.value()))
 				parameterList.append(new ValueExpression(value.name(), commonParent));
 			else
 				parameterList.append(new NumberExpression(paramIt.value(), NumberExpression::BaseHex, commonParent));
@@ -168,7 +168,7 @@ ROMRef CodeDisassembler::handleCode(ROMRef ref, Code code) {
 			ROMRef offset = ref.romPtr()->midRef(snes::offsetFromLoRomPointer(it.value()));
 
 			// Decompiling
-			if (decompile(offset, targetType))
+			if (disassemble(offset, targetType))
 				handleLabel(offset, it.name());
 		}
 	}

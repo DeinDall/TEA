@@ -10,7 +10,7 @@ public:
 	ValueExpression(QString valueName, QObject* parent = nullptr);
 
 	QString toString() const;
-	AssemblerType assemble(CodeAssembler* assembler) const;
+	AssemblerValue assemble(CodeAssembler* assembler) const;
 
 private:
 	QString mValueName;

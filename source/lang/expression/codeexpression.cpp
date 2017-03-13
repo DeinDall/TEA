@@ -17,7 +17,7 @@ QString CodeExpression::toString() const {
 	return resultList.join(" ");
 }
 
-AssemblerType CodeExpression::assemble(CodeAssembler* assembler) const {
+AssemblerValue CodeExpression::assemble(CodeAssembler* assembler) const {
 	auto it = mParameters.begin();
 	auto componentIt = mCodeTemplate->components().begin();
 
@@ -34,11 +34,11 @@ AssemblerType CodeExpression::assemble(CodeAssembler* assembler) const {
 			if (it == mParameters.end())
 				break;
 
-			AssemblerType value = (*it)->assemble(assembler);
+			AssemblerValue value = (*it)->assemble(assembler);
 
-			if (value.type == AssemblerType::Value) {
-				assembler->markValue(assembler->currentOffset() + offset, size, value.data.toString());
-			} else if (value.type == AssemblerType::Number) {
+			if (value.type == AssemblerValue::Value) {
+				assembler->markValueUsage(assembler->currentOffset() + offset, size, value.data.toString());
+			} else if (value.type == AssemblerValue::Number) {
 				data.replace(offset, size, makeNumber(value.data.toLongLong(), size));
 			}
 
@@ -48,7 +48,7 @@ AssemblerType CodeExpression::assemble(CodeAssembler* assembler) const {
 		++componentIt;
 	}
 
-	return { AssemblerType::Data, QVariant(data) };
+	return { AssemblerValue::Data, QVariant(data) };
 }
 
 PrintHint CodeExpression::printHint() const {

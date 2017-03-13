@@ -9,9 +9,9 @@ QString ValueExpression::toString() const {
 	return mValueName;
 }
 
-AssemblerType ValueExpression::assemble(CodeAssembler* assembler) const {
+AssemblerValue ValueExpression::assemble(CodeAssembler* assembler) const {
 	Q_UNUSED(assembler);
-	return { AssemblerType::Value, mValueName };
+	return { AssemblerValue::Value, mValueName };
 }
 
 } // namespace tea

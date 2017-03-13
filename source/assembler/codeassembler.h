@@ -21,15 +21,15 @@ public:
 public:
 	CodeAssembler(const ROM* rom, ValueLibrary* valLib, QObject* parent = nullptr);
 
-	void markValue(uint offset, uint size, QString valueName);
+	void markValueUsage(uint offset, uint size, QString valueName);
 	void writeData(const QByteArray data);
-	void setCurrentOffset(uint offset);
 
 	void defineValue(QString name, quint64 value);
 
+	void setCurrentOffset(uint offset);
 	uint currentOffset() const;
 
-	void writeToFile(QString fileName);
+	void outputToFile(QString fileName);
 
 public slots:
 	void handleExpression(AbstractExpression* exp);

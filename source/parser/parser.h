@@ -17,8 +17,8 @@ public:
 	Parser(const CodeTemplateLibrary* lib, QObject* parent = nullptr);
 
 protected:
-	void handleLabel();
-	void handleStack();
+	void parseLabel();
+	void parseStatement();
 	AbstractExpression* singleTokenExpression(Token token);
 
 	QObject* expressionParent();

@@ -22,7 +22,7 @@ void CodeTemplateLibrary::loadFromDir(QString path) {
 	sort_();
 }
 
-const CodeTemplate& CodeTemplateLibrary::findTemplateFor(ROMRef ref, QString type) const {
+const CodeTemplate& CodeTemplateLibrary::findTemplate(ROMRef ref, QString type) const {
 	for (const CodeTemplate& codeTemplate : mTemplates) {
 		if (!codeTemplate.types().contains(type))
 			continue;

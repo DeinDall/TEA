@@ -15,7 +15,7 @@ namespace tea {
 Parser::Parser(const CodeTemplateLibrary* lib, QObject* parent)
 	: mTemplateLibrary(lib), QObject(parent) {}
 
-void Parser::handleStack() {
+void Parser::parseStatement() {
 	if (mCurrentTokens.isEmpty())
 		return;
 
@@ -69,7 +69,7 @@ void Parser::handleStack() {
 	mCurrentTokens.clear();
 }
 
-void Parser::handleLabel() {
+void Parser::parseLabel() {
 	if (mCurrentTokens.size() != 1)
 		emit parseError("Tried to define label with no/multiple tokens");
 	else {
@@ -103,9 +103,9 @@ AbstractExpression* Parser::singleTokenExpression(Token token) {
 
 void Parser::handleToken(Token token) {
 	if (token.type == Token::LineBreak) {
-		handleStack();
+		parseStatement();
 	} else if (token.type == Token::Colon) {
-		handleLabel();
+		parseLabel();
 	} else if (token.type == Token::StringLiteral) {
 		emit parseError("String literals have no meaning yet, sorry :(");
 	} else

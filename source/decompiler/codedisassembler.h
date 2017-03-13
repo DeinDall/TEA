@@ -15,7 +15,7 @@ class CodeDisassembler : public QObject {
 public:
 	CodeDisassembler(const CodeTemplateLibrary* library, ValueLibrary* valLib = nullptr);
 
-	bool decompile(ROMRef ref, QString type);
+	bool disassemble(ROMRef ref, QString type);
 	void printOutput(QTextStream* out);
 
 	QList<AbstractExpression*> makeExpressions(QObject* commonParent = nullptr);

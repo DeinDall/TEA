@@ -27,7 +27,7 @@ void ValueLibrary::addValue(QString name, QString type, quint64 value) {
 	mValues.append(val);
 }
 
-const Value& ValueLibrary::findValueFor(QStringList types, quint64 value) const {
+const Value& ValueLibrary::findValue(QStringList types, quint64 value) const {
 	for (const Value& val : mValues) {
 		if (val.value() != value)
 			continue;
@@ -49,7 +49,7 @@ const Value& ValueLibrary::findValueFor(QStringList types, quint64 value) const 
 	return mInvalidValue;
 }
 
-const Value& ValueLibrary::findValueFor(QString name) const {
+const Value& ValueLibrary::findValue(QString name) const {
 	for (const Value& val : mValues)
 		if (val.name() == name)
 			return val;
