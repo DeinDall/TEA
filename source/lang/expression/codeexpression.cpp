@@ -14,6 +14,10 @@ QString CodeExpression::toString() const {
 	return resultList.join(" ");
 }
 
+PrintHint CodeExpression::printHint() const {
+	return mCodeTemplate->printHint();
+}
+
 uint CodeExpression::byteSize() const {
 	return mCodeTemplate->size();
 }

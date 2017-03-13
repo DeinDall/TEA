@@ -6,6 +6,7 @@
 
 #include "rom/romref.h"
 #include "code/code.h"
+#include "lang/print/printhint.h"
 
 #include "codetemplatecomponent.h"
 
@@ -23,6 +24,7 @@ public:
 	void setSize(int size);
 	void setPriority(int priority);
 	void setComponents(QList<CodeTemplateComponent> components);
+	void setPrintHint(PrintHint hint);
 
 	QString name() const;
 	QStringList types() const;
@@ -30,6 +32,7 @@ public:
 	int size() const;
 	int priority() const;
 	QList<CodeTemplateComponent> components() const;
+	PrintHint printHint() const;
 
 	bool checkAgainst(ROMRef ref) const;
 	Code makeCodeFrom(ROMRef ref) const;
@@ -40,6 +43,7 @@ private:
 	QString mName;
 	QStringList mTypes;
 	QStringList mNexts;
+	PrintHint mPrintHint;
 
 	int mSize;
 	int mPriority;

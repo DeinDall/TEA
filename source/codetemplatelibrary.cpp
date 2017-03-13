@@ -82,6 +82,17 @@ CodeTemplate CodeTemplateLibrary::makeTemplateFromJsonObject(QJsonObject object)
 	if (object.contains("size"))
 		result.setSize(makeNumberFromJsonValue(object.value("size")));
 
+	if (object.contains("printHint")) {
+		QString str = object.value("printHint").toString();
+
+		if (str == "beginScope")
+			result.setPrintHint(PrintHint(PrintHint::Continue, PrintHint::OpenScope));
+		else if (str == "endScope")
+			result.setPrintHint(PrintHint(PrintHint::CloseScope, PrintHint::Continue));
+		else if (str == "endPart")
+			result.setPrintHint(PrintHint(PrintHint::Continue, PrintHint::IgnoreScope));
+	}
+
 	if (object.contains("priority")) {
 		QJsonValue value = object.value("priority");
 

@@ -5,6 +5,7 @@
 		"next": "eventCode",
 		
 		"size": 1,
+		"printHint": "endPart",
 		
 		"components": [
 			{
@@ -19,7 +20,7 @@
 		"next": "null",
 		
 		"size": 1,
-		"scopeModifier": "end",
+		"printHint": "endScope",
 		
 		"components": [
 			{
@@ -34,7 +35,7 @@
 		"next": "null",
 		
 		"size": 1,
-		"scopeModifier": "end",
+		"printHint": "endScope",
 		
 		"components": [
 			{
@@ -113,6 +114,7 @@
 		"next": "eventCode",
 		
 		"size": 6,
+		"printHint": "endPart",
 		
 		"components": [
 			{

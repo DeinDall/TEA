@@ -5,7 +5,8 @@
 		"next": "eventComponent",
 		
 		"priority": "low",
-		"scopeModifier": "begin",
+		
+		"printHint": "beginScope",
 		
 		"size": 4,
 		
@@ -26,7 +27,8 @@
 		"next": "null",
 		
 		"priority": "high",
-		"scopeModifier": "end",
+		
+		"printHint": "endScope",
 		
 		"size": 2,
 		

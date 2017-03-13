@@ -77,7 +77,7 @@
 		"priority": "high",
 		
 		"size": 2,
-		"scopeModifier": "end",
+		"printHint": "endScope",
 		
 		"components": [
 			{

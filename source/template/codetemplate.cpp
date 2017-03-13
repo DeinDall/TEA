@@ -46,6 +46,10 @@ void CodeTemplate::setComponents(QList<CodeTemplateComponent> components) {
 	mComponents = components;
 }
 
+void CodeTemplate::setPrintHint(PrintHint hint) {
+	mPrintHint = hint;
+}
+
 QString CodeTemplate::name() const {
 	return mName;
 }
@@ -68,6 +72,10 @@ int CodeTemplate::priority() const {
 
 QList<CodeTemplateComponent> CodeTemplate::components() const {
 	return mComponents;
+}
+
+PrintHint CodeTemplate::printHint() const {
+	return mPrintHint;
 }
 
 bool CodeTemplate::checkAgainst(ROMRef ref) const {

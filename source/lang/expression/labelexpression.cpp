@@ -11,4 +11,8 @@ QString LabelExpression::toString() const {
 	return mLabelName % ":";
 }
 
+PrintHint LabelExpression::printHint() const {
+	return PrintHint(PrintHint::ResetScope, PrintHint::OpenScope);
+}
+
 } // namespace tea

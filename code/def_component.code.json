@@ -93,7 +93,7 @@
 		"next": "eventDefinition",
 		
 		"priority": "high",
-		"scopeModifier": "end",
+		"printHint": "endScope",
 		
 		"size": 1,
 		

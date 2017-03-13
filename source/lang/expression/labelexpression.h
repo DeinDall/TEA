@@ -12,6 +12,7 @@ public:
 	LabelExpression(QString labelName, QObject* parent = nullptr);
 
 	QString toString() const;
+	PrintHint printHint() const;
 
 private:
 	QString mLabelName;

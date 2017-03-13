@@ -49,8 +49,55 @@ bool CodeDisassembler::decompile(ROMRef ref, QString type) {
 }
 
 void CodeDisassembler::printOutput(QTextStream* out) {
-	for (AbstractExpression* exp : makeExpressions(this))
-		(*out) << exp->toString() << endl;
+	int currentScopeDepth = 0;
+	for (AbstractExpression* exp : makeExpressions(this)) {
+		PrintHint hint(exp->printHint());
+
+		if (hint.beforeHint() == PrintHint::IgnoreScope)
+			(*out) << exp->toString() << endl;
+		else {
+			switch (hint.beforeHint()) {
+			case PrintHint::OpenScope:
+				++currentScopeDepth;
+				break;
+
+			case PrintHint::CloseScope:
+				currentScopeDepth = qMax(currentScopeDepth-1, 0);
+				break;
+
+			case PrintHint::ResetScope:
+				(*out) << endl;
+				currentScopeDepth = 0;
+				break;
+
+			case PrintHint::Continue:
+			default:
+				break;
+			}
+
+			(*out) << QString(currentScopeDepth, '\t') << exp->toString() << endl;
+		}
+
+		switch (hint.afterHint()) {
+		case PrintHint::OpenScope:
+			++currentScopeDepth;
+			break;
+
+		case PrintHint::CloseScope:
+			currentScopeDepth = qMax(currentScopeDepth-1, 0);
+			break;
+
+		case PrintHint::ResetScope:
+			currentScopeDepth = 0;
+		case PrintHint::IgnoreScope:
+			(*out) << endl;
+			break;
+
+		case PrintHint::Continue:
+		default:
+			break;
+		}
+	}
 }
 
 QList<AbstractExpression*> CodeDisassembler::makeExpressions(QObject* commonParent) {

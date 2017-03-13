@@ -12,6 +12,7 @@ public:
 	CodeExpression(const CodeTemplate* codeTemplate, QList<AbstractExpression*> parameters, QObject* parent = nullptr);
 
 	QString toString() const;
+	PrintHint printHint() const;
 	uint byteSize() const;
 
 private:

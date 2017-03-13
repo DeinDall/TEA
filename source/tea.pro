@@ -21,7 +21,8 @@ SOURCES += \
     lang/expression/labelexpression.cpp \
     lang/expression/numberexpression.cpp \
     decompiler/codedisassembler.cpp \
-    lang/expression/orgexpression.cpp
+    lang/expression/orgexpression.cpp \
+    lang/print/printhint.cpp
 
 HEADERS += \
     template/codetemplate.h \
@@ -39,4 +40,5 @@ HEADERS += \
     lang/expression/labelexpression.h \
     lang/expression/numberexpression.h \
     decompiler/codedisassembler.h \
-    lang/expression/orgexpression.h
+    lang/expression/orgexpression.h \
+    lang/print/printhint.h

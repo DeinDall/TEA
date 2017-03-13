@@ -10,6 +10,7 @@ public:
 	OrgExpression(uint offset, QObject* parent = nullptr);
 
 	QString toString() const;
+	PrintHint printHint() const;
 
 private:
 	uint mOffset;
