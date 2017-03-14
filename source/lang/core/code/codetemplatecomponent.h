@@ -1,7 +1,7 @@
 #ifndef TEA_CODETEMPLATECOMPONENT_H
 #define TEA_CODETEMPLATECOMPONENT_H
 
-#include <QStringList>
+#include "codeparametertype.h"
 
 namespace tea {
 
@@ -9,13 +9,13 @@ class CodeTemplateComponent {
 public:
 	CodeTemplateComponent(QString name);
 
-	void setTypes(QStringList types);
+	void setType(CodeParameterType type);
 	void setOffset(int offset);
 	void setSize(int size);
 	void setFixedValue(quint64 value);
 
 	QString name() const;
-	QStringList types() const;
+	const CodeParameterType& type() const;
 
 	int offset() const;
 	int size() const;
@@ -25,7 +25,7 @@ public:
 
 private:
 	QString mName;
-	QStringList mTypeList;
+	CodeParameterType mType;
 
 	int mOffset;
 	int mSize;

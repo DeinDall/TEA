@@ -11,15 +11,11 @@ Value::Value(QString name)
 bool Value::isValid() const {
 	if (mName.isEmpty())
 		return false;
-
-	if (mTypes.isEmpty())
-		return false;
-
-	return true;
+	return mType.isValid();
 }
 
-void Value::setTypes(QStringList types) {
-	mTypes = types;
+void Value::setType(CodeParameterType type) {
+	mType = type;
 }
 
 void Value::setValue(quint64 value) {
@@ -30,8 +26,8 @@ QString Value::name() const {
 	return mName;
 }
 
-QStringList Value::types() const {
-	return mTypes;
+CodeParameterType Value::type() const {
+	return mType;
 }
 
 quint64 Value::value() const {

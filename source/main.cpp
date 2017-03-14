@@ -19,8 +19,8 @@ int main(int argc, char** argv) {
 
 	bool decompMode = true;
 	QString romFile = "FE5_J.sfc";
-	quint64 offset = 0x3E8000;
-	QString decompType = "eventDefinition";
+	quint64 offset = 0x65561;
+	QString decompType = "chapterEventPointers";
 	QString fileName = "out.tea";
 
 	{
@@ -55,7 +55,9 @@ int main(int argc, char** argv) {
 
 	if (decompMode) {
 		tea::CodeDisassembler decompiler(&lib, &valLib);
-		decompiler.disassemble(rom.midRef(offset), decompType);
+		tea::DisassemblerState state;
+
+		decompiler.disassemble(rom.midRef(offset), decompType, state);
 
 		if (!file.open(QIODevice::WriteOnly))
 			return 1;

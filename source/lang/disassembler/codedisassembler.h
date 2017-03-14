@@ -1,6 +1,8 @@
 #ifndef TEA_CODEDISASSEMBLER_H
 #define TEA_CODEDISASSEMBLER_H
 
+#include "disassemblerstate.h"
+
 #include "lang/codetemplatelibrary.h"
 #include "lang/valuelibrary.h"
 
@@ -15,14 +17,14 @@ class CodeDisassembler : public QObject {
 public:
 	CodeDisassembler(const CodeTemplateLibrary* library, ValueLibrary* valLib = nullptr);
 
-	bool disassemble(ROMRef ref, QString type);
+	bool disassemble(ROMRef ref, QString type, DisassemblerState& state);
 	void printOutput(QTextStream* out);
 
 	QList<AbstractExpression*> makeExpressions(QObject* commonParent = nullptr);
 
 protected:
 	void handleLabel(ROMRef ref, QString name);
-	ROMRef handleCode(ROMRef ref, Code code);
+	ROMRef handleCode(ROMRef ref, Code code, DisassemblerState& state);
 
 private:
 	const CodeTemplateLibrary* mLibrary;

@@ -1,7 +1,7 @@
 #ifndef TEA_VALUE_H
 #define TEA_VALUE_H
 
-#include <QStringList>
+#include "lang/core/code/codeparametertype.h"
 
 namespace tea {
 
@@ -12,18 +12,18 @@ public:
 
 	bool isValid() const;
 
-	void setTypes(QStringList types);
+	void setType(CodeParameterType type);
 	void setValue(quint64 value);
 
 	QString name() const;
-	QStringList types() const;
+	CodeParameterType type() const;
 	quint64 value() const;
 
 	inline operator bool () const { return isValid(); }
 
 private:
 	QString mName;
-	QStringList mTypes;
+	CodeParameterType mType;
 	quint64 mValue;
 };
 

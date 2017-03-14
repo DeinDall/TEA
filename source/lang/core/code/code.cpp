@@ -20,8 +20,8 @@ quint64 Code::ConstParameterIterator::value() const {
 	return mCode->parameterValue(mParameterIndex);
 }
 
-QStringList Code::ConstParameterIterator::types() const {
-	return mCode->codeTemplate()->components().at(mComponentIndex).types();
+const CodeParameterType& Code::ConstParameterIterator::type() const {
+	return mCode->codeTemplate()->components().at(mComponentIndex).type();
 }
 
 uint Code::ConstParameterIterator::offset() const {

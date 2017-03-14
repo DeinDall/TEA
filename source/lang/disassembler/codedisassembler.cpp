@@ -21,12 +21,11 @@ CodeDisassembler::CodeDisassembler(const CodeTemplateLibrary* library, ValueLibr
 		mValueLibrary = (*valLib);
 }
 
-bool CodeDisassembler::disassemble(ROMRef ref, QString type) {
+bool CodeDisassembler::disassemble(ROMRef ref, QString type, DisassemblerState& state) {
 	if (mCodeMap.contains(ref.offset()))
 		return false; // Already decompiled given offset
 
 	// TODO: Proper logger
-	// QTextStream stdstream(stdout);
 
 	qDebug() << ("Called disassembler at 0x" % QString::number(ref.offset(), 16) % " for type " % type) << endl;
 
@@ -41,8 +40,8 @@ bool CodeDisassembler::disassemble(ROMRef ref, QString type) {
 			return false;
 		}
 
-		ref = handleCode(ref, codeTemplate.makeCodeFrom(ref));
-		type = codeTemplate.nextType();
+		ref = handleCode(ref, codeTemplate.makeCodeFrom(ref), state);
+		type = state.parseArgument(codeTemplate.nextType());
 	}
 
 	return true;
@@ -113,7 +112,7 @@ QList<AbstractExpression*> CodeDisassembler::makeExpressions(QObject* commonPare
 
 		auto paramIt = code.parameterIterator();
 		while (paramIt.next()) {
-			if (const Value& value = mValueLibrary.findValue(paramIt.types(), paramIt.value()))
+			if (const Value& value = mValueLibrary.findValue(paramIt.type(), paramIt.value()))
 				parameterList.append(new ValueExpression(value.name(), commonParent));
 			else
 				parameterList.append(new NumberExpression(paramIt.value(), NumberExpression::BaseHex, commonParent));
@@ -148,27 +147,37 @@ void CodeDisassembler::handleLabel(ROMRef ref, QString name) {
 	mValueLibrary.addValue(labelName, "pointer", snes::loRomPointerFromOffset(ref.offset()));
 }
 
-ROMRef CodeDisassembler::handleCode(ROMRef ref, Code code) {
+ROMRef CodeDisassembler::handleCode(ROMRef ref, Code code, DisassemblerState& state) {
 	// Cycling through parameters to handle pointers
 	auto it = code.parameterIterator();
 	while (it.next()) {
 		if (!snes::isLoRomPointer(it.value()))
-			continue;
+			continue; // Value is not a valid pointer anyway
 
-		if (it.types().contains("pointer")) {
-			QString targetType;
+		const CodeParameterType& type = it.type();
 
-			for (QString type : it.types())
-				if (type.startsWith("to:"))
-					targetType = type.mid(3);
+		if (type.name() == "pointer") {
+			QStringList toTypes = type.parameterValues("to");
 
-			if (targetType.isEmpty())
+			if (toTypes.isEmpty())
 				continue;
+
+			QString targetType = state.parseArgument(toTypes.first());
+			DisassemblerState newState(state);
+
+			for (QString arg : type.parameterValues("arg")) {
+				QStringList split = arg.split('=');
+
+				if (split.size() != 2)
+					continue;
+
+				newState.setArgument(split.at(0), split.at(1));
+			}
 
 			ROMRef offset = ref.romPtr()->midRef(snes::offsetFromLoRomPointer(it.value()));
 
 			// Decompiling
-			if (disassemble(offset, targetType))
+			if (disassemble(offset, targetType, newState))
 				handleLabel(offset, it.name());
 		}
 	}

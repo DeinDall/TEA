@@ -21,24 +21,33 @@ void ValueLibrary::loadFromDir(QString path) {
 void ValueLibrary::addValue(QString name, QString type, quint64 value) {
 	Value val(name);
 
-	val.setTypes(type.split(' '));
+	val.setType(CodeParameterType::parseFromString(type));
 	val.setValue(value);
 
 	mValues.append(val);
 }
 
-const Value& ValueLibrary::findValue(QStringList types, quint64 value) const {
+const Value& ValueLibrary::findValue(const CodeParameterType& type, quint64 value) const {
 	for (const Value& val : mValues) {
 		if (val.value() != value)
 			continue;
+		if (type.name() != val.type().name())
+			continue;
 
+		auto it = type.parameters().begin();
 		bool mismatched = false;
 
-		for (QString type : val.types())
-			if (!types.contains(type)) {
-				mismatched = true;
-				break;
-			}
+		while (it != type.parameters().end()) {
+			QString arg = it.key();
+
+			for (QString values : val.type().parameterValues(arg))
+				if (!it.value().contains(values)) {
+					mismatched = true;
+					break;
+				}
+
+			++it;
+		}
 
 		if (mismatched)
 			continue;
@@ -78,7 +87,8 @@ Value ValueLibrary::makeFromJsonObject_(QJsonObject object) {
 	Value result(object.value("name").toString());
 
 	if (object.contains("type"))
-		result.setTypes(object.value("type").toString().split(' '));
+		result.setType(CodeParameterType::parseFromString(object.value("type").toString()));
+
 	if (object.contains("value")) {
 		QJsonValue value = object.value("value");
 

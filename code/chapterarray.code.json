@@ -1,0 +1,53 @@
+[
+	{
+		"name": "chapterEventPointers",
+		"type": "chapterEventPointers",
+		"next": "null",
+		
+		"size": 30,
+		
+		"components": [
+			{
+				"name": "openingEventDefitions",
+				"type": "pointer to:eventDefinition",
+				"size": 3
+			}, {
+				"name": "turnEventDefitions",
+				"type": "pointer to:eventDefinition",
+				"size": 3
+			}, {
+				"name": "talkEventDefitions",
+				"type": "pointer to:eventDefinition",
+				"size": 3
+			}, {
+				"name": "locationEventDefitions",
+				"type": "pointer to:eventDefinition",
+				"size": 3
+			}, {
+				"name": "unknown1",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "shopEventDefinitons",
+				"type": "pointer to:eventDefinition arg:target=shopCode",
+				"size": 3
+			}, {
+				"name": "unknown2",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "unknown3",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "unknown4",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "unknown5",
+				"type": "pointer",
+				"size": 3
+			}
+		]
+	}
+]

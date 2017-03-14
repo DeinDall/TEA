@@ -1,0 +1,11 @@
+[
+	{
+		"name": "pActiveXPos",
+		"type": "pointer",
+		"value": "0xe4d"
+	}, {
+		"name": "pActiveYPos",
+		"type": "pointer",
+		"value": "0xe4f"
+	}
+]

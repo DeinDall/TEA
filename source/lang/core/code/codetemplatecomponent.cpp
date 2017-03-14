@@ -5,8 +5,8 @@ namespace tea {
 CodeTemplateComponent::CodeTemplateComponent(QString name)
 	: mName(name), mOffset(0), mSize(0), mFixed(false), mFixedValue(0) {}
 
-void CodeTemplateComponent::setTypes(QStringList types) {
-	mTypeList = types;
+void CodeTemplateComponent::setType(CodeParameterType type) {
+	mType = type;
 }
 
 void CodeTemplateComponent::setOffset(int offset) {
@@ -26,8 +26,8 @@ QString CodeTemplateComponent::name() const {
 	return mName;
 }
 
-QStringList CodeTemplateComponent::types() const {
-	return mTypeList;
+const CodeParameterType& CodeTemplateComponent::type() const {
+	return mType;
 }
 
 int CodeTemplateComponent::offset() const {

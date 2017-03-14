@@ -159,7 +159,7 @@ CodeTemplateComponent CodeTemplateLibrary::makeTemplateComponentFromJsonObject(Q
 	CodeTemplateComponent result(object.value("name").toString());
 
 	if (object.contains("type"))
-		result.setTypes(object.value("type").toString().split(' '));
+		result.setType(CodeParameterType::parseFromString(object.value("type").toString()));
 
 	if (object.contains("size"))
 		result.setSize(makeNumberFromJsonValue(object.value("size")));

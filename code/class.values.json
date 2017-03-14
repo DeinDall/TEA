@@ -1,596 +1,596 @@
 [
     {
-        "name": "socialknight",
+        "name": "SocialKnight",
         "type": "index of:class",
         "value": "0x1"
     },
     {
-        "name": "lanceknight",
+        "name": "LanceKnight",
         "type": "index of:class",
         "value": "0x2"
     },
     {
-        "name": "archknight",
+        "name": "ArchKnight",
         "type": "index of:class",
         "value": "0x3"
     },
     {
-        "name": "axeknight",
+        "name": "AxeKnight",
         "type": "index of:class",
         "value": "0x4"
     },
     {
-        "name": "freeknight",
+        "name": "FreeKnight",
         "type": "index of:class",
         "value": "0x5"
     },
     {
-        "name": "troubadour",
+        "name": "Troubadour",
         "type": "index of:class",
         "value": "0x6"
     },
     {
-        "name": "lordknight",
+        "name": "LordKnight",
         "type": "index of:class",
         "value": "0x7"
     },
     {
-        "name": "dukeknight",
+        "name": "DukeKnight",
         "type": "index of:class",
         "value": "0x8"
     },
     {
-        "name": "masterknight",
+        "name": "MasterKnight",
         "type": "index of:class",
         "value": "0x9"
     },
     {
-        "name": "paladin",
+        "name": "Paladin",
         "type": "index of:class",
         "value": "0xa"
     },
     {
-        "name": "paladinf",
+        "name": "PaladinF",
         "type": "index of:class",
         "value": "0xb"
     },
     {
-        "name": "bowknight",
+        "name": "BowKnight",
         "type": "index of:class",
         "value": "0xc"
     },
     {
-        "name": "forrestknight",
+        "name": "ForrestKnight",
         "type": "index of:class",
         "value": "0xd"
     },
     {
-        "name": "mageknight",
+        "name": "MageKnight",
         "type": "index of:class",
         "value": "0xe"
     },
     {
-        "name": "greatknight",
+        "name": "GreatKnight",
         "type": "index of:class",
         "value": "0xf"
     },
     {
-        "name": "pegasusknight",
+        "name": "PegasusKnight",
         "type": "index of:class",
         "value": "0x10"
     },
     {
-        "name": "falconknight",
+        "name": "FalconKnight",
         "type": "index of:class",
         "value": "0x11"
     },
     {
-        "name": "dragonrider",
+        "name": "DragonRider",
         "type": "index of:class",
         "value": "0x12"
     },
     {
-        "name": "dragonknight",
+        "name": "DragonKnight",
         "type": "index of:class",
         "value": "0x13"
     },
     {
-        "name": "dragonmaster",
+        "name": "DragonMaster",
         "type": "index of:class",
         "value": "0x14"
     },
     {
-        "name": "bowfighter",
+        "name": "BowFighter",
         "type": "index of:class",
         "value": "0x15"
     },
     {
-        "name": "swordfighter",
+        "name": "SwordFighter",
         "type": "index of:class",
         "value": "0x16"
     },
     {
-        "name": "swordmaster",
+        "name": "Swordmaster",
         "type": "index of:class",
         "value": "0x17"
     },
     {
-        "name": "sniper",
+        "name": "Sniper",
         "type": "index of:class",
         "value": "0x18"
     },
     {
-        "name": "forrest",
+        "name": "Forrest",
         "type": "index of:class",
         "value": "0x19"
     },
     {
-        "name": "general",
+        "name": "General",
         "type": "index of:class",
         "value": "0x1a"
     },
     {
-        "name": "emperor",
+        "name": "Emperor",
         "type": "index of:class",
         "value": "0x1b"
     },
     {
-        "name": "baron",
+        "name": "Baron",
         "type": "index of:class",
         "value": "0x1c"
     },
     {
-        "name": "lancearmour",
+        "name": "LanceArmour",
         "type": "index of:class",
         "value": "0x1d"
     },
     {
-        "name": "axearmour",
+        "name": "AxeArmour",
         "type": "index of:class",
         "value": "0x1e"
     },
     {
-        "name": "bowarmour",
+        "name": "BowArmour",
         "type": "index of:class",
         "value": "0x1f"
     },
     {
-        "name": "swordarmour",
+        "name": "SwordArmour",
         "type": "index of:class",
         "value": "0x20"
     },
     {
-        "name": "berserker",
+        "name": "Berserker",
         "type": "index of:class",
         "value": "0x21"
     },
     {
-        "name": "mountainthief",
+        "name": "MountainThief",
         "type": "index of:class",
         "value": "0x22"
     },
     {
-        "name": "mountainthief2",
+        "name": "MountainThief2",
         "type": "index of:class",
         "value": "0x23"
     },
     {
-        "name": "warrior",
+        "name": "Warrior",
         "type": "index of:class",
         "value": "0x24"
     },
     {
-        "name": "hunter",
+        "name": "Hunter",
         "type": "index of:class",
         "value": "0x25"
     },
     {
-        "name": "pirate",
+        "name": "Pirate",
         "type": "index of:class",
         "value": "0x26"
     },
     {
-        "name": "juniorlord",
+        "name": "JuniorLord",
         "type": "index of:class",
         "value": "0x27"
     },
     {
-        "name": "mageknight2",
+        "name": "MageKnight2",
         "type": "index of:class",
         "value": "0x28"
     },
     {
-        "name": "lord",
+        "name": "Lord",
         "type": "index of:class",
         "value": "0x29"
     },
     {
-        "name": "prince",
+        "name": "Prince",
         "type": "index of:class",
         "value": "0x2a"
     },
     {
-        "name": "mageknightf",
+        "name": "MageKnightF",
         "type": "index of:class",
         "value": "0x2b"
     },
     {
-        "name": "baronmessedupbattlesprite",
+        "name": "BaronGlitched",
         "type": "index of:class",
         "value": "0x2c"
     },
     {
-        "name": "dancer",
+        "name": "Dancer",
         "type": "index of:class",
         "value": "0x2d"
     },
     {
-        "name": "priest",
+        "name": "Priest",
         "type": "index of:class",
         "value": "0x2e"
     },
     {
-        "name": "mage",
+        "name": "Mage",
         "type": "index of:class",
         "value": "0x2f"
     },
     {
-        "name": "loptomage",
+        "name": "LoptoMage",
         "type": "index of:class",
         "value": "0x30"
     },
     {
-        "name": "thundermage",
+        "name": "ThunderMage",
         "type": "index of:class",
         "value": "0x31"
     },
     {
-        "name": "windmage",
+        "name": "WindMage",
         "type": "index of:class",
         "value": "0x32"
     },
     {
-        "name": "highpriest",
+        "name": "HighPriest",
         "type": "index of:class",
         "value": "0x33"
     },
     {
-        "name": "bishop",
+        "name": "Bishop",
         "type": "index of:class",
         "value": "0x34"
     },
     {
-        "name": "sage",
+        "name": "Sage",
         "type": "index of:class",
         "value": "0x35"
     },
     {
-        "name": "bard",
+        "name": "Bard",
         "type": "index of:class",
         "value": "0x36"
     },
     {
-        "name": "sister",
+        "name": "Sister",
         "type": "index of:class",
         "value": "0x37"
     },
     {
-        "name": "darkmage",
+        "name": "DarkMage",
         "type": "index of:class",
         "value": "0x38"
     },
     {
-        "name": "darkbishop",
+        "name": "DarkBishop",
         "type": "index of:class",
         "value": "0x39"
     },
     {
-        "name": "thief",
+        "name": "Thief",
         "type": "index of:class",
         "value": "0x3a"
     },
     {
-        "name": "thieffighter",
+        "name": "ThiefFighter",
         "type": "index of:class",
         "value": "0x3b"
     },
     {
-        "name": "civilian",
+        "name": "Civilian",
         "type": "index of:class",
         "value": "0x3c"
     },
     {
-        "name": "longarch",
+        "name": "LongArch",
         "type": "index of:class",
         "value": "0x3d"
     },
     {
-        "name": "ironarch",
+        "name": "IronArch",
         "type": "index of:class",
         "value": "0x3e"
     },
     {
-        "name": "killerarch",
+        "name": "KillerArch",
         "type": "index of:class",
         "value": "0x3f"
     },
     {
-        "name": "darkprince",
+        "name": "DarkPrince",
         "type": "index of:class",
         "value": "0x40"
     },
     {
-        "name": "axefighter",
+        "name": "AxeFighter",
         "type": "index of:class",
         "value": "0x41"
     },
     {
-        "name": "socialknightdismounted",
+        "name": "SocialKnightDismounted",
         "type": "index of:class",
         "value": "0x42"
     },
     {
-        "name": "lanceknightdismounted",
+        "name": "LanceKnightDismounted",
         "type": "index of:class",
         "value": "0x43"
     },
     {
-        "name": "archknightdismounted",
+        "name": "ArchKnightDismounted",
         "type": "index of:class",
         "value": "0x44"
     },
     {
-        "name": "axeknightdismounted",
+        "name": "AxeKnightDismounted",
         "type": "index of:class",
         "value": "0x45"
     },
     {
-        "name": "freeknightdismounted",
+        "name": "FreeKnightDismounted",
         "type": "index of:class",
         "value": "0x46"
     },
     {
-        "name": "troubadourdismounted",
+        "name": "TroubadourDismounted",
         "type": "index of:class",
         "value": "0x47"
     },
     {
-        "name": "lordknightdismounted",
+        "name": "LordKnightDismounted",
         "type": "index of:class",
         "value": "0x48"
     },
     {
-        "name": "dukeknightdismounted",
+        "name": "DukeKnightDismounted",
         "type": "index of:class",
         "value": "0x49"
     },
     {
-        "name": "masterknightdismounted",
+        "name": "MasterKnightDismounted",
         "type": "index of:class",
         "value": "0x4a"
     },
     {
-        "name": "paladinmdismounted",
+        "name": "PaladinDismounted",
         "type": "index of:class",
         "value": "0x4b"
     },
     {
-        "name": "paladinfdismounted",
+        "name": "PaladinFDismounted",
         "type": "index of:class",
         "value": "0x4c"
     },
     {
-        "name": "bowknightdismounted",
+        "name": "BowKnightDismounted",
         "type": "index of:class",
         "value": "0x4d"
     },
     {
-        "name": "forrestknightdismounted",
+        "name": "ForrestKnightDismounted",
         "type": "index of:class",
         "value": "0x4e"
     },
     {
-        "name": "greatknightdismounted",
+        "name": "GreatKnightDismounted",
         "type": "index of:class",
         "value": "0x4f"
     },
     {
-        "name": "pegasusknightdismounted",
+        "name": "PegasusKnightDismounted",
         "type": "index of:class",
         "value": "0x50"
     },
     {
-        "name": "falconknightdismounted",
+        "name": "FalconKnightDismounted",
         "type": "index of:class",
         "value": "0x51"
     },
     {
-        "name": "dragonriderdismounted",
+        "name": "DragonRiderDismounted",
         "type": "index of:class",
         "value": "0x52"
     },
     {
-        "name": "dragonknightdismounted",
+        "name": "DragonKnightDismounted",
         "type": "index of:class",
         "value": "0x53"
     },
     {
-        "name": "dragonmasterdismounted",
+        "name": "DragonMasterDismounted",
         "type": "index of:class",
         "value": "0x54"
     },
     {
-        "name": "archknightf",
+        "name": "ArchKnightF",
         "type": "index of:class",
         "value": "0x55"
     },
     {
-        "name": "archknightfdismounted",
+        "name": "ArchKnightFDismounted",
         "type": "index of:class",
         "value": "0x56"
     },
     {
-        "name": "bowknightf",
+        "name": "BowKnightF",
         "type": "index of:class",
         "value": "0x57"
     },
     {
-        "name": "bowknightfdismounted",
+        "name": "BowKnightFDismounted",
         "type": "index of:class",
         "value": "0x58"
     },
     {
-        "name": "masterknightf",
+        "name": "MasterKnightF",
         "type": "index of:class",
         "value": "0x59"
     },
     {
-        "name": "masterknightfdismounted",
+        "name": "MasterKnightFDismounted",
         "type": "index of:class",
         "value": "0x5a"
     },
     {
-        "name": "dragonriderf",
+        "name": "DragonRiderF",
         "type": "index of:class",
         "value": "0x5b"
     },
     {
-        "name": "dragonriderfdismounted",
+        "name": "DragonRiderFDismounted",
         "type": "index of:class",
         "value": "0x5c"
     },
     {
-        "name": "dragonknightf",
+        "name": "DragonKnightF",
         "type": "index of:class",
         "value": "0x5d"
     },
     {
-        "name": "dragonknightfdismounted",
+        "name": "DragonKnightFDismounted",
         "type": "index of:class",
         "value": "0x5e"
     },
     {
-        "name": "dragonmasterf",
+        "name": "DragonMasterF",
         "type": "index of:class",
         "value": "0x5f"
     },
     {
-        "name": "dragonmasterfdismounted",
+        "name": "DragonMasterFDismounted",
         "type": "index of:class",
         "value": "0x60"
     },
     {
-        "name": "poisonarch",
+        "name": "PoisonArch",
         "type": "index of:class",
         "value": "0x61"
     },
     {
-        "name": "magef",
+        "name": "MageF",
         "type": "index of:class",
         "value": "0x62"
     },
     {
-        "name": "thundermagef",
+        "name": "ThunderMageF",
         "type": "index of:class",
         "value": "0x63"
     },
     {
-        "name": "loptomagef",
+        "name": "LoptoMageF",
         "type": "index of:class",
         "value": "0x64"
     },
     {
-        "name": "windmagef",
+        "name": "WindMageF",
         "type": "index of:class",
         "value": "0x65"
     },
     {
-        "name": "mageknightf2",
+        "name": "MageKnightF2",
         "type": "index of:class",
         "value": "0x66"
     },
     {
-        "name": "mageknightfdismounted",
+        "name": "MageKnightF2Dismounted",
         "type": "index of:class",
         "value": "0x67"
     },
     {
-        "name": "priestf",
+        "name": "PriestF",
         "type": "index of:class",
         "value": "0x68"
     },
     {
-        "name": "highpriestf",
+        "name": "HighPriestF",
         "type": "index of:class",
         "value": "0x69"
     },
     {
-        "name": "swordfighterf",
+        "name": "SwordFighterF",
         "type": "index of:class",
         "value": "0x6a"
     },
     {
-        "name": "forrestf",
+        "name": "ForrestF",
         "type": "index of:class",
         "value": "0x6b"
     },
     {
-        "name": "swordmasterf",
+        "name": "SwordmasterF",
         "type": "index of:class",
         "value": "0x6c"
     },
     {
-        "name": "bowfighterf",
+        "name": "BowFighterF",
         "type": "index of:class",
         "value": "0x6d"
     },
     {
-        "name": "sniperf",
+        "name": "SniperF",
         "type": "index of:class",
         "value": "0x6e"
     },
     {
-        "name": "thieff",
+        "name": "ThiefF",
         "type": "index of:class",
         "value": "0x6f"
     },
     {
-        "name": "thieffighterf",
+        "name": "ThiefFighterF",
         "type": "index of:class",
         "value": "0x70"
     },
     {
-        "name": "mercenary",
+        "name": "Mercenary",
         "type": "index of:class",
         "value": "0x71"
     },
     {
-        "name": "thiefthieffighterbattlesprite",
+        "name": "Thief2",
         "type": "index of:class",
         "value": "0x72"
     },
     {
-        "name": "pegasusrider",
+        "name": "PegasusRider",
         "type": "index of:class",
         "value": "0x73"
     },
     {
-        "name": "pegasusriderdismounted",
+        "name": "PegasusRiderDismounted",
         "type": "index of:class",
         "value": "0x74"
     },
     {
-        "name": "soldier",
+        "name": "Soldier",
         "type": "index of:class",
         "value": "0x75"
     },
     {
-        "name": "archer",
+        "name": "Archer",
         "type": "index of:class",
         "value": "0x76"
     },
     {
-        "name": "mercenaryf",
+        "name": "MercenaryF",
         "type": "index of:class",
         "value": "0x77"
     }

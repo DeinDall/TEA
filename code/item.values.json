@@ -1,701 +1,701 @@
 [
     {
-        "name": "noitem",
+        "name": "NoItem",
         "type": "index of:item",
         "value": "0x0"
     },
     {
-        "name": "ironsword",
+        "name": "IronSword",
         "type": "index of:item",
         "value": "0x1"
     },
     {
-        "name": "steelsword",
+        "name": "SteelSword",
         "type": "index of:item",
         "value": "0x2"
     },
     {
-        "name": "silversword",
+        "name": "SilverSword",
         "type": "index of:item",
         "value": "0x3"
     },
     {
-        "name": "thinsword",
+        "name": "ThinSword",
         "type": "index of:item",
         "value": "0x4"
     },
     {
-        "name": "ironbroadsword",
+        "name": "IronBroadSword",
         "type": "index of:item",
         "value": "0x5"
     },
     {
-        "name": "killersword",
+        "name": "KillerSword",
         "type": "index of:item",
         "value": "0x6"
     },
     {
-        "name": "poisonsword",
+        "name": "PoisonSword",
         "type": "index of:item",
         "value": "0x7"
     },
     {
-        "name": "berserksword",
+        "name": "BerserkSword",
         "type": "index of:item",
         "value": "0x8"
     },
     {
-        "name": "sleepsword",
+        "name": "SleepSword",
         "type": "index of:item",
         "value": "0x9"
     },
     {
-        "name": "beosword",
+        "name": "BeoSword",
         "type": "index of:item",
         "value": "0xa"
     },
     {
-        "name": "holysword",
+        "name": "HolySword",
         "type": "index of:item",
         "value": "0xb"
     },
     {
-        "name": "loputoussword",
+        "name": "LoputousSword",
         "type": "index of:item",
         "value": "0xc"
     },
     {
-        "name": "blagisword",
+        "name": "BlagiSword",
         "type": "index of:item",
         "value": "0xd"
     },
     {
-        "name": "lightsword",
+        "name": "LightSword",
         "type": "index of:item",
         "value": "0xe"
     },
     {
-        "name": "herosword",
+        "name": "HeroSword",
         "type": "index of:item",
         "value": "0xf"
     },
     {
-        "name": "kingsword",
+        "name": "KingSword",
         "type": "index of:item",
         "value": "0x10"
     },
     {
-        "name": "earthsword",
+        "name": "EarthSword",
         "type": "index of:item",
         "value": "0x11"
     },
     {
-        "name": "windsword",
+        "name": "WindSword",
         "type": "index of:item",
         "value": "0x12"
     },
     {
-        "name": "firesword",
+        "name": "FireSword",
         "type": "index of:item",
         "value": "0x13"
     },
     {
-        "name": "thundersword",
+        "name": "ThunderSword",
         "type": "index of:item",
         "value": "0x14"
     },
     {
-        "name": "elitesword",
+        "name": "EliteSword",
         "type": "index of:item",
         "value": "0x15"
     },
     {
-        "name": "armourkiller",
+        "name": "ArmourKiller",
         "type": "index of:item",
         "value": "0x16"
     },
     {
-        "name": "rapier",
+        "name": "Rapier",
         "type": "index of:item",
         "value": "0x17"
     },
     {
-        "name": "shortsword",
+        "name": "ShortSword",
         "type": "index of:item",
         "value": "0x18"
     },
     {
-        "name": "longsword",
+        "name": "LongSword",
         "type": "index of:item",
         "value": "0x19"
     },
     {
-        "name": "greatsword",
+        "name": "GreatSword",
         "type": "index of:item",
         "value": "0x1a"
     },
     {
-        "name": "mastersword",
+        "name": "MasterSword",
         "type": "index of:item",
         "value": "0x1b"
     },
     {
-        "name": "darknesssword",
+        "name": "DarknessSword",
         "type": "index of:item",
         "value": "0x1c"
     },
     {
-        "name": "mareetassword",
+        "name": "MareetasSword",
         "type": "index of:item",
         "value": "0x1d"
     },
     {
-        "name": "brokensword",
+        "name": "BrokenSword",
         "type": "index of:item",
         "value": "0x1e"
     },
     {
-        "name": "ironlance",
+        "name": "IronLance",
         "type": "index of:item",
         "value": "0x1f"
     },
     {
-        "name": "steellance",
+        "name": "SteelLance",
         "type": "index of:item",
         "value": "0x20"
     },
     {
-        "name": "silverlance",
+        "name": "SilverLance",
         "type": "index of:item",
         "value": "0x21"
     },
     {
-        "name": "thinlance",
+        "name": "ThinLance",
         "type": "index of:item",
         "value": "0x22"
     },
     {
-        "name": "poisonlance",
+        "name": "PoisonLance",
         "type": "index of:item",
         "value": "0x23"
     },
     {
-        "name": "dragonlance",
+        "name": "DragonLance",
         "type": "index of:item",
         "value": "0x24"
     },
     {
-        "name": "darknesslance",
+        "name": "DarknessLance",
         "type": "index of:item",
         "value": "0x25"
     },
     {
-        "name": "herolance",
+        "name": "HeroLance",
         "type": "index of:item",
         "value": "0x26"
     },
     {
-        "name": "shortlance",
+        "name": "ShortLance",
         "type": "index of:item",
         "value": "0x27"
     },
     {
-        "name": "longlance",
+        "name": "LongLance",
         "type": "index of:item",
         "value": "0x28"
     },
     {
-        "name": "greatlance",
+        "name": "GreatLance",
         "type": "index of:item",
         "value": "0x29"
     },
     {
-        "name": "javelin",
+        "name": "Javelin",
         "type": "index of:item",
         "value": "0x2a"
     },
     {
-        "name": "masterlance",
+        "name": "MasterLance",
         "type": "index of:item",
         "value": "0x2b"
     },
     {
-        "name": "knightkiller",
+        "name": "KnightKiller",
         "type": "index of:item",
         "value": "0x2c"
     },
     {
-        "name": "killerlance",
+        "name": "KillerLance",
         "type": "index of:item",
         "value": "0x2d"
     },
     {
-        "name": "gaebolg",
+        "name": "GaeBolg",
         "type": "index of:item",
         "value": "0x2e"
     },
     {
-        "name": "gungnir",
+        "name": "Gungnir",
         "type": "index of:item",
         "value": "0x2f"
     },
     {
-        "name": "brokenlance",
+        "name": "BrokenLance",
         "type": "index of:item",
         "value": "0x30"
     },
     {
-        "name": "ironaxe",
+        "name": "IronAxe",
         "type": "index of:item",
         "value": "0x31"
     },
     {
-        "name": "poisonaxe",
+        "name": "PoisonAxe",
         "type": "index of:item",
         "value": "0x32"
     },
     {
-        "name": "steelaxe",
+        "name": "SteelAxe",
         "type": "index of:item",
         "value": "0x33"
     },
     {
-        "name": "silveraxe",
+        "name": "SilverAxe",
         "type": "index of:item",
         "value": "0x34"
     },
     {
-        "name": "handaxe",
+        "name": "HandAxe",
         "type": "index of:item",
         "value": "0x35"
     },
     {
-        "name": "hammer",
+        "name": "Hammer",
         "type": "index of:item",
         "value": "0x36"
     },
     {
-        "name": "killeraxe",
+        "name": "KillerAxe",
         "type": "index of:item",
         "value": "0x37"
     },
     {
-        "name": "pugi",
+        "name": "Pugi",
         "type": "index of:item",
         "value": "0x38"
     },
     {
-        "name": "heroaxe",
+        "name": "HeroAxe",
         "type": "index of:item",
         "value": "0x39"
     },
     {
-        "name": "devilaxe",
+        "name": "DevilAxe",
         "type": "index of:item",
         "value": "0x3a"
     },
     {
-        "name": "battleaxe",
+        "name": "BattleAxe",
         "type": "index of:item",
         "value": "0x3b"
     },
     {
-        "name": "poleaxe",
+        "name": "PoleAxe",
         "type": "index of:item",
         "value": "0x3c"
     },
     {
-        "name": "masteraxe",
+        "name": "MasterAxe",
         "type": "index of:item",
         "value": "0x3d"
     },
     {
-        "name": "brokenaxe",
+        "name": "BrokenAxe",
         "type": "index of:item",
         "value": "0x3e"
     },
     {
-        "name": "ironbow",
+        "name": "IronBow",
         "type": "index of:item",
         "value": "0x3f"
     },
     {
-        "name": "steelbow",
+        "name": "SteelBow",
         "type": "index of:item",
         "value": "0x40"
     },
     {
-        "name": "silverbow",
+        "name": "SilverBow",
         "type": "index of:item",
         "value": "0x41"
     },
     {
-        "name": "poisonbow",
+        "name": "PoisonBow",
         "type": "index of:item",
         "value": "0x42"
     },
     {
-        "name": "killerbow",
+        "name": "KillerBow",
         "type": "index of:item",
         "value": "0x43"
     },
     {
-        "name": "herobow",
+        "name": "HeroBow",
         "type": "index of:item",
         "value": "0x44"
     },
     {
-        "name": "shortbow",
+        "name": "ShortBow",
         "type": "index of:item",
         "value": "0x45"
     },
     {
-        "name": "longbow",
+        "name": "LongBow",
         "type": "index of:item",
         "value": "0x46"
     },
     {
-        "name": "greatbow",
+        "name": "GreatBow",
         "type": "index of:item",
         "value": "0x47"
     },
     {
-        "name": "masterbow",
+        "name": "MasterBow",
         "type": "index of:item",
         "value": "0x48"
     },
     {
-        "name": "longarch",
+        "name": "LongArch",
         "type": "index of:item",
         "value": "0x49"
     },
     {
-        "name": "ironarch",
+        "name": "IronArch",
         "type": "index of:item",
         "value": "0x4a"
     },
     {
-        "name": "killerarch",
+        "name": "KillerArch",
         "type": "index of:item",
         "value": "0x4b"
     },
     {
-        "name": "poisonarch",
+        "name": "PoisonArch",
         "type": "index of:item",
         "value": "0x4c"
     },
     {
-        "name": "brokenbow",
+        "name": "BrokenBow",
         "type": "index of:item",
         "value": "0x4d"
     },
     {
-        "name": "fire",
+        "name": "Fire",
         "type": "index of:item",
         "value": "0x4e"
     },
     {
-        "name": "elfire",
+        "name": "Elfire",
         "type": "index of:item",
         "value": "0x4f"
     },
     {
-        "name": "volcannon",
+        "name": "Volcannon",
         "type": "index of:item",
         "value": "0x50"
     },
     {
-        "name": "falaflame",
+        "name": "Falaflame",
         "type": "index of:item",
         "value": "0x51"
     },
     {
-        "name": "thunder",
+        "name": "Thunder",
         "type": "index of:item",
         "value": "0x52"
     },
     {
-        "name": "daimthunder",
+        "name": "DaimThunder",
         "type": "index of:item",
         "value": "0x53"
     },
     {
-        "name": "tron",
+        "name": "Tron",
         "type": "index of:item",
         "value": "0x54"
     },
     {
-        "name": "torhammer",
+        "name": "TorHammer",
         "type": "index of:item",
         "value": "0x55"
     },
     {
-        "name": "wind",
+        "name": "Wind",
         "type": "index of:item",
         "value": "0x56"
     },
     {
-        "name": "grafucalibur",
+        "name": "Grafucalibur",
         "type": "index of:item",
         "value": "0x57"
     },
     {
-        "name": "tornado",
+        "name": "Tornado",
         "type": "index of:item",
         "value": "0x58"
     },
     {
-        "name": "holsety",
+        "name": "Holsety",
         "type": "index of:item",
         "value": "0x59"
     },
     {
-        "name": "lightning",
+        "name": "Lightning",
         "type": "index of:item",
         "value": "0x5a"
     },
     {
-        "name": "rizziah",
+        "name": "Rizziah",
         "type": "index of:item",
         "value": "0x5b"
     },
     {
-        "name": "aura",
+        "name": "Aura",
         "type": "index of:item",
         "value": "0x5c"
     },
     {
-        "name": "yotsmungand",
+        "name": "Yotsmungand",
         "type": "index of:item",
         "value": "0x5d"
     },
     {
-        "name": "fenrir",
+        "name": "Fenrir",
         "type": "index of:item",
         "value": "0x5e"
     },
     {
-        "name": "hell",
+        "name": "Hell",
         "type": "index of:item",
         "value": "0x5f"
     },
     {
-        "name": "loputous",
+        "name": "Loputous",
         "type": "index of:item",
         "value": "0x60"
     },
     {
-        "name": "meteo",
+        "name": "Meteo",
         "type": "index of:item",
         "value": "0x61"
     },
     {
-        "name": "thunderstorm",
+        "name": "ThunderStorm",
         "type": "index of:item",
         "value": "0x62"
     },
     {
-        "name": "blizzard",
+        "name": "Blizzard",
         "type": "index of:item",
         "value": "0x63"
     },
     {
-        "name": "poison",
+        "name": "Poison",
         "type": "index of:item",
         "value": "0x64"
     },
     {
-        "name": "stone",
+        "name": "Stone",
         "type": "index of:item",
         "value": "0x65"
     },
     {
-        "name": "holsetyunlimited",
+        "name": "HolsetyUnlimited",
         "type": "index of:item",
         "value": "0x66"
     },
     {
-        "name": "brokenbook",
+        "name": "BrokenBook",
         "type": "index of:item",
         "value": "0x67"
     },
     {
-        "name": "live",
+        "name": "Live",
         "type": "index of:item",
         "value": "0x68"
     },
     {
-        "name": "relive",
+        "name": "Relive",
         "type": "index of:item",
         "value": "0x69"
     },
     {
-        "name": "recover",
+        "name": "Recover",
         "type": "index of:item",
         "value": "0x6a"
     },
     {
-        "name": "libro",
+        "name": "Libro",
         "type": "index of:item",
         "value": "0x6b"
     },
     {
-        "name": "reserve",
+        "name": "Reserve",
         "type": "index of:item",
         "value": "0x6c"
     },
     {
-        "name": "rescue",
+        "name": "Rescue",
         "type": "index of:item",
         "value": "0x6d"
     },
     {
-        "name": "warp",
+        "name": "Warp",
         "type": "index of:item",
         "value": "0x6e"
     },
     {
-        "name": "rest",
+        "name": "Rest",
         "type": "index of:item",
         "value": "0x6f"
     },
     {
-        "name": "silence",
+        "name": "Silence",
         "type": "index of:item",
         "value": "0x70"
     },
     {
-        "name": "sleep",
+        "name": "Sleep",
         "type": "index of:item",
         "value": "0x71"
     },
     {
-        "name": "torch",
+        "name": "Torch",
         "type": "index of:item",
         "value": "0x72"
     },
     {
-        "name": "return",
+        "name": "Return",
         "type": "index of:item",
         "value": "0x73"
     },
     {
-        "name": "repair",
+        "name": "Repair",
         "type": "index of:item",
         "value": "0x74"
     },
     {
-        "name": "thief",
+        "name": "Thief",
         "type": "index of:item",
         "value": "0x75"
     },
     {
-        "name": "watch",
+        "name": "Watch",
         "type": "index of:item",
         "value": "0x76"
     },
     {
-        "name": "berserk",
+        "name": "Berserk",
         "type": "index of:item",
         "value": "0x77"
     },
     {
-        "name": "unlock",
+        "name": "Unlock",
         "type": "index of:item",
         "value": "0x78"
     },
     {
-        "name": "magicshield",
+        "name": "MagicShield",
         "type": "index of:item",
         "value": "0x79"
     },
     {
-        "name": "rewarp",
+        "name": "Rewarp",
         "type": "index of:item",
         "value": "0x7a"
     },
     {
-        "name": "cure",
+        "name": "Cure",
         "type": "index of:item",
         "value": "0x7b"
     },
     {
-        "name": "brokenstaff",
+        "name": "BrokenStaff",
         "type": "index of:item",
         "value": "0x7c"
     },
     {
-        "name": "luckring",
+        "name": "LuckRing",
         "type": "index of:item",
         "value": "0x7d"
     },
     {
-        "name": "livering",
+        "name": "LifeRing",
         "type": "index of:item",
         "value": "0x7e"
     },
     {
-        "name": "speedring",
+        "name": "SpeedRing",
         "type": "index of:item",
         "value": "0x7f"
     },
     {
-        "name": "magicring",
+        "name": "MagicRing",
         "type": "index of:item",
         "value": "0x80"
     },
     {
-        "name": "powerring",
+        "name": "PowerRing",
         "type": "index of:item",
         "value": "0x81"
     },
     {
-        "name": "bodyring",
+        "name": "BodyRing",
         "type": "index of:item",
         "value": "0x82"
     },
     {
-        "name": "shieldring",
+        "name": "ShieldRing",
         "type": "index of:item",
         "value": "0x83"
     },
     {
-        "name": "skillring",
+        "name": "SkillRing",
         "type": "index of:item",
         "value": "0x84"
     },
     {
-        "name": "legring",
+        "name": "LegRing",
         "type": "index of:item",
         "value": "0x85"
     },
     {
-        "name": "knightproof",
+        "name": "KnightProof",
         "type": "index of:item",
         "value": "0x86"
     },
     {
-        "name": "masterproof",
+        "name": "MasterProof",
         "type": "index of:item",
         "value": "0x87"
     },
     {
-        "name": "treasurekey",
+        "name": "TreasureKey",
         "type": "index of:item",
         "value": "0x88"
     },
     {
-        "name": "doorkey",
+        "name": "DoorKey",
         "type": "index of:item",
         "value": "0x89"
     },
     {
-        "name": "bridgekey",
+        "name": "BridgeKey",
         "type": "index of:item",
         "value": "0x8a"
     },
     {
-        "name": "thiefkey",
+        "name": "ThiefKey",
         "type": "index of:item",
         "value": "0x8b"
     },
@@ -705,137 +705,137 @@
         "value": "0x8c"
     },
     {
-        "name": "medicine",
+        "name": "Medicine",
         "type": "index of:item",
         "value": "0x8d"
     },
     {
-        "name": "holywater",
+        "name": "HolyWater",
         "type": "index of:item",
         "value": "0x8e"
     },
     {
-        "name": "torch2",
+        "name": "Torch2",
         "type": "index of:item",
         "value": "0x8f"
     },
     {
-        "name": "antidote",
+        "name": "Antidote",
         "type": "index of:item",
         "value": "0x90"
     },
     {
-        "name": "membercard",
+        "name": "MemberCard",
         "type": "index of:item",
         "value": "0x91"
     },
     {
-        "name": "odoscroll",
+        "name": "OdoScroll",
         "type": "index of:item",
         "value": "0x92"
     },
     {
-        "name": "baldoscroll",
+        "name": "BaldoScroll",
         "type": "index of:item",
         "value": "0x93"
     },
     {
-        "name": "hezulscroll",
+        "name": "HezulScroll",
         "type": "index of:item",
         "value": "0x94"
     },
     {
-        "name": "dainscroll",
+        "name": "DainScroll",
         "type": "index of:item",
         "value": "0x95"
     },
     {
-        "name": "nobascroll",
+        "name": "NobaScroll",
         "type": "index of:item",
         "value": "0x96"
     },
     {
-        "name": "neirscroll",
+        "name": "NeirScroll",
         "type": "index of:item",
         "value": "0x97"
     },
     {
-        "name": "ulirscroll",
+        "name": "UlirScroll",
         "type": "index of:item",
         "value": "0x98"
     },
     {
-        "name": "tordoscroll",
+        "name": "TordoScroll",
         "type": "index of:item",
         "value": "0x99"
     },
     {
-        "name": "falascroll",
+        "name": "FalaScroll",
         "type": "index of:item",
         "value": "0x9a"
     },
     {
-        "name": "setyscroll",
+        "name": "SetyScroll",
         "type": "index of:item",
         "value": "0x9b"
     },
     {
-        "name": "blagiscroll",
+        "name": "BlagiScroll",
         "type": "index of:item",
         "value": "0x9c"
     },
     {
-        "name": "heimscroll",
+        "name": "HeimScroll",
         "type": "index of:item",
         "value": "0x9d"
     },
     {
-        "name": "elitemanual",
+        "name": "EliteManual",
         "type": "index of:item",
         "value": "0x9e"
     },
     {
-        "name": "duelmanual",
+        "name": "DuelManual",
         "type": "index of:item",
         "value": "0x9f"
     },
     {
-        "name": "bargainmanual",
+        "name": "BargainManual",
         "type": "index of:item",
         "value": "0xa0"
     },
     {
-        "name": "ambushmanual",
+        "name": "AmbushManual",
         "type": "index of:item",
         "value": "0xa1"
     },
     {
-        "name": "wrathmanual",
+        "name": "WrathManual",
         "type": "index of:item",
         "value": "0xa2"
     },
     {
-        "name": "continuemanual",
+        "name": "ContinueManual",
         "type": "index of:item",
         "value": "0xa3"
     },
     {
-        "name": "prayermanual",
+        "name": "PrayerManual",
         "type": "index of:item",
         "value": "0xa4"
     },
     {
-        "name": "awarenessmanual",
+        "name": "AwarenessManual",
         "type": "index of:item",
         "value": "0xa5"
     },
     {
-        "name": "sunlightmanual",
+        "name": "SunlightManual",
         "type": "index of:item",
         "value": "0xa6"
     },
     {
-        "name": "moonlightmanual",
+        "name": "MoonlightManual",
         "type": "index of:item",
         "value": "0xa7"
     }

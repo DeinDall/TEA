@@ -28,7 +28,9 @@ SOURCES += \
     lang/parser/parser.cpp \
     lang/assembler/codeassembler.cpp \
     lang/core/keywords.cpp \
-    lang/assembler/assemblervalue.cpp
+    lang/assembler/assemblervalue.cpp \
+    lang/disassembler/disassemblerstate.cpp \
+    lang/core/code/codeparametertype.cpp
 
 HEADERS += \
     core/rom/rom.h \
@@ -54,4 +56,6 @@ HEADERS += \
     lang/parser/parser.h \
     lang/assembler/codeassembler.h \
     lang/core/keywords.h \
-    lang/assembler/assemblervalue.h
+    lang/assembler/assemblervalue.h \
+    lang/disassembler/disassemblerstate.h \
+    lang/core/code/codeparametertype.h

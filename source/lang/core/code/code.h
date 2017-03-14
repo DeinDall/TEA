@@ -4,6 +4,7 @@
 #include <QVector>
 
 #include "core/rom/romref.h"
+#include "lang/core/code/codeparametertype.h"
 #include "lang/valuelibrary.h"
 
 namespace tea {
@@ -17,7 +18,7 @@ public:
 		friend class Code;
 	public:
 		QString name() const;
-		QStringList types() const;
+		const CodeParameterType& type() const;
 		quint64 value() const;
 		uint offset() const;
 

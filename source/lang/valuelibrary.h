@@ -3,6 +3,7 @@
 
 #include <QJsonObject>
 
+#include "lang/core/code/codeparametertype.h"
 #include "lang/core/value/value.h"
 
 namespace tea {
@@ -15,7 +16,7 @@ public:
 
 	void addValue(QString name, QString type, quint64 value);
 
-	const Value& findValue(QStringList types, quint64 value) const;
+	const Value& findValue(const CodeParameterType& type, quint64 value) const;
 	const Value& findValue(QString name) const;
 
 protected:

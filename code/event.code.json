@@ -17,7 +17,7 @@
 				"size": 1
 			}, {
 				"name": "eventPointer",
-				"type": "pointer to:eventCode",
+				"type": "pointer to:$target=eventCode",
 				"size": 3
 			}
 		]

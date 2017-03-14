@@ -344,8 +344,8 @@
 				"type": "number",
 				"size": 1
 			}, {
-				"name": "extraPointer",
-				"type": "pointer",
+				"name": "moveDataPointer",
+				"type": "pointer to:moveData",
 				"size": 3
 			}
 		]
