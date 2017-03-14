@@ -7,5 +7,13 @@
 		"name": "pActiveYPos",
 		"type": "pointer",
 		"value": "0xe4f"
+	}, {
+		"name": "pCurrentTurn",
+		"type": "pointer",
+		"value": "0xe13"
+	}, {
+		"name": "pCurrentPhase",
+		"type": "pointer",
+		"value": "0xe15"
 	}
 ]

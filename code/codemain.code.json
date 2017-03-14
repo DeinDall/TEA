@@ -219,6 +219,24 @@
 			}
 		]
 	}, {
+		"name": "deactivateEvent",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0C",
+				"size": 1
+			}, {
+				"name": "eventId",
+				"type": "index of:event",
+				"size": 1
+			}
+		]
+	}, {
 		"name": "pause",
 		"type": "eventCode",
 		"next": "eventCode",

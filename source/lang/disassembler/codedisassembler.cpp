@@ -32,13 +32,18 @@ bool CodeDisassembler::disassemble(ROMRef ref, QString type, DisassemblerState& 
 	if (ref.offset() >= ref.romPtr()->size())
 		return false;
 
+	bool atLeastOne = false;
+
 	while (type != "null") {
 		const CodeTemplate& codeTemplate = mLibrary->findTemplate(ref, type);
 
 		if (!codeTemplate.isValid()) {
-			qDebug() << ("Couldn't disassemble " % type % " at 0x" % QString::number(ref.offset(), 16) % " (next byte: 0x" % QString::number((quint8) ref.at(0), 16) % ")");
+			if (atLeastOne)
+				qDebug() << ("Couldn't disassemble " % type % " at 0x" % QString::number(ref.offset(), 16) % " (next byte: 0x" % QString::number((quint8) ref.at(0), 16) % ")");
 			return false;
 		}
+
+		atLeastOne = true;
 
 		ref = handleCode(ref, codeTemplate.makeCodeFrom(ref), state);
 		type = state.parseArgument(codeTemplate.nextType());

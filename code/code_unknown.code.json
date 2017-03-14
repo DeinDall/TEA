@@ -24,6 +24,32 @@
 			}
 		]
 	}, {
+		"name": "unknownCallAsm1C",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 10,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x1C",
+				"size": 1
+			}, {
+				"name": "ptr",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "ptr2",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "ptr3",
+				"type": "pointer",
+				"size": 3
+			}
+		]
+	}, {
 		"name": "unknownStartScene",
 		"type": "eventCode",
 		"next": "eventCode",
@@ -61,19 +87,22 @@
 			}
 		]
 	}, {
-		"name": "unknown0C",
+		"name": "unknown03",
 		"type": "eventCode",
 		"next": "eventCode",
 		
-		"size": 2,
+		"size": 3,
 		
 		"components": [
 			{
 				"fixed": true,
-				"value": "0x0C",
+				"value": "0x03",
 				"size": 1
 			}, {
-				"name": "argument",
+				"name": "argument1",
+				"size": 1
+			}, {
+				"name": "argument2",
 				"size": 1
 			}
 		]
@@ -156,7 +185,7 @@
 		"type": "eventCode",
 		"next": "eventCode",
 		
-		"size": 4,
+		"size": 6,
 		
 		"components": [
 			{
@@ -164,8 +193,11 @@
 				"value": "0x25",
 				"size": 1
 			}, {
-				"name": "argument",
+				"name": "ptr",
 				"size": 3
+			}, {
+				"name": "argument",
+				"size": 2
 			}
 		]
 	}, {
@@ -280,6 +312,43 @@
 			}, {
 				"name": "argument",
 				"size": 2
+			}, {
+				"name": "argument2",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "unknown0B",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 6,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0B",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 3
+			}, {
+				"name": "argument2",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "unknown2C",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x2C",
+				"size": 1
 			}, {
 				"name": "argument2",
 				"size": 2
@@ -404,6 +473,20 @@
 			{
 				"fixed": true,
 				"value": "0x6C",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "unknown36",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 1,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x36",
 				"size": 1
 			}
 		]

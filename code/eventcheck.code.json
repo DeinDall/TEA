@@ -22,6 +22,24 @@
 			}
 		]
 	}, {
+		"name": "checkUnknownPtrAgain",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x04",
+				"size": 1
+			}, {
+				"name": "position",
+				"type": "pointer",
+				"size": 3
+			}
+		]
+	}, {
 		"name": "checkByte",
 		"type": "eventComponent",
 		"next": "eventComponent",
@@ -66,6 +84,27 @@
 			}
 		]
 	}, {
+		"name": "checkShortUnknown",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 6,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x08",
+				"size": 1
+			}, {
+				"name": "position1",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "arg",
+				"size": 2
+			}
+		]
+	}, {
 		"name": "checkPointer",
 		"type": "eventComponent",
 		"next": "eventComponent",
@@ -88,7 +127,7 @@
 			}
 		]
 	}, {
-		"name": "checkUnknown0D",
+		"name": "checkEventInactive",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
@@ -244,7 +283,7 @@
 			}
 		]
 	}, {
-		"name": "checkUnknownBounds",
+		"name": "checkShortBounds",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
