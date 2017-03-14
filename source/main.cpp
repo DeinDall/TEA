@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
 	Q_UNUSED(app);
 
 	bool decompMode = true;
-	QString romFile = "FE5_J.sfc";
+	QString romFile = "FE5_J_UNHEADERED.sfc";
 	quint64 offset = 0x65561;
 	QString decompType = "chapterEventPointers";
 	QString fileName = "out.tea";
