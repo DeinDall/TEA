@@ -27,7 +27,7 @@ public:
 	void setPrintHint(PrintHint hint);
 
 	QString name() const;
-	QStringList types() const;
+	QString type() const;
 	QString nextType() const;
 	int size() const;
 	int priority() const;

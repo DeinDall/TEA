@@ -42,7 +42,7 @@ bool CodeDisassembler::disassemble(ROMRef ref, QString type) {
 		}
 
 		ref = handleCode(ref, codeTemplate.makeCodeFrom(ref));
-		type = codeTemplate.nextTypes().first();
+		type = codeTemplate.nextType();
 	}
 
 	return true;
