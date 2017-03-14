@@ -105,7 +105,7 @@
 			}
 		]
 	}, {
-		"name": "checkEvent",
+		"name": "checkEventActive",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		

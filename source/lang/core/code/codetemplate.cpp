@@ -17,21 +17,21 @@ bool CodeTemplate::isValid() const {
 	if (mSize == 0)
 		return false;
 
-	if (mTypes.isEmpty())
+	if (mType.isEmpty())
 		return false;
 
-	if (mNexts.isEmpty())
+	if (mNext.isEmpty())
 		return false;
 
 	return true;
 }
 
-void CodeTemplate::setTypes(QStringList types) {
-	mTypes = types;
+void CodeTemplate::setType(QString type) {
+	mType = type;
 }
 
-void CodeTemplate::setNextTypes(QStringList nexts) {
-	mNexts = nexts;
+void CodeTemplate::setNextType(QString next) {
+	mNext = next;
 }
 
 void CodeTemplate::setSize(int size) {
@@ -54,12 +54,12 @@ QString CodeTemplate::name() const {
 	return mName;
 }
 
-QStringList CodeTemplate::types() const {
-	return mTypes;
+QString CodeTemplate::type() const {
+	return mType;
 }
 
-QStringList CodeTemplate::nextTypes() const {
-	return mNexts;
+QString CodeTemplate::nextType() const {
+	return mNext;
 }
 
 int CodeTemplate::size() const {

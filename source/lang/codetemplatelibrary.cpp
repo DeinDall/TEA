@@ -24,7 +24,7 @@ void CodeTemplateLibrary::loadFromDir(QString path) {
 
 const CodeTemplate& CodeTemplateLibrary::findTemplate(ROMRef ref, QString type) const {
 	for (const CodeTemplate& codeTemplate : mTemplates) {
-		if (!codeTemplate.types().contains(type))
+		if (!codeTemplate.type().contains(type))
 			continue;
 
 		if (codeTemplate.checkAgainst(ref))
@@ -38,7 +38,7 @@ const CodeTemplate& CodeTemplateLibrary::findTemplate(QString name, QString type
 	for (const CodeTemplate& codeTemplate : mTemplates) {
 		if (codeTemplate.name() != name)
 			continue;
-		if (!codeTemplate.types().contains(type))
+		if (!codeTemplate.type().contains(type))
 			continue;
 		return codeTemplate;
 	}
@@ -93,10 +93,10 @@ CodeTemplate CodeTemplateLibrary::makeTemplateFromJsonObject(QJsonObject object)
 	CodeTemplate result(object.value("name").toString());
 
 	if (object.contains("type"))
-		result.setTypes(object.value("type").toString().split(' '));
+		result.setType(object.value("type").toString());
 
 	if (object.contains("next"))
-		result.setNextTypes(object.value("next").toString().split(' '));
+		result.setNextType(object.value("next").toString());
 
 	if (object.contains("size"))
 		result.setSize(makeNumberFromJsonValue(object.value("size")));

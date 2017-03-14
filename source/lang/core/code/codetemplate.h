@@ -19,8 +19,8 @@ public:
 
 	bool isValid() const;
 
-	void setTypes(QStringList types);
-	void setNextTypes(QStringList nexts);
+	void setType(QString type);
+	void setNextType(QString next);
 	void setSize(int size);
 	void setPriority(int priority);
 	void setComponents(QList<CodeTemplateComponent> components);
@@ -28,7 +28,7 @@ public:
 
 	QString name() const;
 	QStringList types() const;
-	QStringList nextTypes() const;
+	QString nextType() const;
 	int size() const;
 	int priority() const;
 	const QList<CodeTemplateComponent>& components() const;
@@ -43,8 +43,8 @@ public:
 
 private:
 	QString mName;
-	QStringList mTypes;
-	QStringList mNexts;
+	QString mType;
+	QString mNext;
 	PrintHint mPrintHint;
 
 	int mSize;
