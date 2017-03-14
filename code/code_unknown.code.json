@@ -1,5 +1,29 @@
 [
 	{
+		"name": "callEOC2Asm",
+		"type": "eventCode",
+		"next": "null",
+		
+		"priority": "high",
+		
+		"size": 6,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x1D",
+				"size": 1
+			}, {
+				"fixed": true,
+				"value": "0x8cabdb",
+				"size": 3
+			}, {
+				"fixed": true,
+				"value": "0x00",
+				"size": 2
+			}
+		]
+	}, {
 		"name": "unknownStartScene",
 		"type": "eventCode",
 		"next": "eventCode",
@@ -37,7 +61,7 @@
 			}
 		]
 	}, {
-		"name": "unknown0C0B",
+		"name": "unknown0C",
 		"type": "eventCode",
 		"next": "eventCode",
 		
@@ -46,8 +70,11 @@
 		"components": [
 			{
 				"fixed": true,
-				"value": "0x0B0C",
-				"size": 2
+				"value": "0x0C",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 1
 			}
 		]
 	}, {
@@ -75,16 +102,13 @@
 		"type": "eventCode",
 		"next": "eventCode",
 		
-		"size": 4,
+		"size": 1,
 		
 		"components": [
 			{
 				"fixed": true,
 				"value": "0x34",
 				"size": 1
-			}, {
-				"name": "argument",
-				"size": 3
 			}
 		]
 	}, {
@@ -108,6 +132,26 @@
 			}
 		]
 	}, {
+		"name": "unknown15",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 7,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x15",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 3
+			}, {
+				"name": "argument2",
+				"size": 3
+			}
+		]
+	}, {
 		"name": "unknown25",
 		"type": "eventCode",
 		"next": "eventCode",
@@ -118,6 +162,23 @@
 			{
 				"fixed": true,
 				"value": "0x25",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "unknown3D",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x3D",
 				"size": 1
 			}, {
 				"name": "argument",
@@ -148,6 +209,140 @@
 			}
 		]
 	}, {
+		"name": "unknown02",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x02",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 1
+			}, {
+				"name": "argument2",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "unknown0F",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 5,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0F",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 2
+			}, {
+				"name": "argument2",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "unknown0E",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0E",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "unknown0A",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 5,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0A",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 2
+			}, {
+				"name": "argument2",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "unknown37",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x37",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "unknown26",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x26",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "unknown46",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 7,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x46",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 2
+			}, {
+				"name": "argument2",
+				"size": 2
+			}, {
+				"name": "argument3",
+				"size": 2
+			}
+		]
+	}, {
 		"name": "unknownE0",
 		"type": "eventCode",
 		"next": "eventCode",
@@ -161,6 +356,86 @@
 				"size": 1
 			}, {
 				"name": "argument",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "unknown6A",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x6A",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "unknown6B",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x6B",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "unknown6C",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 1,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x6C",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "unknownCallReinforcement",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x43",
+				"size": 1
+			}, {
+				"name": "reinforcementPointer",
+				"type": "pointer to:unitCode",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "unknownEndFF",
+		"type": "eventCode",
+		"next": "null",
+		
+		"size": 1,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0xFF",
 				"size": 1
 			}
 		]

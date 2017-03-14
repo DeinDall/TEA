@@ -27,7 +27,7 @@ bool CodeDisassembler::disassemble(ROMRef ref, QString type, DisassemblerState& 
 
 	// TODO: Proper logger
 
-	qDebug() << ("Called disassembler at 0x" % QString::number(ref.offset(), 16) % " for type " % type) << endl;
+	// qDebug() << ("Called disassembler at 0x" % QString::number(ref.offset(), 16) % " for type " % type) << endl;
 
 	if (ref.offset() >= ref.romPtr()->size())
 		return false;
@@ -36,7 +36,7 @@ bool CodeDisassembler::disassemble(ROMRef ref, QString type, DisassemblerState& 
 		const CodeTemplate& codeTemplate = mLibrary->findTemplate(ref, type);
 
 		if (!codeTemplate.isValid()) {
-			qDebug() << ("Couldn't disassemble at 0x" % QString::number(ref.offset(), 16) % " (next byte: 0x" % QString::number((quint8) ref.at(0), 16) % ")") << endl;
+			qDebug() << ("Couldn't disassemble " % type % " at 0x" % QString::number(ref.offset(), 16) % " (next byte: 0x" % QString::number((quint8) ref.at(0), 16) % ")");
 			return false;
 		}
 

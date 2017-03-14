@@ -105,6 +105,169 @@
 			}
 		]
 	}, {
+		"name": "checkUnknown10",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 5,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x10",
+				"size": 1
+			}, {
+				"name": "arg",
+				"size": 2
+			}, {
+				"name": "arg2",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "checkUnknown11",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 5,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x11",
+				"size": 1
+			}, {
+				"name": "arg",
+				"size": 2
+			}, {
+				"name": "arg2",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "checkUnknown1A",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x1A",
+				"size": 1
+			}, {
+				"name": "arg",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "checkUnknown16",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x16",
+				"size": 1
+			}, {
+				"name": "arg",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "checkUnknown17",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x17",
+				"size": 1
+			}, {
+				"name": "arg",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "checkUnknown18",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x18",
+				"size": 1
+			}, {
+				"name": "arg",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "checkUnknown19",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 1,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x19",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "checkUnknown14",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x14",
+				"size": 1
+			}, {
+				"name": "arg",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "checkUnknownBounds",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 8,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0C",
+				"size": 1
+			}, {
+				"name": "position",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "arg",
+				"size": 2
+			}, {
+				"name": "arg2",
+				"size": 2
+			}
+		]
+	}, {
 		"name": "checkEventActive",
 		"type": "eventComponent",
 		"next": "eventComponent",
@@ -120,6 +283,23 @@
 				"name": "eventId",
 				"type": "index of:event",
 				"size": 1
+			}
+		]
+	}, {
+		"name": "checkUnknownPtr",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 4,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0F",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 3
 			}
 		]
 	}, {
