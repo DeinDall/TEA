@@ -4,8 +4,8 @@
 #include <QString>
 #include <QList>
 
-#include "rom/romref.h"
-#include "code/code.h"
+#include "core/rom/romref.h"
+#include "lang/core/code/code.h"
 #include "lang/print/printhint.h"
 
 #include "codetemplatecomponent.h"

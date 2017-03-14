@@ -1,10 +1,10 @@
 #ifndef TEA_CODEDISASSEMBLER_H
 #define TEA_CODEDISASSEMBLER_H
 
-#include "codetemplatelibrary.h"
-#include "valuelibrary.h"
+#include "lang/codetemplatelibrary.h"
+#include "lang/valuelibrary.h"
 
-#include "lang/expression/abstractexpression.h"
+#include "lang/core/expression/abstractexpression.h"
 
 #include <QMap>
 #include <QTextStream>

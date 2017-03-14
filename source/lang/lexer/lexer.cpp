@@ -1,9 +1,9 @@
 #include "lexer.h"
 
+#include "lang/core/keywords.h"
+
 #include <QDebug>
 #include <QStringBuilder>
-
-#include "keywords.h"
 
 namespace tea {
 

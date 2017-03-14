@@ -6,52 +6,52 @@ CONFIG -= app_bundle
 
 SOURCES += \
     main.cpp \
-    template/codetemplate.cpp \
-    template/codetemplatecomponent.cpp \
-    rom/rom.cpp \
-    rom/romref.cpp \
-    rom/romutil.cpp \
-    code/code.cpp \
-    codetemplatelibrary.cpp \
-    valuelibrary.cpp \
-    value/value.cpp \
-    lang/expression/abstractexpression.cpp \
-    lang/expression/codeexpression.cpp \
-    lang/expression/valueexpression.cpp \
-    lang/expression/labelexpression.cpp \
-    lang/expression/numberexpression.cpp \
-    decompiler/codedisassembler.cpp \
-    lang/expression/orgexpression.cpp \
+    core/rom/rom.cpp \
+    core/rom/romref.cpp \
+    core/rom/romutil.cpp \
+    core/rom/romwriter.cpp \
+    lang/core/code/codetemplate.cpp \
+    lang/core/code/codetemplatecomponent.cpp \
+    lang/core/code/code.cpp \
+    lang/codetemplatelibrary.cpp \
+    lang/core/value/value.cpp \
+    lang/valuelibrary.cpp \
+    lang/core/expression/abstractexpression.cpp \
+    lang/core/expression/codeexpression.cpp \
+    lang/core/expression/valueexpression.cpp \
+    lang/core/expression/labelexpression.cpp \
+    lang/core/expression/numberexpression.cpp \
+    lang/core/expression/orgexpression.cpp \
+    lang/disassembler/codedisassembler.cpp \
     lang/print/printhint.cpp \
-    lexer/lexer.cpp \
-    parser/parser.cpp \
-    assembler/codeassembler.cpp \
-    rom/romwriter.cpp \
-    lexer/keywords.cpp \
-    assembler/assemblervalue.cpp
+    lang/lexer/lexer.cpp \
+    lang/parser/parser.cpp \
+    lang/assembler/codeassembler.cpp \
+    lang/core/keywords.cpp \
+    lang/assembler/assemblervalue.cpp
 
 HEADERS += \
-    template/codetemplate.h \
-    template/codetemplatecomponent.h \
-    rom/rom.h \
-    rom/romref.h \
-    rom/romutil.h \
-    code/code.h \
-    codetemplatelibrary.h \
-    valuelibrary.h \
-    value/value.h \
-    lang/expression/abstractexpression.h \
-    lang/expression/codeexpression.h \
-    lang/expression/valueexpression.h \
-    lang/expression/labelexpression.h \
-    lang/expression/numberexpression.h \
-    decompiler/codedisassembler.h \
-    lang/expression/orgexpression.h \
+    core/rom/rom.h \
+    core/rom/romref.h \
+    core/rom/romutil.h \
+    core/rom/romwriter.h \
+    lang/core/code/codetemplate.h \
+    lang/core/code/codetemplatecomponent.h \
+    lang/core/code/code.h \
+    lang/codetemplatelibrary.h \
+    lang/core/value/value.h \
+    lang/valuelibrary.h \
+    lang/core/expression/abstractexpression.h \
+    lang/core/expression/codeexpression.h \
+    lang/core/expression/valueexpression.h \
+    lang/core/expression/labelexpression.h \
+    lang/core/expression/numberexpression.h \
+    lang/core/expression/orgexpression.h \
+    lang/disassembler/codedisassembler.h \
     lang/print/printhint.h \
-    lexer/lexer.h \
-    lexer/token.h \
-    parser/parser.h \
-    assembler/codeassembler.h \
-    rom/romwriter.h \
-    lexer/keywords.h \
-    assembler/assemblervalue.h
+    lang/lexer/lexer.h \
+    lang/core/token.h \
+    lang/parser/parser.h \
+    lang/assembler/codeassembler.h \
+    lang/core/keywords.h \
+    lang/assembler/assemblervalue.h

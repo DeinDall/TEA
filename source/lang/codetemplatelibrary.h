@@ -1,7 +1,7 @@
 #ifndef TEA_CODETEMPLATELIBRARY_H
 #define TEA_CODETEMPLATELIBRARY_H
 
-#include "template/codetemplate.h"
+#include "lang/core/code/codetemplate.h"
 
 #include <QJsonObject>
 

@@ -4,15 +4,14 @@
 #include <QDebug>
 #include <QFileInfo>
 
-#include "decompiler/codedisassembler.h"
-#include "rom/romutil.h"
+#include "lang/codetemplatelibrary.h"
+#include "lang/valuelibrary.h"
 
-#include "codetemplatelibrary.h"
-#include "valuelibrary.h"
+#include "lang/lexer/lexer.h"
+#include "lang/parser/parser.h"
+#include "lang/assembler/codeassembler.h"
 
-#include "lexer/lexer.h"
-#include "parser/parser.h"
-#include "assembler/codeassembler.h"
+#include "lang/disassembler/codedisassembler.h"
 
 int main(int argc, char** argv) {
 	QCoreApplication app(argc, argv);

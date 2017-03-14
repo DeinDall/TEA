@@ -1,7 +1,7 @@
 #include "labelexpression.h"
 
-#include "assembler/codeassembler.h"
-#include "rom/romutil.h"
+#include "core/rom/romutil.h"
+#include "lang/assembler/codeassembler.h"
 
 #include <QStringBuilder>
 

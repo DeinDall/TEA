@@ -1,9 +1,9 @@
 #ifndef TEA_CODEASSEMBLER_H
 #define TEA_CODEASSEMBLER_H
 
-#include "lang/expression/abstractexpression.h"
-#include "rom/romwriter.h"
-#include "valuelibrary.h"
+#include "lang/core/expression/abstractexpression.h"
+#include "core/rom/romwriter.h"
+#include "lang/valuelibrary.h"
 
 #include <QObject>
 #include <QMap>

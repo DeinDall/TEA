@@ -4,10 +4,10 @@
 #include <QObject>
 #include <QVector>
 
-#include "lang/expression/abstractexpression.h"
-#include "lexer/token.h"
+#include "lang/core/expression/abstractexpression.h"
+#include "lang/core/token.h"
 
-#include "codetemplatelibrary.h"
+#include "lang/codetemplatelibrary.h"
 
 namespace tea {
 

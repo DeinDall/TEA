@@ -3,7 +3,7 @@
 
 #include <QJsonObject>
 
-#include "value/value.h"
+#include "lang/core/value/value.h"
 
 namespace tea {
 

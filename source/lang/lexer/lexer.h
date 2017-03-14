@@ -4,7 +4,7 @@
 #include <QString>
 #include <QObject>
 
-#include "token.h"
+#include "lang/core/token.h"
 
 namespace tea {
 

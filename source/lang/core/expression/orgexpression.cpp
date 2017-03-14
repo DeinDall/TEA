@@ -1,8 +1,8 @@
 #include "orgexpression.h"
 
-#include <QStringBuilder>
+#include "lang/assembler/codeassembler.h"
 
-#include "assembler/codeassembler.h"
+#include <QStringBuilder>
 
 namespace tea {
 

@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QString>
 
-#include "assembler/assemblervalue.h"
+#include "lang/assembler/assemblervalue.h"
 #include "lang/print/printhint.h"
 
 namespace tea {

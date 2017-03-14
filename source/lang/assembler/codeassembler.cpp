@@ -1,6 +1,6 @@
 #include "codeassembler.h"
 
-#include "rom/romutil.h"
+#include "core/rom/romutil.h"
 
 #include <QFile>
 

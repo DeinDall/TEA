@@ -1,6 +1,6 @@
 #include "codetemplate.h"
 
-#include "rom/romutil.h"
+#include "core/rom/romutil.h"
 
 namespace tea {
 

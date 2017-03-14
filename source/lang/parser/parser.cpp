@@ -1,14 +1,14 @@
 #include "parser.h"
 
-#include "lexer/keywords.h"
-
-#include "lang/expression/codeexpression.h"
-#include "lang/expression/numberexpression.h"
-#include "lang/expression/valueexpression.h"
-#include "lang/expression/labelexpression.h"
-#include "lang/expression/orgexpression.h"
-
 #include <QStringBuilder>
+
+#include "lang/core/keywords.h"
+
+#include "lang/core/expression/codeexpression.h"
+#include "lang/core/expression/numberexpression.h"
+#include "lang/core/expression/valueexpression.h"
+#include "lang/core/expression/labelexpression.h"
+#include "lang/core/expression/orgexpression.h"
 
 namespace tea {
 

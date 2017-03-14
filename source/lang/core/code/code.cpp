@@ -1,9 +1,9 @@
 #include "code.h"
 
-#include "template/codetemplate.h"
-#include "rom/romutil.h"
+#include "lang/core/code/codetemplate.h"
+#include "core/rom/romutil.h"
 
-#include "decompiler/codedisassembler.h"
+#include "lang/disassembler/codedisassembler.h"
 
 #include <QStringBuilder>
 

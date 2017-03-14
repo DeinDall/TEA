@@ -3,8 +3,8 @@
 
 #include <QVector>
 
-#include "rom/romref.h"
-#include "valuelibrary.h"
+#include "core/rom/romref.h"
+#include "lang/valuelibrary.h"
 
 namespace tea {
 
