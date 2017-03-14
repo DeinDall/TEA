@@ -131,6 +131,30 @@
 			}
 		]
 	}, {
+		"name": "callEOCAsm",
+		"type": "eventCode",
+		"next": "null",
+		
+		"priority": "high",
+		
+		"size": 6,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x1D",
+				"size": 1
+			}, {
+				"fixed": true,
+				"value": "0x8ca4b1",
+				"size": 3
+			}, {
+				"fixed": true,
+				"value": "0x00",
+				"size": 2
+			}
+		]
+	}, {
 		"name": "callAsm2",
 		"type": "eventCode",
 		"next": "eventCode",

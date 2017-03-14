@@ -88,6 +88,41 @@
 			}
 		]
 	}, {
+		"name": "checkUnknown0D",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0D",
+				"size": 1
+			}, {
+				"name": "arg",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "checkEvent",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0E",
+				"size": 1
+			}, {
+				"name": "eventId",
+				"type": "index of:event",
+				"size": 1
+			}
+		]
+	}, {
 		"name": "endEvent",
 		"type": "eventComponent",
 		"next": "eventDefinition",

@@ -125,7 +125,7 @@
 			}
 		]
 	}, {
-		"name": "unknown9",
+		"name": "unknown09",
 		"type": "eventCode",
 		"next": "eventCode",
 		
@@ -148,6 +148,23 @@
 			}
 		]
 	}, {
+		"name": "unknownE0",
+		"type": "eventCode",
+		"next": "eventCode",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0xE0",
+				"size": 1
+			}, {
+				"name": "argument",
+				"size": 1
+			}
+		]
+	}, {
 		"name": "unknownSetPointer",
 		"type": "eventCode",
 		"next": "eventCode",
@@ -167,21 +184,6 @@
 				"name": "pointerValue",
 				"type": "pointer",
 				"size": 3
-			}
-		]
-	}, {
-		"name": "unknown",
-		"type": "eventCode",
-		"next": "eventCode",
-		
-		"priority": "low",
-		
-		"size": 1,
-		
-		"components": [
-			{
-				"name": "value",
-				"size": 1
 			}
 		]
 	}
