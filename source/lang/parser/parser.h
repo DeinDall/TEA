@@ -19,7 +19,11 @@ public:
 protected:
 	void parseLabel();
 	void parseStatement();
-	AbstractExpression* parseExpression(Token token);
+
+	AbstractExpression* parseExpression();
+	AbstractExpression* parseNext(AbstractExpression* previous, int precedence);
+
+	bool checkNext(Token::TokenType type) const;
 
 	QObject* returnParent();
 

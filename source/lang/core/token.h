@@ -15,7 +15,11 @@ struct Token {
 		StringLiteral,
 
 		LineBreak,
-		Colon
+		Colon,
+
+		OpenSquareBracket,
+		CloseSquareBracket,
+		Comma
 	};
 
 	TokenType type;

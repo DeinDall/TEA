@@ -6,12 +6,12 @@
 namespace tea {
 
 enum Keyword {
-	KeywordUndefined = 0,
+	KeywordUndefined = -1,
 	KeywordOrg
 };
 
-Keyword getKeywordFor(QStringRef ref);
-QString getKeywordIdentifier(int keyword);
+int keywordIndex(QStringRef ref);
+QString keywordIdentifier(int keyword);
 
 } // namespace tea
 

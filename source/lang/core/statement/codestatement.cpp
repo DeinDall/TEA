@@ -34,20 +34,20 @@ void CodeStatement::compute(CodeAssembler* assembler) const {
 		if (it == mParameters.end())
 			return;
 
-		uint size = (*componentIt).size;
-		uint offset = (*componentIt).offset;
+		uint size = (*componentIt).bitSize;
+		uint offset = (*componentIt).bitOffset;
 
 		if ((*it)->canCompute(assembler)) {
-			data.replace(offset, size, makeNumber((*it)->compute(assembler), size));
+			(*componentIt).fillBits((*it)->compute(assembler), data);
 			(*it)->deleteLater();
 		} else
-			assembler->markExpressionUsage(assembler->currentOffset() + offset, size, (*it));
+			assembler->markExpressionUsage(assembler->currentOffset()*8 + offset, size, (*it));
 
 		++it;
 		++componentIt;
 	}
 
-	assembler->writeData(data);
+	assembler->writeData(data); // TODO: reverse
 }
 
 const CodeTemplate* CodeStatement::codeTemplate() const {

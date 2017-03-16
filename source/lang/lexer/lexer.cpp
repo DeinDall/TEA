@@ -71,8 +71,8 @@ void Lexer::tokenizeIdentifier(QStringRef ref) {
 
 	QStringRef stringRef(ref.left(pos));
 
-	if (Keyword keyword = getKeywordFor(stringRef))
-		emit tokenReady({ Token::Keyword, QVariant((int) keyword) });
+	if (int keyword = keywordIndex(stringRef))
+		emit tokenReady({ Token::Keyword, QVariant(keyword) });
 	else
 		emit tokenReady({ Token::Identifier, QVariant(stringRef.toString()) });
 
@@ -114,10 +114,17 @@ void Lexer::tokenizeString(QStringRef ref) {
 void Lexer::tokenizeSymbol(QStringRef ref) {
 	if (ref.at(0) == ':')
 		emit tokenReady({ Token::Colon, QVariant() });
+	else if (ref.at(0) == '[')
+		emit tokenReady({ Token::OpenSquareBracket, QVariant() });
+	else if (ref.at(0) == ']')
+		emit tokenReady({ Token::CloseSquareBracket, QVariant() });
+	else if (ref.at(0) == ',')
+		emit tokenReady({ Token::Comma, QVariant() });
 	else {
 		emit tokenError(ref.left(1), "Unreckognized token");
 		return;
 	}
+
 	tokenize(ref.mid(1));
 }
 

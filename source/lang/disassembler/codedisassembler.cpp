@@ -9,6 +9,7 @@
 
 #include "lang/core/expression/numberexpression.h"
 #include "lang/core/expression/valueexpression.h"
+#include "lang/core/expression/tupleexpression.h"
 
 #include "lang/core/statement/orgstatement.h"
 #include "lang/core/statement/abstractstatement.h"
@@ -46,15 +47,24 @@ bool CodeDisassembler::disassemble(uint offset, QString type, DisassemblerState&
 		QList<AbstractExpression*> expressions;
 
 		for (const CodeTemplate::Parameter& parameter : codeTemplate.parameters()) {
-			quint64 value = readNumber(ref.begin() + parameter.offset,
-									   ref.begin() + parameter.offset + parameter.size);
+			quint64 value = parameter.readBits(ref);
 
 			handlePossiblePointer(state, parameter, value);
 
-			if (const Value& libValue = mValueLibrary.findValue(parameter.type, value))
-				expressions.append(new ValueExpression(libValue.name(), returnParent()));
-			else
-				expressions.append(new NumberExpression(value, returnParent()));
+			if (parameter.isTuple) {
+				QList<AbstractExpression*> tupleExpressions;
+
+				for (int i=0; i<8; ++i)
+					if (((value>>(8*i)) & 0xFF))
+						for (int j=tupleExpressions.size(); j<=i; ++j)
+							tupleExpressions.append(makeExpression(parameter.type, ((value>>(8*j)) & 0xFF)));
+
+				if (tupleExpressions.isEmpty())
+					tupleExpressions.append(makeExpression(parameter.type, 0));
+
+				expressions.append(new TupleExpression(tupleExpressions, returnParent()));
+			} else
+				expressions.append(makeExpression(parameter.type, value));
 		}
 
 		mCodeMap.insert(ref.offset(), new CodeStatement(&codeTemplate, expressions, returnParent()));
@@ -124,6 +134,13 @@ void CodeDisassembler::handleLabel(QString name, uint offset) {
 
 	mLabelMap.insert(offset, new LabelStatement(labelName, returnParent()));
 	mValueLibrary.addValue(labelName, "pointer", snes::loRomPointerFromOffset(offset));
+}
+
+AbstractExpression* CodeDisassembler::makeExpression(CodeParameterType type, quint64 value) {
+	if (const Value& libValue = mValueLibrary.findValue(type, value))
+		return new ValueExpression(libValue.name(), returnParent());
+	else
+		return new NumberExpression(value, returnParent());
 }
 
 QObject* CodeDisassembler::returnParent() {

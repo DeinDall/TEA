@@ -12,12 +12,22 @@
 				"type": "index of:character",
 				"size": 2
 			}, {
+				"name": "allegiance",
+				"type": "allegiance",
+				
+				"offset": "22bit",
+				"size": "2bit"
+			}, {
 				"name": "xStart",
 				"type": "coordinate",
-				"size": 1
+				
+				"offset": "16bit",
+				"size": "6bit"
 			}, {
 				"name": "yStart",
 				"type": "coordinate",
+				
+				"offset": 3,
 				"size": 1
 			}, {
 				"name": "xMove",
@@ -32,40 +42,24 @@
 				"type": "index of:character",
 				"size": 2
 			}, {
-				"name": "inv1",
+				"name": "inventory",
 				"type": "index of:item",
-				"size": 1
-			}, {
-				"name": "inv2",
-				"type": "index of:item",
-				"size": 1
-			}, {
-				"name": "inv3",
-				"type": "index of:item",
-				"size": 1
-			}, {
-				"name": "inv4",
-				"type": "index of:item",
-				"size": 1
-			}, {
-				"name": "inv5",
-				"type": "index of:item",
-				"size": 1
-			}, {
-				"name": "inv6",
-				"type": "index of:item",
-				"size": 1
-			}, {
-				"name": "inv7",
-				"type": "index of:item",
-				"size": 1
+				
+				"tuple": true,
+				"size": 7
 			}, {
 				"name": "level",
 				"type": "number",
-				"size": 1
+				"size": "7bit"
+			}, {
+				"name": "autolevel",
+				"type": "boolean",
+				"size": "1bit"
 			}, {
 				"name": "ai",
-				"type": "aidata",
+				"type": "aiData",
+				
+				"tuple": true,
 				"size": 4
 			}
 		]

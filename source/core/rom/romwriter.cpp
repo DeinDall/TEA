@@ -28,6 +28,19 @@ void ROMWriter::writeAt(uint pos, QByteArray data) {
 		(*xorIt++) = (*romIt++) ^ (*dataIt++);
 }
 
+void ROMWriter::writeBits(quint64 bitOffset, quint64 bitSize, quint64 value) {
+	value <<= (bitOffset & 0x7);
+	quint64 mask = ((0x1 << bitSize)-1) << (bitOffset & 0x7);
+
+	for (uint i=(bitOffset >> 3); i<((bitOffset+bitSize+7) >> 3); ++i) {
+		char leftoverByte = ((mXORArray[i]) ^ (mROM->at(i))) & (~(mask & 0xFF));
+		mXORArray[i] = (mROM->at(i) ^ (leftoverByte | (value & mask & 0xFF)));
+
+		mask >>= 8;
+		value >>= 8;
+	}
+}
+
 void ROMWriter::outputToFile(QString fileName) const {
 	QByteArray output;
 	output.reserve(mROM->size());

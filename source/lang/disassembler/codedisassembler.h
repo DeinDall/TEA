@@ -27,6 +27,8 @@ protected:
 	void handlePossiblePointer(DisassemblerState& state, const CodeTemplate::Parameter& paramter, quint64 value);
 	void handleLabel(QString name, uint offset);
 
+	AbstractExpression* makeExpression(CodeParameterType type, quint64 value);
+
 	QObject* returnParent();
 
 private:

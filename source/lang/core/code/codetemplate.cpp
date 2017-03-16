@@ -8,7 +8,32 @@
 namespace tea {
 
 CodeTemplate::Parameter::Parameter()
-	: offset(0), size(0) {}
+	: bitOffset(0), bitSize(0), isTuple(false) {}
+
+void CodeTemplate::Parameter::fillBits(quint64 value, QByteArray& array) const {
+	value <<= (bitOffset & 0x7);
+	quint64 mask = ((0x1 << bitSize)-1) << (bitOffset & 0x7);
+
+	for (int i=(bitOffset >> 3); i<((bitOffset+bitSize+7) >> 3); ++i) {
+		array[i] = (array[i] & (~(mask & 0xFF))); // clears the parameter bits
+		array[i] = (array[i] | (value & mask & 0xFF)); // fills the parameter bits
+		mask >>= 8;
+		value >>= 8;
+	}
+}
+
+quint64 CodeTemplate::Parameter::readBits(const ROMRef& ref) const {
+	quint64 mask = ((0x1 << bitSize)-1) << (bitOffset & 0x7);
+	quint64 result = 0;
+
+	uint byteOffset = (bitOffset >> 3);
+	uint byteSize = ((bitSize+7) >> 3);
+
+	for (int i=0; i<byteSize; ++i)
+		result |= ((ref.at(byteOffset+i) & (mask & 0xFF)) << (i*8));
+
+	return (result >> (bitOffset & 0x7));
+}
 
 CodeTemplate::CodeTemplate()
 	:  mNext("null"), mPriority(0) {}
@@ -160,16 +185,26 @@ uint CodeTemplate::appendFromJsonObject(QJsonObject object, uint currentOffset) 
 	uint offset = currentOffset;
 
 	value = object.value("size");
-	if (value.isString())
-		size = value.toString().toInt(nullptr, 0);
-	else if (value.isDouble())
-		size = value.toInt();
+	if (value.isString()) {
+		QString strValue = value.toString();
+
+		if (strValue.endsWith("bit"))
+			size = strValue.leftRef(strValue.size()-3).toInt(nullptr, 0);
+		else
+			size = 8*strValue.toInt(nullptr, 0);
+	} else if (value.isDouble())
+		size = 8*value.toInt();
 
 	value = object.value("offset");
-	if (value.isString())
-		offset = value.toString().toInt(nullptr, 0);
-	else if (value.isDouble())
-		offset = value.toInt();
+	if (value.isString()) {
+		QString strValue = value.toString();
+
+		if (strValue.endsWith("bit"))
+			offset = strValue.leftRef(strValue.size()-3).toInt(nullptr, 0);
+		else
+			offset = 8*strValue.toInt(nullptr, 0);
+	} else if (value.isDouble())
+		offset = 8*value.toInt();
 
 	value = object.value("fixed");
 	if (value.isBool() && value.toBool()) {
@@ -182,14 +217,26 @@ uint CodeTemplate::appendFromJsonObject(QJsonObject object, uint currentOffset) 
 			fixedValue = value.toInt();
 
 		if (fixedValue != UINT64_MAX) {
-			mFixedBytesMask.replace(offset, size, QByteArray(size, 0xFF));
-			mFixedBytesValue.replace(offset, size, makeNumber(fixedValue, size));
+			fixedValue <<= (offset & 0x7);
+			quint64 fixedMask = ((0x1 << size)-1) << (offset & 0x7);
+
+			for (uint i=(offset >> 3); i<((offset+size+7) >> 3); ++i) {
+				mFixedBytesMask[i] = (mFixedBytesMask[i] | (fixedMask & 0xFF));
+				mFixedBytesValue[i] = (mFixedBytesValue[i] | (fixedValue & 0xFF));
+
+				fixedMask >>= 8;
+				fixedValue >>= 8;
+			}
 		}
 	} else {
 		Parameter parameter;
 
-		parameter.offset = offset;
-		parameter.size = size;
+		parameter.bitOffset = offset;
+		parameter.bitSize = size;
+
+		value = object.value("tuple");
+		if (value.isBool() && value.toBool())
+			parameter.isTuple = true;
 
 		value = object.value("name");
 		if (value.isString())

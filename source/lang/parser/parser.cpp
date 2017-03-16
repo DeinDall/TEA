@@ -6,6 +6,7 @@
 
 #include "lang/core/expression/numberexpression.h"
 #include "lang/core/expression/valueexpression.h"
+#include "lang/core/expression/tupleexpression.h"
 
 #include "lang/core/statement/codestatement.h"
 #include "lang/core/statement/labelstatement.h"
@@ -28,7 +29,7 @@ void Parser::parseStatement() {
 			if (mCurrentTokens.size() != 1)
 				emit parseError("Called org without/with too many argument(s)");
 			else {
-				AbstractExpression* exp = parseExpression(mCurrentTokens.at(0));
+				AbstractExpression* exp = parseExpression();
 
 				if (exp)
 					emit statementReady(new OrgStatement(exp, returnParent()));
@@ -39,8 +40,8 @@ void Parser::parseStatement() {
 	} else if (first.type == Token::Identifier) {
 		QList<AbstractExpression*> arguments;
 
-		for (Token token : mCurrentTokens)
-			arguments.append(parseExpression(token));
+		while (AbstractExpression* exp = parseExpression())
+			arguments.append(exp);
 
 		QString codeName = first.data.toString();
 		const CodeTemplate& codeTemplate = mTemplateLibrary->findTemplate(codeName, arguments.size());
@@ -83,12 +84,58 @@ QObject* Parser::returnParent() {
 	return this;
 }
 
-AbstractExpression* Parser::parseExpression(Token token) {
-	if (token.type == Token::NumberLiteral)
-		return new NumberExpression(token.data.toLongLong(), returnParent());
-	else if (token.type == Token::Identifier)
-		return new ValueExpression(token.data.toString(), returnParent());
+AbstractExpression* Parser::parseExpression() {
+	if (checkNext(Token::OpenSquareBracket)) {
+		mCurrentTokens.removeFirst();
+
+		QList<AbstractExpression*> tupleExpressions;
+
+		while (!checkNext(Token::CloseSquareBracket)) {
+			tupleExpressions.append(parseExpression());
+			if (!checkNext(Token::Comma))
+				break;
+			mCurrentTokens.removeFirst();
+		}
+
+		if (!checkNext(Token::CloseSquareBracket)) {
+			if (mCurrentTokens.isEmpty())
+				emit parseError("Tuple not closed (missing \']\')");
+			else
+				emit parseError("Unexpected token " % mCurrentTokens.first().toString());
+		} else {
+			mCurrentTokens.removeFirst();
+
+			return new TupleExpression(tupleExpressions, returnParent());
+		}
+	} else if (checkNext(Token::NumberLiteral)) {
+		quint64 value = mCurrentTokens.first().data.toLongLong();
+		mCurrentTokens.removeFirst();
+
+		return new NumberExpression(value, returnParent());
+	} else if (checkNext(Token::Identifier)) {
+		QString name = mCurrentTokens.first().data.toString();
+		mCurrentTokens.removeFirst();
+
+		return new ValueExpression(name, returnParent());
+	}
+
 	return nullptr;
+}
+
+AbstractExpression* Parser::parseNext(AbstractExpression* previous, int precedence) {
+	if (mCurrentTokens.isEmpty())
+		return nullptr;
+
+	Token token = mCurrentTokens.first();
+	mCurrentTokens.removeFirst();
+
+	return nullptr;
+}
+
+bool Parser::checkNext(Token::TokenType type) const {
+	if (mCurrentTokens.isEmpty())
+		return false;
+	return (mCurrentTokens.first().type == type);
 }
 
 void Parser::handleToken(Token token) {

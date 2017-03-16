@@ -1,0 +1,11 @@
+[
+	{
+		"name": "true",
+		"type": "boolean",
+		"value": "0x01"
+	}, {
+		"name": "false",
+		"type": "boolean",
+		"value": "0x00"
+	}
+]

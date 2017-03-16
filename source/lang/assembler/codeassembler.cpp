@@ -15,7 +15,7 @@ CodeAssembler::CodeAssembler(const ROM* rom, ValueLibrary* valLib, QObject* pare
 		mValueLibrary = ValueLibrary(*valLib);
 }
 
-void CodeAssembler::markExpressionUsage(uint offset, uint size, AbstractExpression* expression) {
+void CodeAssembler::markExpressionUsage(quint64 offset, quint64 size, AbstractExpression* expression) {
 	mMarkedExpression[offset] = { size, expression };
 }
 
@@ -56,7 +56,7 @@ void CodeAssembler::outputToFile(QString fileName) {
 		if (!value.expression->canCompute(this))
 			break; // TODO: err away
 
-		mWriter.writeAt(offset, makeNumber(value.expression->compute(this), value.size));
+		mWriter.writeBits(offset, value.bitSize, value.expression->compute(this));
 	}
 
 	mWriter.outputToFile(fileName);

@@ -30,7 +30,8 @@ SOURCES += \
     lang/core/statement/orgstatement.cpp \
     lang/core/statement/labelstatement.cpp \
     lang/print/statementprinter.cpp \
-    lang/core/token.cpp
+    lang/core/token.cpp \
+    lang/core/expression/tupleexpression.cpp
 
 HEADERS += \
     core/rom/rom.h \
@@ -57,4 +58,5 @@ HEADERS += \
     lang/core/statement/codestatement.h \
     lang/core/statement/orgstatement.h \
     lang/core/statement/labelstatement.h \
-    lang/print/statementprinter.h
+    lang/print/statementprinter.h \
+    lang/core/expression/tupleexpression.h

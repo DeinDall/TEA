@@ -17,11 +17,16 @@ public:
 	struct Parameter {
 		Parameter();
 
+		void fillBits(quint64 value, QByteArray& array) const;
+		quint64 readBits(const ROMRef& ref) const;
+
 		CodeParameterType type;
 		QString name;
 
-		int offset;
-		int size;
+		int bitOffset;
+		int bitSize;
+
+		bool isTuple;
 	};
 
 public:

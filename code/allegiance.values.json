@@ -1,0 +1,15 @@
+[
+	{
+		"name": "ally",
+		"type": "allegiance",
+		"value": "0x0"
+	}, {
+		"name": "enemy",
+		"type": "allegiance",
+		"value": "0x1"
+	}, {
+		"name": "neutral",
+		"type": "allegiance",
+		"value": "0x2"
+	}
+]

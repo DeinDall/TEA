@@ -13,6 +13,7 @@ public:
 
 	void writeAt(uint pos, char val);
 	void writeAt(uint pos, QByteArray data);
+	void writeBits(quint64 bitOffset, quint64 bitSize, quint64 value);
 
 	void outputToFile(QString fileName) const;
 

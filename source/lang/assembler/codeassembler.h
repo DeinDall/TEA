@@ -16,14 +16,14 @@ class CodeAssembler : public QObject {
 	Q_OBJECT
 public:
 	struct MarkedExpression {
-		uint size;
+		quint64 bitSize;
 		AbstractExpression* expression;
 	};
 
 public:
 	CodeAssembler(const ROM* rom, ValueLibrary* valLib, QObject* parent = nullptr);
 
-	void markExpressionUsage(uint offset, uint size, AbstractExpression* expression);
+	void markExpressionUsage(quint64 offset, quint64 size, AbstractExpression* expression);
 	void writeData(const QByteArray data);
 
 	void defineValue(QString name, quint64 value);

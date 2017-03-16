@@ -15,11 +15,17 @@ QString Token::toString() const {
 	case StringLiteral:
 		return ("\"" % data.toString() % "\"");
 	case Keyword:
-		return getKeywordIdentifier(data.toInt());
+		return keywordIdentifier(data.toInt());
 	case Colon:
 		return ":";
 	case LineBreak:
 		return "\n";
+	case OpenSquareBracket:
+		return "[";
+	case CloseSquareBracket:
+		return "]";
+	case Comma:
+		return ",";
 	default:
 		return "";
 	}
