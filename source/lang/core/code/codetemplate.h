@@ -2,55 +2,75 @@
 #define TEA_CODETEMPLATE_H
 
 #include <QString>
-#include <QList>
+#include <QVector>
+
+#include <QJsonObject>
 
 #include "core/rom/romref.h"
-#include "lang/core/code/code.h"
+#include "codeparametertype.h"
 #include "lang/print/printhint.h"
-
-#include "codetemplatecomponent.h"
 
 namespace tea {
 
 class CodeTemplate {
 public:
+	struct Parameter {
+		Parameter();
+
+		CodeParameterType type;
+		QString name;
+
+		int offset;
+		int size;
+	};
+
+public:
 	CodeTemplate();
-	CodeTemplate(QString name);
 
 	bool isValid() const;
 
-	void setType(QString type);
-	void setNextType(QString next);
-	void setSize(int size);
-	void setPriority(int priority);
-	void setComponents(QList<CodeTemplateComponent> components);
-	void setPrintHint(PrintHint hint);
-
 	QString name() const;
+
 	QString type() const;
 	QString nextType() const;
-	int size() const;
+
+	uint size() const;
+
 	int priority() const;
-	const QList<CodeTemplateComponent>& components() const;
+
+	const QVector<Parameter>& parameters() const;
+	uint parameterCount() const;
+
 	PrintHint printHint() const;
 
-	uint argumentCount() const;
+	QByteArray fixedMask() const;
+	QByteArray fixedData() const;
 
 	bool checkAgainst(ROMRef ref) const;
-	Code makeCodeFrom(ROMRef ref) const;
 
 	inline operator bool () const { return isValid(); }
 
+public:
+	static CodeTemplate fromJsonObject(QJsonObject object);
+
+protected:
+	void setSize(int size);
+	uint appendFromJsonObject(QJsonObject object, uint currentOffset);
+
 private:
 	QString mName;
+
 	QString mType;
 	QString mNext;
+
 	PrintHint mPrintHint;
 
-	int mSize;
 	int mPriority;
 
-	QList<CodeTemplateComponent> mComponents;
+	QByteArray mFixedBytesMask;
+	QByteArray mFixedBytesValue;
+
+	QVector<Parameter> mParameters;
 };
 
 } // namespace tea

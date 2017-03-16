@@ -7,10 +7,12 @@ namespace tea {
 
 class ValueExpression : public AbstractExpression {
 public:
-	ValueExpression(QString valueName, QObject* parent = nullptr);
+	ValueExpression(QString valueName, QObject* parent);
 
-	QString toString() const;
-	AssemblerValue assemble(CodeAssembler* assembler) const;
+	QList<Token> toTokens() const;
+
+	bool canCompute(CodeAssembler* assembler) const;
+	quint64 compute(CodeAssembler* assembler) const;
 
 private:
 	QString mValueName;

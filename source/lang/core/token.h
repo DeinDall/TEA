@@ -20,6 +20,8 @@ struct Token {
 
 	TokenType type;
 	QVariant data;
+
+	QString toString() const;
 };
 
 } // namespace tea

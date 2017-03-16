@@ -8,6 +8,9 @@
 
 #include "lang/core/expression/abstractexpression.h"
 
+#include "lang/core/statement/codestatement.h"
+#include "lang/core/statement/labelstatement.h"
+
 #include <QMap>
 #include <QTextStream>
 
@@ -15,23 +18,25 @@ namespace tea {
 
 class CodeDisassembler : public QObject {
 public:
-	CodeDisassembler(const CodeTemplateLibrary* library, ValueLibrary* valLib = nullptr);
+	CodeDisassembler(const ROM* rom, const CodeTemplateLibrary* library, ValueLibrary* valLib, QObject* parent);
 
-	bool disassemble(ROMRef ref, QString type, DisassemblerState& state);
-	void printOutput(QTextStream* out);
-
-	QList<AbstractExpression*> makeExpressions(QObject* commonParent = nullptr);
+	bool disassemble(uint offset, QString type, DisassemblerState& state);
+	QList<AbstractStatement*> makeStatements();
 
 protected:
-	void handleLabel(ROMRef ref, QString name);
-	ROMRef handleCode(ROMRef ref, Code code, DisassemblerState& state);
+	void handlePossiblePointer(DisassemblerState& state, const CodeTemplate::Parameter& paramter, quint64 value);
+	void handleLabel(QString name, uint offset);
+
+	QObject* returnParent();
 
 private:
+	const ROM* mROM;
+
 	const CodeTemplateLibrary* mLibrary;
 	ValueLibrary mValueLibrary;
 
-	QMap<uint, Code> mCodeMap;
-	QMap<uint, QString> mLabelMap;
+	QMap<uint, CodeStatement*> mCodeMap;
+	QMap<uint, LabelStatement*> mLabelMap;
 };
 
 } // namespace tea

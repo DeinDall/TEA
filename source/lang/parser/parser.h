@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QVector>
 
-#include "lang/core/expression/abstractexpression.h"
+#include "lang/core/statement/abstractstatement.h"
 #include "lang/core/token.h"
 
 #include "lang/codetemplatelibrary.h"
@@ -19,15 +19,15 @@ public:
 protected:
 	void parseLabel();
 	void parseStatement();
-	AbstractExpression* singleTokenExpression(Token token);
+	AbstractExpression* parseExpression(Token token);
 
-	QObject* expressionParent();
+	QObject* returnParent();
 
 public slots:
 	void handleToken(Token token);
 
 signals:
-	void expressionReady(AbstractExpression* exp);
+	void statementReady(AbstractStatement* statement);
 	void parseError(QString what);
 
 private:

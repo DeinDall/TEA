@@ -5,13 +5,17 @@ namespace tea {
 ValueExpression::ValueExpression(QString valueName, QObject* parent)
 	: AbstractExpression(parent), mValueName(valueName) {}
 
-QString ValueExpression::toString() const {
-	return mValueName;
+QList<Token> ValueExpression::toTokens() const {
+	return QList<Token>({ Token { Token::Identifier, QVariant(mValueName) } });
 }
 
-AssemblerValue ValueExpression::assemble(CodeAssembler* assembler) const {
+bool ValueExpression::canCompute(CodeAssembler* assembler) const {
+	return assembler->hasValue(mValueName);
+}
+
+quint64 ValueExpression::compute(CodeAssembler* assembler) const {
 	Q_UNUSED(assembler);
-	return { AssemblerValue::Value, mValueName };
+	return assembler->getValue(mValueName);
 }
 
 } // namespace tea

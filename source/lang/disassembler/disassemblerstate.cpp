@@ -36,7 +36,6 @@ QString DisassemblerState::parseArgument(QString arg) const {
 		return getArgument(args.at(0).mid(1), args.at(1));
 
 	return arg;
-
 }
 
 } // namespace tea

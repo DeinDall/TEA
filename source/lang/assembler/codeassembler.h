@@ -1,7 +1,6 @@
 #ifndef TEA_CODEASSEMBLER_H
 #define TEA_CODEASSEMBLER_H
 
-#include "lang/core/expression/abstractexpression.h"
 #include "core/rom/romwriter.h"
 #include "lang/valuelibrary.h"
 
@@ -10,21 +9,27 @@
 
 namespace tea {
 
+class AbstractStatement;
+class AbstractExpression;
+
 class CodeAssembler : public QObject {
 	Q_OBJECT
 public:
-	struct MarkedValue {
+	struct MarkedExpression {
 		uint size;
-		QString name;
+		AbstractExpression* expression;
 	};
 
 public:
 	CodeAssembler(const ROM* rom, ValueLibrary* valLib, QObject* parent = nullptr);
 
-	void markValueUsage(uint offset, uint size, QString valueName);
+	void markExpressionUsage(uint offset, uint size, AbstractExpression* expression);
 	void writeData(const QByteArray data);
 
 	void defineValue(QString name, quint64 value);
+
+	bool hasValue(QString name) const;
+	quint64 getValue(QString name) const;
 
 	void setCurrentOffset(uint offset);
 	uint currentOffset() const;
@@ -32,13 +37,13 @@ public:
 	void outputToFile(QString fileName);
 
 public slots:
-	void handleExpression(AbstractExpression* exp);
+	void handleStatement(AbstractStatement* statement);
 
 private:
 	uint mCurrentOffset;
 	ROMWriter mWriter;
 
-	QMap<uint, MarkedValue> mMarkedValues;
+	QMap<uint, MarkedExpression> mMarkedExpression;
 	ValueLibrary mValueLibrary;
 };
 

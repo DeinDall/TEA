@@ -22,9 +22,6 @@ protected:
 	void addFromJsonFile_(QString fileName);
 	void sort_();
 
-	CodeTemplate makeTemplateFromJsonObject(QJsonObject object) const;
-	CodeTemplateComponent makeTemplateComponentFromJsonObject(QJsonObject object) const;
-
 	qint64 makeNumberFromJsonValue(QJsonValue value) const;
 
 private:

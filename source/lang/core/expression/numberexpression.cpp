@@ -4,18 +4,21 @@
 
 namespace tea {
 
-NumberExpression::NumberExpression(quint64 value, BaseEnum base, QObject* parent)
-	: AbstractExpression(parent), mValue(value), mBase(base) {}
+NumberExpression::NumberExpression(quint64 value, QObject* parent)
+	: AbstractExpression(parent), mValue(value) {}
 
-QString NumberExpression::toString() const {
-	if (mBase == BaseHex)
-		return "0x" % QString::number(mValue, 16);
-	return QString::number(mValue, 10);
+QList<Token> NumberExpression::toTokens() const {
+	return QList<Token>({ Token { Token::NumberLiteral, QVariant((qint64) mValue) } });
 }
 
-AssemblerValue NumberExpression::assemble(CodeAssembler* assembler) const {
+bool NumberExpression::canCompute(CodeAssembler* assembler) const {
 	Q_UNUSED(assembler);
-	return { AssemblerValue::Number, QVariant(mValue) };
+	return true;
+}
+
+quint64 NumberExpression::compute(CodeAssembler* assembler) const {
+	Q_UNUSED(assembler);
+	return mValue;
 }
 
 } // namespace tea

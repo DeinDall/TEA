@@ -8,4 +8,10 @@ Keyword getKeywordFor(QStringRef ref) {
 	return KeywordUndefined;
 }
 
+QString getKeywordIdentifier(int keyword) {
+	if (keyword == KeywordOrg)
+		return "org";
+	return "";
+}
+
 } // namespace tea

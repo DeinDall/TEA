@@ -12,6 +12,7 @@
 #include "lang/assembler/codeassembler.h"
 
 #include "lang/disassembler/codedisassembler.h"
+#include "lang/print/statementprinter.h"
 
 int main(int argc, char** argv) {
 	QCoreApplication app(argc, argv);
@@ -54,16 +55,16 @@ int main(int argc, char** argv) {
 	valLib.loadFromDir("./code/");
 
 	if (decompMode) {
-		tea::CodeDisassembler decompiler(&lib, &valLib);
+		tea::CodeDisassembler disassembler(&rom, &lib, &valLib, nullptr);
 		tea::DisassemblerState state;
 
-		decompiler.disassemble(rom.midRef(offset), decompType, state);
+		disassembler.disassemble(offset, decompType, state);
 
 		if (!file.open(QIODevice::WriteOnly))
 			return 1;
 
 		QTextStream stream(&file);
-		decompiler.printOutput(&stream);
+		tea::StatementPrinter().printStatements(stream, disassembler.makeStatements());
 
 		file.close();
 	} else {
@@ -78,7 +79,7 @@ int main(int argc, char** argv) {
 		tea::CodeAssembler assembler(&rom, &valLib);
 
 		QObject::connect(&lexer, &tea::Lexer::tokenReady, &parser, &tea::Parser::handleToken);
-		QObject::connect(&parser, &tea::Parser::expressionReady, &assembler, &tea::CodeAssembler::handleExpression);
+		QObject::connect(&parser, &tea::Parser::statementReady, &assembler, &tea::CodeAssembler::handleStatement);
 
 		QObject::connect(&lexer, &tea::Lexer::tokenError, [] (QStringRef, QString what) {
 			qDebug() << what;

@@ -7,20 +7,15 @@ namespace tea {
 
 class NumberExpression : public AbstractExpression {
 public:
-	enum BaseEnum {
-		BaseDec = 10,
-		BaseHex = 16
-	};
+	NumberExpression(quint64 value, QObject* parent);
 
-public:
-	NumberExpression(quint64 value, BaseEnum base, QObject* parent = nullptr);
+	QList<Token> toTokens() const;
 
-	QString toString() const;
-	AssemblerValue assemble(CodeAssembler* assembler) const;
+	bool canCompute(CodeAssembler* assembler) const;
+	quint64 compute(CodeAssembler* assembler) const;
 
 private:
 	quint64 mValue;
-	BaseEnum mBase;
 };
 
 } // namespace tea

@@ -11,6 +11,7 @@ enum Keyword {
 };
 
 Keyword getKeywordFor(QStringRef ref);
+QString getKeywordIdentifier(int keyword);
 
 } // namespace tea
 

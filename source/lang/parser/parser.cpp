@@ -4,11 +4,12 @@
 
 #include "lang/core/keywords.h"
 
-#include "lang/core/expression/codeexpression.h"
 #include "lang/core/expression/numberexpression.h"
 #include "lang/core/expression/valueexpression.h"
-#include "lang/core/expression/labelexpression.h"
-#include "lang/core/expression/orgexpression.h"
+
+#include "lang/core/statement/codestatement.h"
+#include "lang/core/statement/labelstatement.h"
+#include "lang/core/statement/orgstatement.h"
 
 namespace tea {
 
@@ -27,44 +28,33 @@ void Parser::parseStatement() {
 			if (mCurrentTokens.size() != 1)
 				emit parseError("Called org without/with too many argument(s)");
 			else {
-				Token token = mCurrentTokens.at(0);
+				AbstractExpression* exp = parseExpression(mCurrentTokens.at(0));
 
-				if (token.type == Token::NumberLiteral) {
-					emit expressionReady(new OrgExpression(token.data.toLongLong(), expressionParent()));
-				} else
-					emit parseError("Called org with a non-number argument");
+				if (exp)
+					emit statementReady(new OrgStatement(exp, returnParent()));
+				else
+					emit parseError("Invalid org expression");
 			}
 		}
 	} else if (first.type == Token::Identifier) {
+		QList<AbstractExpression*> arguments;
+
+		for (Token token : mCurrentTokens)
+			arguments.append(parseExpression(token));
+
 		QString codeName = first.data.toString();
-		int argCount = mCurrentTokens.size();
+		const CodeTemplate& codeTemplate = mTemplateLibrary->findTemplate(codeName, arguments.size());
 
-		const CodeTemplate& codeTemplate = mTemplateLibrary->findTemplate(codeName, argCount);
-
-		if (codeTemplate.isValid()) {
-			QList<AbstractExpression*> codeArguments;
-			codeArguments.reserve(argCount);
-
-			for (int i=0; i<argCount; ++i) {
-				if (AbstractExpression* exp = singleTokenExpression(mCurrentTokens.at(i)))
-					codeArguments.append(exp);
-				else {
-					emit parseError("Invalid code argument token: " % mCurrentTokens.at(i).data.toString());
-					break;
-				}
-			}
-
-			if (codeArguments.size() == argCount) // No errors encountered
-				emit expressionReady(new CodeExpression(&codeTemplate, codeArguments, expressionParent()));
-		} else {
+		if (codeTemplate.isValid())
+			emit statementReady(new CodeStatement(&codeTemplate, arguments, returnParent()));
+		else {
 			if (!mTemplateLibrary->findTemplate(first.data.toString()).isValid())
 				emit parseError("Invalid code identifier: " % codeName);
 			else
 				emit parseError("Invalid argument count for: " % codeName);
 		}
-	} else {
+	} else
 		emit parseError("Unexpected token: " % first.data.toString());
-	}
 
 	mCurrentTokens.clear();
 }
@@ -76,7 +66,7 @@ void Parser::parseLabel() {
 		Token token = mCurrentTokens.at(0);
 
 		if (token.type == Token::Identifier)
-			emit expressionReady(new LabelExpression(token.data.toString(), expressionParent()));
+			emit statementReady(new LabelStatement(token.data.toString(), returnParent()));
 		else
 			emit parseError("Tried to define label with not an identifier: " % token.data.toString());
 	}
@@ -84,7 +74,7 @@ void Parser::parseLabel() {
 	mCurrentTokens.clear();
 }
 
-QObject* Parser::expressionParent() {
+QObject* Parser::returnParent() {
 	QObject* thisParent = parent();
 
 	if (thisParent)
@@ -93,11 +83,11 @@ QObject* Parser::expressionParent() {
 	return this;
 }
 
-AbstractExpression* Parser::singleTokenExpression(Token token) {
+AbstractExpression* Parser::parseExpression(Token token) {
 	if (token.type == Token::NumberLiteral)
-		return new NumberExpression(token.data.toLongLong(), NumberExpression::BaseHex, expressionParent());
+		return new NumberExpression(token.data.toLongLong(), returnParent());
 	else if (token.type == Token::Identifier)
-		return new ValueExpression(token.data.toString(), expressionParent());
+		return new ValueExpression(token.data.toString(), returnParent());
 	return nullptr;
 }
 

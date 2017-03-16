@@ -4,8 +4,8 @@
 #include <QObject>
 #include <QString>
 
-#include "lang/assembler/assemblervalue.h"
-#include "lang/print/printhint.h"
+#include "lang/assembler/codeassembler.h"
+#include "lang/core/token.h"
 
 namespace tea {
 
@@ -13,11 +13,12 @@ class CodeAssembler;
 
 class AbstractExpression : public QObject {
 public:
-	AbstractExpression(QObject* parent = nullptr);
-	virtual QString toString() const = 0;
-	virtual AssemblerValue assemble(CodeAssembler* assembler) const = 0;
-	virtual PrintHint printHint() const;
-	virtual uint byteSize() const;
+	AbstractExpression(QObject* parent);
+
+	virtual QList<Token> toTokens() const = 0;
+
+	virtual bool canCompute(CodeAssembler* assembler) const = 0;
+	virtual quint64 compute(CodeAssembler* assembler) const = 0;
 };
 
 } // namespace tea
