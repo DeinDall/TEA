@@ -31,7 +31,12 @@ SOURCES += \
     lang/core/statement/labelstatement.cpp \
     lang/print/statementprinter.cpp \
     lang/core/token.cpp \
-    lang/core/expression/tupleexpression.cpp
+    lang/core/expression/tupleexpression.cpp \
+    lang/parser/parselet/startparselet.cpp \
+    lang/parser/parselet/numberparselet.cpp \
+    lang/parser/parselet/valueparselet.cpp \
+    lang/parser/parselet/nextparselet.cpp \
+    lang/parser/parselet/tupleparselet.cpp
 
 HEADERS += \
     core/rom/rom.h \
@@ -59,4 +64,9 @@ HEADERS += \
     lang/core/statement/orgstatement.h \
     lang/core/statement/labelstatement.h \
     lang/print/statementprinter.h \
-    lang/core/expression/tupleexpression.h
+    lang/core/expression/tupleexpression.h \
+    lang/parser/parselet/startparselet.h \
+    lang/parser/parselet/numberparselet.h \
+    lang/parser/parselet/valueparselet.h \
+    lang/parser/parselet/nextparselet.h \
+    lang/parser/parselet/tupleparselet.h

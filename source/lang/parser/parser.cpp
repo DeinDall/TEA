@@ -1,8 +1,13 @@
 #include "parser.h"
 
 #include <QStringBuilder>
+#include <QDebug>
 
 #include "lang/core/keywords.h"
+
+#include "parselet/valueparselet.h"
+#include "parselet/numberparselet.h"
+#include "parselet/tupleparselet.h"
 
 #include "lang/core/expression/numberexpression.h"
 #include "lang/core/expression/valueexpression.h"
@@ -15,7 +20,16 @@
 namespace tea {
 
 Parser::Parser(const CodeTemplateLibrary* lib, QObject* parent)
-	: QObject(parent), mTemplateLibrary(lib) {}
+	: QObject(parent), mTemplateLibrary(lib) {
+	mStartParselets[Token::Identifier] = new ValueParselet;
+	mStartParselets[Token::NumberLiteral] = new NumberParselet;
+	mStartParselets[Token::OpenSquareBracket] = new TupleParselet;
+}
+
+Parser::~Parser() {
+	for (StartParselet* parselet : mStartParselets)
+		delete parselet;
+}
 
 void Parser::parseStatement() {
 	if (mCurrentTokens.isEmpty())
@@ -84,52 +98,48 @@ QObject* Parser::returnParent() {
 	return this;
 }
 
-AbstractExpression* Parser::parseExpression() {
-	if (checkNext(Token::OpenSquareBracket)) {
-		mCurrentTokens.removeFirst();
+AbstractExpression* Parser::parseExpression(int precedence) {
+	StartParselet* startParselet = nullptr;
 
-		QList<AbstractExpression*> tupleExpressions;
+	if (!(startParselet = mStartParselets.value(peekNext().type, nullptr)))
+		return nullptr;
 
-		while (!checkNext(Token::CloseSquareBracket)) {
-			tupleExpressions.append(parseExpression());
-			if (!checkNext(Token::Comma))
-				break;
-			mCurrentTokens.removeFirst();
-		}
+	AbstractExpression* expression = startParselet->parseExpression(removeNext(), this);
 
-		if (!checkNext(Token::CloseSquareBracket)) {
-			if (mCurrentTokens.isEmpty())
-				emit parseError("Tuple not closed (missing \']\')");
-			else
-				emit parseError("Unexpected token " % mCurrentTokens.first().toString());
-		} else {
-			mCurrentTokens.removeFirst();
+	NextParselet* nextParselet = nullptr;
 
-			return new TupleExpression(tupleExpressions, returnParent());
-		}
-	} else if (checkNext(Token::NumberLiteral)) {
-		quint64 value = mCurrentTokens.first().data.toLongLong();
-		mCurrentTokens.removeFirst();
+	while ((nextParselet = mNextParselets.value(peekNext().type, nullptr)) &&
+		   (nextParselet->precedence() > precedence))
+		expression = nextParselet->parseExpression(expression, removeNext(), this);
 
-		return new NumberExpression(value, returnParent());
-	} else if (checkNext(Token::Identifier)) {
-		QString name = mCurrentTokens.first().data.toString();
-		mCurrentTokens.removeFirst();
-
-		return new ValueExpression(name, returnParent());
-	}
-
-	return nullptr;
+	return expression;
 }
 
-AbstractExpression* Parser::parseNext(AbstractExpression* previous, int precedence) {
+Token Parser::peekNext() const {
 	if (mCurrentTokens.isEmpty())
-		return nullptr;
+		return { Token::Undefined, QVariant() };
+	return mCurrentTokens.first();
+}
+
+Token Parser::removeNext() {
+	if (mCurrentTokens.isEmpty())
+		return { Token::Undefined, QVariant() };
 
 	Token token = mCurrentTokens.first();
 	mCurrentTokens.removeFirst();
 
-	return nullptr;
+	return token;
+}
+
+bool Parser::removeNext(Token::TokenType type) {
+	if (mCurrentTokens.isEmpty())
+		return false;
+
+	if (mCurrentTokens.first().type != type)
+		return false;
+
+	mCurrentTokens.removeFirst();
+	return true;
 }
 
 bool Parser::checkNext(Token::TokenType type) const {

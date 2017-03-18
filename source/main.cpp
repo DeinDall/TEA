@@ -90,7 +90,12 @@ int main(int argc, char** argv) {
 		});
 
 		lexer.tokenize(data.midRef(0));
+
+#ifdef NDEBUG
 		assembler.outputToFile(romFile);
+#else
+		assembler.outputToFile(romFile + ".debug.sfc");
+#endif
 	}
 
 	return 0;

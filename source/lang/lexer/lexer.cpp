@@ -71,7 +71,9 @@ void Lexer::tokenizeIdentifier(QStringRef ref) {
 
 	QStringRef stringRef(ref.left(pos));
 
-	if (int keyword = keywordIndex(stringRef))
+	int keyword = keywordIndex(stringRef);
+
+	if (keyword != KeywordUndefined)
 		emit tokenReady({ Token::Keyword, QVariant(keyword) });
 	else
 		emit tokenReady({ Token::Identifier, QVariant(stringRef.toString()) });
