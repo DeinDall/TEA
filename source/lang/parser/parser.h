@@ -2,7 +2,7 @@
 #define TEA_PARSER_H
 
 #include <QObject>
-#include <QVector>
+#include <QQueue>
 
 #include "lang/core/statement/abstractstatement.h"
 #include "lang/core/token.h"
@@ -10,26 +10,40 @@
 #include "parselet/startparselet.h"
 #include "parselet/nextparselet.h"
 
-#include "lang/codetemplatelibrary.h"
+#include "lang/library/codelibrary.h"
 
 namespace tea {
 
 class Parser : public QObject {
 	Q_OBJECT
+
 public:
-	Parser(const CodeTemplateLibrary* lib, QObject* parent = nullptr);
+	class TokenQueue {
+		friend class Parser;
+
+	public:
+		bool checkNext(Token::TokenType type) const;
+		Token peekNext() const;
+		Token removeNext();
+		bool removeNext(Token::TokenType type);
+
+	private:
+		QQueue<Token> mTokens;
+	};
+public:
+	Parser(const CodeLibrary* lib, QObject* parent = nullptr);
 	~Parser();
 
-	Token removeNext();
-	bool removeNext(Token::TokenType type);
-	Token peekNext() const;
-	bool checkNext(Token::TokenType type) const;
+	void setCodeLibrary(const CodeLibrary* lib);
 
+	TokenQueue& tokens();
 	AbstractExpression* parseExpression(int precedence = 0);
 
 protected:
 	void parseLabel();
 	void parseStatement();
+
+	QList<AbstractExpression*> parseArguments();
 
 	QObject* returnParent();
 
@@ -42,9 +56,14 @@ public slots:
 	void handleToken(Token token);
 	void finishParsing();
 
+protected slots:
+	void onError();
+
 private:
-	const CodeTemplateLibrary* mTemplateLibrary;
-	QVector<Token> mCurrentTokens;
+	bool mErrored;
+
+	const CodeLibrary* mCodeLibrary;
+	TokenQueue mTokenQueue;
 
 	QMap<Token::TokenType, StartParselet*> mStartParselets;
 	QMap<Token::TokenType, NextParselet*> mNextParselets;

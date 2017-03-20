@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
 	tea::ROM rom;
 	rom.loadFromFile(romFile);
 
-	tea::CodeTemplateLibrary lib;
+	tea::CodeLibrary lib;
 	lib.loadFromDir("./code/");
 
 	tea::ValueLibrary valLib;

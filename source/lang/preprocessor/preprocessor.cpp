@@ -23,8 +23,9 @@ void Preprocessor::handleFile(QString fileName) {
 	if (!file.open(QIODevice::ReadOnly))
 		return; // TODO: emit error();
 
-	++mCurrentIncludeDepth;
 	QTextStream stream(&file);
+
+	++mCurrentIncludeDepth;
 
 	while (!stream.atEnd())
 		processLine(stream.readLine());

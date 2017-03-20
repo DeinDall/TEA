@@ -1,4 +1,4 @@
-#include "codetemplatelibrary.h"
+#include "codelibrary.h"
 
 #include <QDir>
 #include <QFile>
@@ -10,9 +10,11 @@
 
 namespace tea {
 
-CodeTemplateLibrary::CodeTemplateLibrary() {}
+CodeLibrary::CodeLibrary() {}
 
-void CodeTemplateLibrary::loadFromDir(QString path) {
+void CodeLibrary::loadFromDir(QString path) {
+	mAccessLock.lockForWrite();
+
 	QDir dir(path);
 
 	if (dir.exists())
@@ -20,9 +22,49 @@ void CodeTemplateLibrary::loadFromDir(QString path) {
 			if (fileInfo.completeSuffix() == "code.json")
 				addFromJsonFile_(fileInfo.absoluteFilePath());
 	sort_();
+
+	mAccessLock.unlock();
 }
 
-const CodeTemplate& CodeTemplateLibrary::findTemplate(ROMRef ref, QString type) const {
+const CodeTemplate* CodeLibrary::findCodeTemplate(QString name, uint argCount) const {
+	const CodeTemplate* result = nullptr;
+
+	mAccessLock.lockForRead();
+
+	for (const CodeTemplate& codeTemplate : mTemplates) {
+		if (codeTemplate.parameterCount() != argCount)
+			continue;
+		if (codeTemplate.name() != name)
+			continue;
+
+		result = &codeTemplate;
+		break;
+	}
+
+	mAccessLock.unlock();
+
+	return result;
+}
+
+const CodeTemplate* CodeLibrary::findCodeTemplate(QString name) const {
+	const CodeTemplate* result = nullptr;
+
+	mAccessLock.lockForRead();
+
+	for (const CodeTemplate& codeTemplate : mTemplates) {
+		if (codeTemplate.name() != name)
+			continue;
+
+		result = &codeTemplate;
+		break;
+	}
+
+	mAccessLock.unlock();
+
+	return result;
+}
+
+const CodeTemplate& CodeLibrary::findTemplate(ROMRef ref, QString type) const {
 	for (const CodeTemplate& codeTemplate : mTemplates) {
 		if (codeTemplate.type() != type)
 			continue;
@@ -34,7 +76,7 @@ const CodeTemplate& CodeTemplateLibrary::findTemplate(ROMRef ref, QString type) 
 	return mInvalidTemplate;
 }
 
-const CodeTemplate& CodeTemplateLibrary::findTemplate(QString name, QString type) const {
+const CodeTemplate& CodeLibrary::findTemplate(QString name, QString type) const {
 	for (const CodeTemplate& codeTemplate : mTemplates) {
 		if (codeTemplate.name() != name)
 			continue;
@@ -46,7 +88,7 @@ const CodeTemplate& CodeTemplateLibrary::findTemplate(QString name, QString type
 	return mInvalidTemplate;
 }
 
-const CodeTemplate& CodeTemplateLibrary::findTemplate(QString name, uint argCount) const {
+const CodeTemplate& CodeLibrary::findTemplate(QString name, uint argCount) const {
 	for (const CodeTemplate& codeTemplate : mTemplates) {
 		if (codeTemplate.parameterCount() != argCount)
 			continue;
@@ -58,14 +100,14 @@ const CodeTemplate& CodeTemplateLibrary::findTemplate(QString name, uint argCoun
 	return mInvalidTemplate;
 }
 
-const CodeTemplate& CodeTemplateLibrary::findTemplate(QString name) const {
+const CodeTemplate& CodeLibrary::findTemplate(QString name) const {
 	for (const CodeTemplate& codeTemplate : mTemplates)
 		if (codeTemplate.name() == name)
 			return codeTemplate;
 	return mInvalidTemplate;
 }
 
-void CodeTemplateLibrary::addFromJsonFile_(QString fileName) {
+void CodeLibrary::addFromJsonFile_(QString fileName) {
 	QFile file(fileName);
 
 	if (!file.open(QIODevice::ReadOnly))
@@ -83,13 +125,13 @@ void CodeTemplateLibrary::addFromJsonFile_(QString fileName) {
 	}
 }
 
-void CodeTemplateLibrary::sort_() {
+void CodeLibrary::sort_() {
 	std::sort(mTemplates.begin(), mTemplates.end(), [] (const CodeTemplate& first, const CodeTemplate& second) {
 		return first.priority() > second.priority();
 	});
 }
 
-qint64 CodeTemplateLibrary::makeNumberFromJsonValue(QJsonValue value) const {
+qint64 CodeLibrary::makeNumberFromJsonValue(QJsonValue value) const {
 	if (value.isDouble())
 		return value.toInt();
 	return value.toString().toLongLong(nullptr, 0);

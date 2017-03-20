@@ -3,7 +3,7 @@
 
 #include "disassemblerstate.h"
 
-#include "lang/codetemplatelibrary.h"
+#include "lang/library/codelibrary.h"
 #include "lang/valuelibrary.h"
 
 #include "lang/core/expression/abstractexpression.h"

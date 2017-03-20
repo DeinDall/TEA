@@ -12,13 +12,13 @@ AbstractExpression* TupleParselet::parseExpression(Token token, Parser* parser) 
 	if (token.type == Token::OpenSquareBracket) {
 		QList<AbstractExpression*> parameters;
 
-		while (!parser->checkNext(Token::CloseSquareBracket)) {
+		while (!parser->tokens().checkNext(Token::CloseSquareBracket)) {
 			parameters.append(parser->parseExpression());
-			if (!parser->removeNext(Token::Comma))
+			if (!parser->tokens().removeNext(Token::Comma))
 				break;
 		}
 
-		if (!parser->removeNext(Token::CloseSquareBracket))
+		if (!parser->tokens().removeNext(Token::CloseSquareBracket))
 			return nullptr;
 		else
 			return new TupleExpression(parameters, parser);

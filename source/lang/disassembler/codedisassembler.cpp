@@ -16,7 +16,7 @@
 
 namespace tea {
 
-CodeDisassembler::CodeDisassembler(const ROM* rom, const CodeTemplateLibrary* library, ValueLibrary* valLib, QObject* parent)
+CodeDisassembler::CodeDisassembler(const ROM* rom, const CodeLibrary* library, ValueLibrary* valLib, QObject* parent)
 	: QObject(parent), mROM(rom), mLibrary(library) {
 	if (valLib)
 		mValueLibrary = (*valLib);

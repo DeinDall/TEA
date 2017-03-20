@@ -38,7 +38,7 @@ SOURCES += \
     lang/parser/parselet/tupleparselet.cpp \
     assemblercontroller.cpp \
     lang/preprocessor/preprocessor.cpp \
-    lang/library/codetemplatelibrary.cpp
+    lang/library/codelibrary.cpp
 
 HEADERS += \
     core/rom/rom.h \
@@ -73,4 +73,4 @@ HEADERS += \
     lang/parser/parselet/tupleparselet.h \
     assemblercontroller.h \
     lang/preprocessor/preprocessor.h \
-    lang/library/codetemplatelibrary.h
+    lang/library/codelibrary.h
