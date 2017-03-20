@@ -11,16 +11,16 @@ namespace tea {
 class Lexer : public QObject {
 	Q_OBJECT
 public:
-	Lexer();
+	Lexer(QObject* parent = nullptr);
 
-	void tokenize(QStringRef ref);
+	QStringRef tokenize(QStringRef ref);
 
 protected:
-	void tokenizeSpace(QStringRef ref);
-	void tokenizeNumber(QStringRef ref);
-	void tokenizeIdentifier(QStringRef ref);
-	void tokenizeString(QStringRef ref);
-	void tokenizeSymbol(QStringRef ref);
+	QStringRef tokenizeSpace(QStringRef ref);
+	QStringRef tokenizeNumber(QStringRef ref);
+	QStringRef tokenizeIdentifier(QStringRef ref);
+	QStringRef tokenizeString(QStringRef ref);
+	QStringRef tokenizeSymbol(QStringRef ref);
 
 signals:
 	void tokenReady(Token token);
@@ -31,7 +31,11 @@ public slots:
 	void handleLine(QString line);
 	void finishLexing();
 
+protected slots:
+	void onError();
+
 private:
+	bool mErrored;
 };
 
 } // namespace tea

@@ -7,29 +7,30 @@
 
 namespace tea {
 
-Lexer::Lexer() {
-	QObject::connect(this, &tokenReady, this, &debugToken);
+Lexer::Lexer(QObject* parent)
+	: QObject(parent), mErrored(false) {
+	QObject::connect(this, &tokenError, this, &onError);
 }
 
-void Lexer::tokenize(QStringRef ref) {
+QStringRef Lexer::tokenize(QStringRef ref) {
 	if (ref.isEmpty())
-		return;
+		return ref;
 
 	QChar chr = ref.at(0);
 
 	if (chr.isSpace())
-		tokenizeSpace(ref);
+		return tokenizeSpace(ref);
 	else if (chr.isNumber())
-		tokenizeNumber(ref);
+		return tokenizeNumber(ref);
 	else if (chr.isLetter())
-		tokenizeIdentifier(ref);
+		return tokenizeIdentifier(ref);
 	else if (chr == '\"')
-		tokenizeString(ref);
+		return tokenizeString(ref);
 	else
-		tokenizeSymbol(ref);
+		return tokenizeSymbol(ref);
 }
 
-void Lexer::tokenizeSpace(QStringRef ref) {
+QStringRef Lexer::tokenizeSpace(QStringRef ref) {
 	int pos = 0;
 	QChar chr;
 
@@ -39,30 +40,29 @@ void Lexer::tokenizeSpace(QStringRef ref) {
 		++pos;
 	}
 
-	tokenize(ref.mid(pos));
+	return ref.mid(pos);
 }
 
-void Lexer::tokenizeNumber(QStringRef ref) {
+QStringRef Lexer::tokenizeNumber(QStringRef ref) {
 	int pos = 0;
 	QChar chr;
 
 	while (pos < ref.size() && (chr = ref.at(pos)).isLetterOrNumber())
 		++pos;
 
-	{
-		bool ok = false;
-		qint64 value = ref.left(pos).toLongLong(&ok, 0);
+	bool ok = false;
+	qint64 value = ref.left(pos).toLongLong(&ok, 0);
 
-		if (!ok)
-			emit tokenError(ref.left(pos), "Unable to parse number");
-		else {
-			emit tokenReady({ Token::NumberLiteral, QVariant(value) });
-			tokenize(ref.mid(pos));
-		}
+	if (!ok) {
+		emit tokenError(ref.left(pos), "Unable to parse number");
+		return ref.right(0);
+	} else {
+		emit tokenReady({ Token::NumberLiteral, QVariant(value) });
+		return ref.mid(pos);
 	}
 }
 
-void Lexer::tokenizeIdentifier(QStringRef ref) {
+QStringRef Lexer::tokenizeIdentifier(QStringRef ref) {
 	int pos = 0;
 	QChar chr;
 
@@ -78,10 +78,10 @@ void Lexer::tokenizeIdentifier(QStringRef ref) {
 	else
 		emit tokenReady({ Token::Identifier, QVariant(stringRef.toString()) });
 
-	tokenize(ref.mid(pos));
+	return ref.mid(pos);
 }
 
-void Lexer::tokenizeString(QStringRef ref) {
+QStringRef Lexer::tokenizeString(QStringRef ref) {
 	int pos = 1;
 	bool skip = false;
 	QChar chr;
@@ -110,10 +110,10 @@ void Lexer::tokenizeString(QStringRef ref) {
 
 	emit tokenReady({ Token::StringLiteral, QVariant(stringValue) });
 
-	tokenize(ref.mid(pos));
+	return ref.mid(pos);
 }
 
-void Lexer::tokenizeSymbol(QStringRef ref) {
+QStringRef Lexer::tokenizeSymbol(QStringRef ref) {
 	if (ref.at(0) == ':')
 		emit tokenReady({ Token::Colon, QVariant() });
 	else if (ref.at(0) == '[')
@@ -127,19 +127,25 @@ void Lexer::tokenizeSymbol(QStringRef ref) {
 		return;
 	}
 
-	tokenize(ref.mid(1));
+	return ref.mid(1);
 }
 
 void Lexer::handleLine(QString line) {
-	tokenize(line.mid(0));
+	if (mErrored)
+		return;
+
+	QStringRef ref = line.mid(0);
+
+	while (!ref.isEmpty())
+		ref = tokenize(ref);
 }
 
 void Lexer::finishLexing() {
 	emit finished();
 }
 
-void Lexer::debugToken(Token token) {
-	qDebug() << (QString::number(token.type) % ": " % token.data.toString());
+void Lexer::onError() {
+	mErrored = true;
 }
 
 } // namespace tea
