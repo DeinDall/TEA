@@ -33,12 +33,14 @@ protected:
 
 	QObject* returnParent();
 
-public slots:
-	void handleToken(Token token);
-
 signals:
 	void statementReady(AbstractStatement* statement);
 	void parseError(QString what);
+	void finished();
+
+public slots:
+	void handleToken(Token token);
+	void finishParsing();
 
 private:
 	const CodeTemplateLibrary* mTemplateLibrary;

@@ -26,6 +26,8 @@ public:
 		int bitOffset;
 		int bitSize;
 
+		int bitPartSize;
+
 		bool isTuple;
 	};
 

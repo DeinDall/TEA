@@ -25,9 +25,11 @@ protected:
 signals:
 	void tokenReady(Token token);
 	void tokenError(QStringRef where, QString what);
+	void finished();
 
 public slots:
-	void debugToken(Token token);
+	void handleLine(QString line);
+	void finishLexing();
 
 private:
 };

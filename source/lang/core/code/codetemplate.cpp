@@ -8,9 +8,14 @@
 namespace tea {
 
 CodeTemplate::Parameter::Parameter()
-	: bitOffset(0), bitSize(0), isTuple(false) {}
+	: bitOffset(0), bitSize(0), isTuple(false), bitPartSize(8) {}
 
 void CodeTemplate::Parameter::fillBits(quint64 value, QByteArray& array) const {
+	quint64 nval = 0;
+
+	for (int i=0; i<((bitSize+bitPartSize-1)/bitPartSize); ++i)
+		nval |= (((value >> 8*i) & 0xFF) << bitPartSize);
+
 	value <<= (bitOffset & 0x7);
 	quint64 mask = ((0x1 << bitSize)-1) << (bitOffset & 0x7);
 

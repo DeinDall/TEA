@@ -47,7 +47,7 @@ void CodeStatement::compute(CodeAssembler* assembler) const {
 		++componentIt;
 	}
 
-	assembler->writeData(data); // TODO: reverse
+	assembler->writeData(data);
 }
 
 const CodeTemplate* CodeStatement::codeTemplate() const {

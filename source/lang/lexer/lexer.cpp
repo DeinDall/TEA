@@ -130,6 +130,14 @@ void Lexer::tokenizeSymbol(QStringRef ref) {
 	tokenize(ref.mid(1));
 }
 
+void Lexer::handleLine(QString line) {
+	tokenize(line.mid(0));
+}
+
+void Lexer::finishLexing() {
+	emit finished();
+}
+
 void Lexer::debugToken(Token token) {
 	qDebug() << (QString::number(token.type) % ": " % token.data.toString());
 }

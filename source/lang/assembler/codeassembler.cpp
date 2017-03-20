@@ -67,4 +67,18 @@ void CodeAssembler::handleStatement(AbstractStatement* statement) {
 	statement->deleteLater();
 }
 
+void CodeAssembler::finishAssembling() {
+	for (auto it = mMarkedExpression.begin(); it != mMarkedExpression.end(); ++it) {
+		uint offset = it.key();
+		MarkedExpression value = it.value();
+
+		if (!value.expression->canCompute(this))
+			break; // TODO: err away
+
+		mWriter.writeBits(offset, value.bitSize, value.expression->compute(this));
+	}
+
+	emit finished();
+}
+
 } // namespace tea

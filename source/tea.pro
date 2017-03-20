@@ -11,7 +11,6 @@ SOURCES += \
     core/rom/romutil.cpp \
     core/rom/romwriter.cpp \
     lang/core/code/codetemplate.cpp \
-    lang/codetemplatelibrary.cpp \
     lang/core/value/value.cpp \
     lang/valuelibrary.cpp \
     lang/core/expression/abstractexpression.cpp \
@@ -36,7 +35,10 @@ SOURCES += \
     lang/parser/parselet/numberparselet.cpp \
     lang/parser/parselet/valueparselet.cpp \
     lang/parser/parselet/nextparselet.cpp \
-    lang/parser/parselet/tupleparselet.cpp
+    lang/parser/parselet/tupleparselet.cpp \
+    assemblercontroller.cpp \
+    lang/preprocessor/preprocessor.cpp \
+    lang/library/codetemplatelibrary.cpp
 
 HEADERS += \
     core/rom/rom.h \
@@ -44,7 +46,6 @@ HEADERS += \
     core/rom/romutil.h \
     core/rom/romwriter.h \
     lang/core/code/codetemplate.h \
-    lang/codetemplatelibrary.h \
     lang/core/value/value.h \
     lang/valuelibrary.h \
     lang/core/expression/abstractexpression.h \
@@ -69,4 +70,7 @@ HEADERS += \
     lang/parser/parselet/numberparselet.h \
     lang/parser/parselet/valueparselet.h \
     lang/parser/parselet/nextparselet.h \
-    lang/parser/parselet/tupleparselet.h
+    lang/parser/parselet/tupleparselet.h \
+    assemblercontroller.h \
+    lang/preprocessor/preprocessor.h \
+    lang/library/codetemplatelibrary.h

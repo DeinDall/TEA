@@ -36,8 +36,12 @@ public:
 
 	void outputToFile(QString fileName);
 
+signals:
+	void finished();
+
 public slots:
 	void handleStatement(AbstractStatement* statement);
+	void finishAssembling();
 
 private:
 	uint mCurrentOffset;

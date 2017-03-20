@@ -159,4 +159,9 @@ void Parser::handleToken(Token token) {
 		mCurrentTokens.append(token);
 }
 
+void Parser::finishParsing() {
+	parseStatement();
+	emit finishParsing();
+}
+
 } // namespace tea
