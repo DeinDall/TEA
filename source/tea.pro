@@ -44,7 +44,13 @@ SOURCES += \
     lang/error/errorhandler.cpp \
     lang/error/error.cpp \
     lang/core/fileposition.cpp \
-    lang/core/assemblyline.cpp
+    lang/core/assemblyline.cpp \
+    lang/lexer/lexelet/abstractlexelet.cpp \
+    lang/lexer/lexelet/identifierlexelet.cpp \
+    lang/lexer/lexelet/numberlexelet.cpp \
+    lang/lexer/lexelet/stringlexelet.cpp \
+    lang/lexer/lexelet/charlexelet.cpp \
+    lang/lexer/lexerexception.cpp
 
 HEADERS += \
     core/rom/rom.h \
@@ -85,4 +91,10 @@ HEADERS += \
     lang/error/errorhandler.h \
     lang/error/error.h \
     lang/core/fileposition.h \
-    lang/core/assemblyline.h
+    lang/core/assemblyline.h \
+    lang/lexer/lexelet/abstractlexelet.h \
+    lang/lexer/lexelet/identifierlexelet.h \
+    lang/lexer/lexelet/numberlexelet.h \
+    lang/lexer/lexelet/stringlexelet.h \
+    lang/lexer/lexelet/charlexelet.h \
+    lang/lexer/lexerexception.h

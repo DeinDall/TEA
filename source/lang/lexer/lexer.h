@@ -8,10 +8,19 @@
 #include "lang/core/token.h"
 #include "lang/error/assemblyexception.h"
 
+#include "lexelet/abstractlexelet.h"
+
+#include <QVector>
+#include <QPair>
+
 namespace tea {
 
 class Lexer : public QObject {
 	Q_OBJECT
+
+public:
+	using charCheckFunc_t = bool(*)(QChar);
+
 public:
 	Lexer(QObject* parent = nullptr);
 
@@ -33,11 +42,10 @@ public slots:
 	void handleLine(tea::AssemblyLine line);
 	void finishLexing();
 
-protected slots:
-	void onError();
-
 private:
 	bool mErrored;
+
+	QVector<QPair<charCheckFunc_t, AbstractLexelet*>> mLexelets;
 
 	AssemblyLine mCurrentLine;
 };
