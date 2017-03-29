@@ -2,7 +2,8 @@
 
 namespace tea {
 
-ErrorProxy::ErrorProxy() {}
+ErrorProxy::ErrorProxy(ErrorHandler* handler)
+	: mHandler(handler) {}
 
 void ErrorProxy::registerError(Error::Scope when, FilePosition where, QString what) {
 	mHandler->mReadWriteLock.lockForWrite();

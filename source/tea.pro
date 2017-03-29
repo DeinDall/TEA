@@ -43,7 +43,8 @@ SOURCES += \
     lang/error/errorproxy.cpp \
     lang/error/errorhandler.cpp \
     lang/error/error.cpp \
-    lang/core/fileposition.cpp
+    lang/core/fileposition.cpp \
+    lang/core/assemblyline.cpp
 
 HEADERS += \
     core/rom/rom.h \
@@ -83,4 +84,5 @@ HEADERS += \
     lang/error/errorproxy.h \
     lang/error/errorhandler.h \
     lang/error/error.h \
-    lang/core/fileposition.h
+    lang/core/fileposition.h \
+    lang/core/assemblyline.h

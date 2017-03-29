@@ -4,6 +4,7 @@
 #include <QString>
 #include <QObject>
 
+#include "lang/core/assemblyline.h"
 #include "lang/core/token.h"
 #include "lang/error/assemblyexception.h"
 
@@ -29,7 +30,7 @@ signals:
 	void finished();
 
 public slots:
-	void handleLine(QString line);
+	void handleLine(tea::AssemblyLine line);
 	void finishLexing();
 
 protected slots:
@@ -37,6 +38,8 @@ protected slots:
 
 private:
 	bool mErrored;
+
+	AssemblyLine mCurrentLine;
 };
 
 } // namespace tea

@@ -14,7 +14,7 @@ PrintHint OrgStatement::printHint() const {
 QList<Token> OrgStatement::toTokens() const {
 	QList<Token> result;
 
-	result.append({ Token::Keyword, QVariant((int) KeywordOrg) });
+	result.append(Token(Token::Keyword, QVariant((int) KeywordOrg), FilePosition()));
 	result.append(mExpression->toTokens());
 
 	return result;

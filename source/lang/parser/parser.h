@@ -24,10 +24,10 @@ public:
 		friend class Parser;
 
 	public:
-		bool checkNext(Token::TokenType type) const;
+		bool checkNext(Token::Type type) const;
 		Token peekNext() const;
 		Token removeNext();
-		bool removeNext(Token::TokenType type);
+		bool removeNext(Token::Type type);
 
 	private:
 		QQueue<Token> mTokens;
@@ -64,8 +64,8 @@ private:
 	const CodeLibrary* mCodeLibrary;
 	TokenQueue mTokenQueue;
 
-	QMap<Token::TokenType, StartParselet*> mStartParselets;
-	QMap<Token::TokenType, NextParselet*> mNextParselets;
+	QMap<Token::Type, StartParselet*> mStartParselets;
+	QMap<Token::Type, NextParselet*> mNextParselets;
 };
 
 } // namespace tea

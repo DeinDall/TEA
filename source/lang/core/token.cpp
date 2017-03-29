@@ -6,6 +6,14 @@
 
 namespace tea {
 
+Token::Token() {}
+
+Token::Token(Type aType, const QVariant& aData, const FilePosition& aPosition)
+	: type(aType), data(aData), position(aPosition) {}
+
+Token::Token(Type aType, const FilePosition& aPosition)
+	: Token(aType, QVariant(), aPosition) {}
+
 QString Token::toString() const {
 	switch (type) {
 	case Identifier:

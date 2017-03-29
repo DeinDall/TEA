@@ -6,7 +6,7 @@ ValueExpression::ValueExpression(QString valueName, QObject* parent)
 	: AbstractExpression(parent), mValueName(valueName) {}
 
 QList<Token> ValueExpression::toTokens() const {
-	return QList<Token>({ Token { Token::Identifier, QVariant(mValueName) } });
+	return QList<Token>({ Token(Token::Identifier, QVariant(mValueName), FilePosition())});
 }
 
 bool ValueExpression::canCompute(CodeAssembler* assembler) const {

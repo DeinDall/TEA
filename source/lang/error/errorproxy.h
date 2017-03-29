@@ -7,7 +7,7 @@ namespace tea {
 
 class ErrorProxy {
 public:
-	ErrorProxy();
+	ErrorProxy(ErrorHandler* handler);
 
 	void registerError(Error::Scope when, FilePosition where, QString what);
 

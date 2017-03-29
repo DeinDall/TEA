@@ -3,10 +3,12 @@
 
 #include <QVariant>
 
+#include "fileposition.h"
+
 namespace tea {
 
 struct Token {
-	enum TokenType {
+	enum Type {
 		Undefined = -1,
 
 		Keyword,
@@ -22,10 +24,16 @@ struct Token {
 		Comma
 	};
 
-	TokenType type;
-	QVariant data;
+	Token();
+	Token(Type aType, const QVariant& aData, const FilePosition& aPosition);
+	Token(Type aType, const FilePosition& aPosition);
 
 	QString toString() const;
+
+	Type type;
+	QVariant data;
+
+	FilePosition position;
 };
 
 } // namespace tea

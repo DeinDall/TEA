@@ -34,7 +34,7 @@ QStringRef Lexer::tokenizeSpace(QStringRef ref) {
 
 	while (pos < ref.size() && (chr = ref.at(pos)).isSpace()) {
 		if (chr == '\n')
-			emit tokenReady({ Token::LineBreak, QVariant() });
+			emit tokenReady(Token(Token::LineBreak, QVariant(), mCurrentLine.makePosition(ref.position())));
 		++pos;
 	}
 
@@ -54,7 +54,7 @@ QStringRef Lexer::tokenizeNumber(QStringRef ref) {
 	if (!ok)
 		throw AssemblyException(AssemblyException::Error, AssemblyException::Lexing, "Unable to parse number");
 	else {
-		emit tokenReady({ Token::NumberLiteral, QVariant(value) });
+		emit tokenReady(Token(Token::NumberLiteral, QVariant(value), mCurrentLine.makePosition(ref.position())));
 		return ref.mid(pos);
 	}
 }
@@ -71,9 +71,9 @@ QStringRef Lexer::tokenizeIdentifier(QStringRef ref) {
 	int keyword = keywordIndex(stringRef);
 
 	if (keyword != KeywordUndefined)
-		emit tokenReady({ Token::Keyword, QVariant(keyword) });
+		emit tokenReady(Token(Token::Keyword, QVariant(keyword), mCurrentLine.makePosition(ref.position())));
 	else
-		emit tokenReady({ Token::Identifier, QVariant(stringRef.toString()) });
+		emit tokenReady(Token(Token::Identifier, QVariant(stringRef.toString()), mCurrentLine.makePosition(ref.position())));
 
 	return ref.mid(pos);
 }
@@ -105,41 +105,41 @@ QStringRef Lexer::tokenizeString(QStringRef ref) {
 		++pos;
 	}
 
-	emit tokenReady({ Token::StringLiteral, QVariant(stringValue) });
+	emit tokenReady(Token(Token::StringLiteral, QVariant(stringValue), mCurrentLine.makePosition(ref.position())));
 
 	return ref.mid(pos);
 }
 
 QStringRef Lexer::tokenizeSymbol(QStringRef ref) {
 	if (ref.at(0) == ':')
-		emit tokenReady({ Token::Colon, QVariant() });
+		emit tokenReady(Token(Token::Colon, mCurrentLine.makePosition(ref.position())));
 	else if (ref.at(0) == '[')
-		emit tokenReady({ Token::OpenSquareBracket, QVariant() });
+		emit tokenReady(Token(Token::OpenSquareBracket, mCurrentLine.makePosition(ref.position())));
 	else if (ref.at(0) == ']')
-		emit tokenReady({ Token::CloseSquareBracket, QVariant() });
+		emit tokenReady(Token(Token::CloseSquareBracket, mCurrentLine.makePosition(ref.position())));
 	else if (ref.at(0) == ',')
-		emit tokenReady({ Token::Comma, QVariant() });
+		emit tokenReady(Token(Token::Comma, mCurrentLine.makePosition(ref.position())));
 	else
 		throw AssemblyException(AssemblyException::Error, AssemblyException::Lexing, "Unreckognized token");
 
 	return ref.mid(1);
 }
 
-void Lexer::handleLine(QString line) {
+void Lexer::handleLine(tea::AssemblyLine line) {
 	if (mErrored)
 		return;
 
 	try {
-		QStringRef ref = line.midRef(0);
+		QStringRef ref = line.lineData.midRef(0);
 
 		while (!ref.isEmpty())
 			ref = tokenize(ref);
+
+		emit tokenReady(Token(Token::LineBreak, line.makePosition(line.lineData.size())));
 	} catch (const AssemblyException& exception) {
 		emit error(exception);
 		mErrored = true;
 	}
-
-	emit tokenReady({ Token::LineBreak, QVariant()});
 }
 
 void Lexer::finishLexing() {

@@ -18,10 +18,12 @@
 
 Q_DECLARE_METATYPE(tea::Token)
 Q_DECLARE_METATYPE(tea::AssemblyException)
+Q_DECLARE_METATYPE(tea::AssemblyLine)
 
 int main(int argc, char** argv) {
 	QCoreApplication app(argc, argv);
 
+	qRegisterMetaType<tea::AssemblyLine>();
 	qRegisterMetaType<tea::Token>();
 	qRegisterMetaType<tea::AssemblyException>();
 

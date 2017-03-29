@@ -8,7 +8,7 @@ NumberExpression::NumberExpression(quint64 value, QObject* parent)
 	: AbstractExpression(parent), mValue(value) {}
 
 QList<Token> NumberExpression::toTokens() const {
-	return QList<Token>({ Token { Token::NumberLiteral, QVariant((qint64) mValue) } });
+	return QList<Token>({ Token(Token::NumberLiteral, QVariant((qint64) mValue), FilePosition())});
 }
 
 bool NumberExpression::canCompute(CodeAssembler* assembler) const {

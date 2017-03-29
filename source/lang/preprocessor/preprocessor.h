@@ -4,6 +4,7 @@
 #include <QObject>
 
 #include "lang/error/assemblyexception.h"
+#include "lang/core/assemblyline.h"
 
 namespace tea {
 
@@ -12,10 +13,10 @@ class Preprocessor : public QObject {
 public:
 	Preprocessor();
 
-	void processLine(QString line);
+	void processLine(uint lineNumber, QString line);
 
 signals:
-	void lineReady(QString line);
+	void lineReady(tea::AssemblyLine line);
 	void finished();
 	void error(tea::AssemblyException exception);
 

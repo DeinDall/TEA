@@ -16,7 +16,7 @@ PrintHint CodeStatement::printHint() const {
 QList<Token> CodeStatement::toTokens() const {
 	QList<Token> result;
 
-	result.append({ Token::Identifier, QVariant(mCodeTemplate->name()) });
+	result.append(Token(Token::Identifier, QVariant(mCodeTemplate->name()), FilePosition()));
 
 	for (AbstractExpression* exp : mParameters)
 		result.append(exp->toTokens());

@@ -14,8 +14,8 @@ PrintHint LabelStatement::printHint() const {
 QList<Token> LabelStatement::toTokens() const {
 	QList<Token> result;
 
-	result.append({ Token::Identifier, QVariant(mLabelName) });
-	result.append({ Token::Colon, QVariant() });
+	result.append(Token(Token::Identifier, QVariant(mLabelName), FilePosition()));
+	result.append(Token(Token::Colon, FilePosition()));
 
 	return result;
 }

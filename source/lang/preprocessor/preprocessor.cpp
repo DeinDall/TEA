@@ -8,8 +8,8 @@ namespace tea {
 Preprocessor::Preprocessor()
 	: mCurrentIncludeDepth(0) {}
 
-void Preprocessor::processLine(QString line) {
-	emit lineReady(line);
+void Preprocessor::processLine(uint lineNumber, QString line) {
+	emit lineReady(AssemblyLine(line, lineNumber, mCurrentFile));
 }
 
 void Preprocessor::handleFile(QString fileName) {
@@ -36,8 +36,8 @@ void Preprocessor::handleFile(QString fileName) {
 	QString lastFile = mCurrentFile;
 	mCurrentFile = fileName;
 
-	for (QString& line : lines)
-		processLine(line);
+	for (int i=0; i<lines.size(); ++i)
+		processLine(i, lines[i]);
 
 	mCurrentFile = lastFile;
 

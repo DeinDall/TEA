@@ -19,7 +19,7 @@
 
 namespace tea {
 
-bool Parser::TokenQueue::checkNext(Token::TokenType type) const {
+bool Parser::TokenQueue::checkNext(Token::Type type) const {
 	if (mTokens.isEmpty())
 		return false;
 	return (mTokens.head().type == type);
@@ -27,17 +27,17 @@ bool Parser::TokenQueue::checkNext(Token::TokenType type) const {
 
 Token Parser::TokenQueue::peekNext() const {
 	if (mTokens.isEmpty())
-		return { Token::Undefined, QVariant() };
+		return Token(Token::Undefined, FilePosition());
 	return mTokens.head();
 }
 
 Token Parser::TokenQueue::removeNext() {
 	if (mTokens.isEmpty())
-		return { Token::Undefined, QVariant() };
+		return Token(Token::Undefined, FilePosition());
 	return mTokens.dequeue();
 }
 
-bool Parser::TokenQueue::removeNext(Token::TokenType type) {
+bool Parser::TokenQueue::removeNext(Token::Type type) {
 	if (mTokens.isEmpty())
 		return false;
 
