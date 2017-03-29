@@ -24,14 +24,8 @@ public:
 public:
 	Lexer(QObject* parent = nullptr);
 
-	QStringRef tokenize(QStringRef ref);
-
 protected:
-	QStringRef tokenizeSpace(QStringRef ref);
-	QStringRef tokenizeNumber(QStringRef ref);
-	QStringRef tokenizeIdentifier(QStringRef ref);
-	QStringRef tokenizeString(QStringRef ref);
-	QStringRef tokenizeSymbol(QStringRef ref);
+	QStringRef tokenize(QStringRef ref);
 
 signals:
 	void tokenReady(tea::Token token);
