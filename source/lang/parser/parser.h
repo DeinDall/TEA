@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QQueue>
 
+#include "lang/error/assemblyexception.h"
+
 #include "lang/core/statement/abstractstatement.h"
 #include "lang/core/token.h"
 
@@ -48,16 +50,13 @@ protected:
 	QObject* returnParent();
 
 signals:
-	void statementReady(AbstractStatement* statement);
-	void parseError(QString what);
+	void statementReady(tea::AbstractStatement* statement);
+	void error(tea::AssemblyException exception);
 	void finished();
 
 public slots:
-	void handleToken(Token token);
+	void handleToken(tea::Token token);
 	void finishParsing();
-
-protected slots:
-	void onError();
 
 private:
 	bool mErrored;

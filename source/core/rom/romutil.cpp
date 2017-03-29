@@ -21,23 +21,27 @@ QByteArray makeNumber(quint64 value, uint size) {
 	return result;
 }
 
-namespace snes {
+namespace snes_lorom {
 
-bool isLoRomPointer(uint pointer) {
+bool isPointer(uint pointer) {
 	return (pointer & 0x8000);
 }
 
-uint offsetFromLoRomPointer(uint pointer) {
+uint offsetFromPointer(uint pointer) {
 	return (((pointer >> 16) & 0x7F) << 15) | (pointer & 0x7FFF);
 }
 
-uint loRomPointerFromOffset(uint offset) {
+uint pointerFromOffset(uint offset) {
 	return ((offset >> 15) << 16) | (offset & 0x7FFF) | 0x808000;
 }
 
 } // namespace snes
 
 namespace gba {
+
+bool isPointer(uint pointer) {
+	return (pointer & 0x80000000);
+}
 
 uint offsetFromPointer(uint pointer) {
 	return (pointer & 0x7FFFFFFF);

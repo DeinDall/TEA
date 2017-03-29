@@ -7,10 +7,12 @@
 
 #include <QFile>
 
+#include <QCoreApplication>
+
 namespace tea {
 
 CodeAssembler::CodeAssembler(const ROM* rom, ValueLibrary* valLib, QObject* parent)
-	: QObject(parent), mWriter(rom) {
+	: QObject(parent), mErrored(false), mWriter(rom) {
 	if (valLib)
 		mValueLibrary = ValueLibrary(*valLib);
 }
@@ -48,36 +50,43 @@ quint64 CodeAssembler::getValue(QString name) const {
 	return 0;
 }
 
-void CodeAssembler::outputToFile(QString fileName) {
-	for (auto it = mMarkedExpression.begin(); it != mMarkedExpression.end(); ++it) {
-		uint offset = it.key();
-		MarkedExpression value = it.value();
-
-		if (!value.expression->canCompute(this))
-			break; // TODO: err away
-
-		mWriter.writeBits(offset, value.bitSize, value.expression->compute(this));
-	}
-
-	mWriter.outputToFile(fileName);
+const ROMWriteLayer& CodeAssembler::writeLayer() const {
+	return mWriter;
 }
 
-void CodeAssembler::handleStatement(AbstractStatement* statement) {
-	statement->compute(this);
+void CodeAssembler::handleStatement(tea::AbstractStatement* statement) {
+	if (!mErrored) {
+		try {
+			statement->compute(this);
+		} catch (const AssemblyException& exception) {
+			emit error(exception);
+			mErrored = true;
+		}
+	}
+
 	statement->deleteLater();
 }
 
 void CodeAssembler::finishAssembling() {
-	for (auto it = mMarkedExpression.begin(); it != mMarkedExpression.end(); ++it) {
-		uint offset = it.key();
-		MarkedExpression value = it.value();
+	if (!mErrored) {
+		try {
+			for (auto it = mMarkedExpression.begin(); it != mMarkedExpression.end(); ++it) {
+				uint offset = it.key();
+				MarkedExpression value = it.value();
 
-		if (!value.expression->canCompute(this))
-			break; // TODO: err away
+				if (!value.expression->canCompute(this))
+					throw AssemblyException(AssemblyException::Error, AssemblyException::Assembling, "Unable to compute expression");
 
-		mWriter.writeBits(offset, value.bitSize, value.expression->compute(this));
+				mWriter.writeBits(offset, value.bitSize, value.expression->compute(this));
+				value.expression->deleteLater();
+			}
+		} catch (const AssemblyException& exception) {
+			emit error(exception);
+			mErrored = true;
+		}
 	}
 
+	moveToThread(qApp->thread());
 	emit finished();
 }
 

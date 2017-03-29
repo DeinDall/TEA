@@ -5,6 +5,7 @@
 #include <QObject>
 
 #include "lang/core/token.h"
+#include "lang/error/assemblyexception.h"
 
 namespace tea {
 
@@ -23,8 +24,8 @@ protected:
 	QStringRef tokenizeSymbol(QStringRef ref);
 
 signals:
-	void tokenReady(Token token);
-	void tokenError(QStringRef where, QString what);
+	void tokenReady(tea::Token token);
+	void error(tea::AssemblyException exception);
 	void finished();
 
 public slots:

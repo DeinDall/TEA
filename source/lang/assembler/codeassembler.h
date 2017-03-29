@@ -1,8 +1,10 @@
 #ifndef TEA_CODEASSEMBLER_H
 #define TEA_CODEASSEMBLER_H
 
-#include "core/rom/romwriter.h"
+#include "core/rom/romwritelayer.h"
 #include "lang/valuelibrary.h"
+
+#include "lang/error/assemblyexception.h"
 
 #include <QObject>
 #include <QMap>
@@ -34,18 +36,21 @@ public:
 	void setCurrentOffset(uint offset);
 	uint currentOffset() const;
 
-	void outputToFile(QString fileName);
+	const ROMWriteLayer& writeLayer() const;
 
 signals:
+	void error(tea::AssemblyException exception);
 	void finished();
 
 public slots:
-	void handleStatement(AbstractStatement* statement);
+	void handleStatement(tea::AbstractStatement* statement);
 	void finishAssembling();
 
 private:
+	bool mErrored;
+
 	uint mCurrentOffset;
-	ROMWriter mWriter;
+	ROMWriteLayer mWriter;
 
 	QMap<uint, MarkedExpression> mMarkedExpression;
 	ValueLibrary mValueLibrary;

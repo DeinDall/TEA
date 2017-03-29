@@ -8,9 +8,7 @@
 namespace tea {
 
 Lexer::Lexer(QObject* parent)
-	: QObject(parent), mErrored(false) {
-	QObject::connect(this, &tokenError, this, &onError);
-}
+	: QObject(parent), mErrored(false) {}
 
 QStringRef Lexer::tokenize(QStringRef ref) {
 	if (ref.isEmpty())
@@ -53,10 +51,9 @@ QStringRef Lexer::tokenizeNumber(QStringRef ref) {
 	bool ok = false;
 	qint64 value = ref.left(pos).toLongLong(&ok, 0);
 
-	if (!ok) {
-		emit tokenError(ref.left(pos), "Unable to parse number");
-		return ref.right(0);
-	} else {
+	if (!ok)
+		throw AssemblyException(AssemblyException::Error, AssemblyException::Lexing, "Unable to parse number");
+	else {
 		emit tokenReady({ Token::NumberLiteral, QVariant(value) });
 		return ref.mid(pos);
 	}
@@ -122,10 +119,8 @@ QStringRef Lexer::tokenizeSymbol(QStringRef ref) {
 		emit tokenReady({ Token::CloseSquareBracket, QVariant() });
 	else if (ref.at(0) == ',')
 		emit tokenReady({ Token::Comma, QVariant() });
-	else {
-		emit tokenError(ref.left(1), "Unreckognized token");
-		return;
-	}
+	else
+		throw AssemblyException(AssemblyException::Error, AssemblyException::Lexing, "Unreckognized token");
 
 	return ref.mid(1);
 }
@@ -134,10 +129,17 @@ void Lexer::handleLine(QString line) {
 	if (mErrored)
 		return;
 
-	QStringRef ref = line.mid(0);
+	try {
+		QStringRef ref = line.midRef(0);
 
-	while (!ref.isEmpty())
-		ref = tokenize(ref);
+		while (!ref.isEmpty())
+			ref = tokenize(ref);
+	} catch (const AssemblyException& exception) {
+		emit error(exception);
+		mErrored = true;
+	}
+
+	emit tokenReady({ Token::LineBreak, QVariant()});
 }
 
 void Lexer::finishLexing() {

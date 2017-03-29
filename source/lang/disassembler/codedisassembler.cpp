@@ -99,7 +99,7 @@ QList<AbstractStatement*> CodeDisassembler::makeStatements() {
 }
 
 void CodeDisassembler::handlePossiblePointer(DisassemblerState& state, const CodeTemplate::Parameter& paramter, quint64 value) {
-	if (!snes::isLoRomPointer(value))
+	if (!snes_lorom::isPointer(value))
 		return;
 
 	const CodeParameterType& type = paramter.type;
@@ -124,8 +124,8 @@ void CodeDisassembler::handlePossiblePointer(DisassemblerState& state, const Cod
 		newState.setArgument(split.at(0), split.at(1));
 	}
 
-	if (disassemble(snes::offsetFromLoRomPointer(value), target, newState))
-		handleLabel(paramter.name, snes::offsetFromLoRomPointer(value));
+	if (disassemble(snes_lorom::offsetFromPointer(value), target, newState))
+		handleLabel(paramter.name, snes_lorom::offsetFromPointer(value));
 }
 
 void CodeDisassembler::handleLabel(QString name, uint offset) {
@@ -133,7 +133,7 @@ void CodeDisassembler::handleLabel(QString name, uint offset) {
 	QString labelName(name % QString::number(counter++));
 
 	mLabelMap.insert(offset, new LabelStatement(labelName, returnParent()));
-	mValueLibrary.addValue(labelName, "pointer", snes::loRomPointerFromOffset(offset));
+	mValueLibrary.addValue(labelName, "pointer", snes_lorom::pointerFromOffset(offset));
 }
 
 AbstractExpression* CodeDisassembler::makeExpression(CodeParameterType type, quint64 value) {

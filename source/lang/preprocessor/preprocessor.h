@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "lang/error/assemblyexception.h"
+
 namespace tea {
 
 class Preprocessor : public QObject {
@@ -15,13 +17,14 @@ public:
 signals:
 	void lineReady(QString line);
 	void finished();
-	void error(QString what);
+	void error(tea::AssemblyException exception);
 
 public slots:
 	void handleFile(QString fileName);
 
 private:
 	int mCurrentIncludeDepth;
+	QString mCurrentFile;
 };
 
 } // namespace tea

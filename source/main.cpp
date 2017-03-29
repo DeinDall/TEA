@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <QFileInfo>
 
-#include "lang/codetemplatelibrary.h"
+#include "lang/library/codelibrary.h"
 #include "lang/valuelibrary.h"
 
 #include "lang/lexer/lexer.h"
@@ -14,6 +14,24 @@
 #include "lang/disassembler/codedisassembler.h"
 #include "lang/print/statementprinter.h"
 
+#include "assemblercontroller.h"
+
+Q_DECLARE_METATYPE(tea::Token)
+Q_DECLARE_METATYPE(tea::AssemblyException)
+
+int main(int argc, char** argv) {
+	QCoreApplication app(argc, argv);
+
+	qRegisterMetaType<tea::Token>();
+	qRegisterMetaType<tea::AssemblyException>();
+
+	tea::AssemblerController controller;
+	controller.start("out.tea", "FE5.debug.sfc");
+
+	return app.exec();
+}
+
+/*
 int main(int argc, char** argv) {
 	QCoreApplication app(argc, argv);
 	Q_UNUSED(app);
@@ -81,11 +99,11 @@ int main(int argc, char** argv) {
 		QObject::connect(&lexer, &tea::Lexer::tokenReady, &parser, &tea::Parser::handleToken);
 		QObject::connect(&parser, &tea::Parser::statementReady, &assembler, &tea::CodeAssembler::handleStatement);
 
-		QObject::connect(&lexer, &tea::Lexer::tokenError, [] (QStringRef, QString what) {
+		QObject::connect(&lexer, &tea::Lexer::error, [] (QStringRef, QString what) {
 			qDebug() << what;
 		});
 
-		QObject::connect(&parser, &tea::Parser::parseError, [] (QString what) {
+		QObject::connect(&parser, &tea::Parser::error, [] (QString what) {
 			qDebug() << what;
 		});
 
@@ -99,4 +117,4 @@ int main(int argc, char** argv) {
 	}
 
 	return 0;
-}
+} //*/

@@ -14,23 +14,32 @@ void Preprocessor::processLine(QString line) {
 
 void Preprocessor::handleFile(QString fileName) {
 	if (mCurrentIncludeDepth > 100) // TODO: put that constant somewhere
-		emit error("Maximum Include depth reached, make sure you have no looping inclusions");
-
-	// TODO: maybe not process the file while it is open?
+		emit error(AssemblyException(AssemblyException::Error, AssemblyException::Preprocessing, "Maximum Include depth reached, make sure you have no looping inclusions"));
 
 	QFile file(fileName);
 
-	if (!file.open(QIODevice::ReadOnly))
-		return; // TODO: emit error();
+	if (!file.open(QIODevice::ReadOnly)) {
+		emit error(AssemblyException(AssemblyException::Error, AssemblyException::Preprocessing, "Error while opening file"));
+		return;
+	}
 
 	QTextStream stream(&file);
+	QStringList lines;
+
+	while (!stream.atEnd())
+		lines.append(stream.readLine());
+
+	file.close();
 
 	++mCurrentIncludeDepth;
 
-	while (!stream.atEnd())
-		processLine(stream.readLine());
+	QString lastFile = mCurrentFile;
+	mCurrentFile = fileName;
 
-	file.close();
+	for (QString& line : lines)
+		processLine(line);
+
+	mCurrentFile = lastFile;
 
 	if ((--mCurrentIncludeDepth) == 0)
 		emit finished();

@@ -21,7 +21,7 @@ QList<Token> LabelStatement::toTokens() const {
 }
 
 void LabelStatement::compute(CodeAssembler* assembler) const {
-	assembler->defineValue(mLabelName, snes::loRomPointerFromOffset(assembler->currentOffset()));
+	assembler->defineValue(mLabelName, snes_lorom::pointerFromOffset(assembler->currentOffset()));
 }
 
 } // namespace tea

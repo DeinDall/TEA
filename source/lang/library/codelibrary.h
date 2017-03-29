@@ -29,7 +29,7 @@ protected:
 	qint64 makeNumberFromJsonValue(QJsonValue value) const;
 
 private:
-	QReadWriteLock mAccessLock;
+	mutable QReadWriteLock mAccessLock;
 
 	CodeTemplate mInvalidTemplate;
 	QList<CodeTemplate> mTemplates;

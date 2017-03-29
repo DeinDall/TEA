@@ -9,7 +9,6 @@ SOURCES += \
     core/rom/rom.cpp \
     core/rom/romref.cpp \
     core/rom/romutil.cpp \
-    core/rom/romwriter.cpp \
     lang/core/code/codetemplate.cpp \
     lang/core/value/value.cpp \
     lang/valuelibrary.cpp \
@@ -38,13 +37,18 @@ SOURCES += \
     lang/parser/parselet/tupleparselet.cpp \
     assemblercontroller.cpp \
     lang/preprocessor/preprocessor.cpp \
-    lang/library/codelibrary.cpp
+    lang/library/codelibrary.cpp \
+    lang/error/assemblyexception.cpp \
+    core/rom/romwritelayer.cpp \
+    lang/error/errorproxy.cpp \
+    lang/error/errorhandler.cpp \
+    lang/error/error.cpp \
+    lang/core/fileposition.cpp
 
 HEADERS += \
     core/rom/rom.h \
     core/rom/romref.h \
     core/rom/romutil.h \
-    core/rom/romwriter.h \
     lang/core/code/codetemplate.h \
     lang/core/value/value.h \
     lang/valuelibrary.h \
@@ -73,4 +77,10 @@ HEADERS += \
     lang/parser/parselet/tupleparselet.h \
     assemblercontroller.h \
     lang/preprocessor/preprocessor.h \
-    lang/library/codelibrary.h
+    lang/library/codelibrary.h \
+    lang/error/assemblyexception.h \
+    core/rom/romwritelayer.h \
+    lang/error/errorproxy.h \
+    lang/error/errorhandler.h \
+    lang/error/error.h \
+    lang/core/fileposition.h

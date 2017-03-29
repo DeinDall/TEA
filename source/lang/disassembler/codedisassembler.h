@@ -18,7 +18,7 @@ namespace tea {
 
 class CodeDisassembler : public QObject {
 public:
-	CodeDisassembler(const ROM* rom, const CodeTemplateLibrary* library, ValueLibrary* valLib, QObject* parent);
+	CodeDisassembler(const ROM* rom, const CodeLibrary* library, ValueLibrary* valLib, QObject* parent);
 
 	bool disassemble(uint offset, QString type, DisassemblerState& state);
 	QList<AbstractStatement*> makeStatements();
@@ -34,7 +34,7 @@ protected:
 private:
 	const ROM* mROM;
 
-	const CodeTemplateLibrary* mLibrary;
+	const CodeLibrary* mLibrary;
 	ValueLibrary mValueLibrary;
 
 	QMap<uint, CodeStatement*> mCodeMap;

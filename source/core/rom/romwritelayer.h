@@ -1,13 +1,13 @@
-#ifndef TEA_ROMWRITER_H
-#define TEA_ROMWRITER_H
+#ifndef TEA_ROMWRITELAYER_H
+#define TEA_ROMWRITELAYER_H
 
 #include "rom.h"
 
 namespace tea {
 
-class ROMWriter {
+class ROMWriteLayer {
 public:
-	ROMWriter(const ROM* rom);
+	ROMWriteLayer(const ROM* rom);
 
 	const ROM* romPtr() const;
 
@@ -24,4 +24,4 @@ private:
 
 } // namespace tea
 
-#endif // TEA_ROMWRITER_H
+#endif // TEA_ROMWRITELAYER_H

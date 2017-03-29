@@ -1,22 +1,22 @@
-#include "romwriter.h"
+#include "romwritelayer.h"
 
 #include <QFile>
 
 namespace tea {
 
-ROMWriter::ROMWriter(const ROM* rom)
+ROMWriteLayer::ROMWriteLayer(const ROM* rom)
 	: mROM(rom) {
 	if (mROM)
 		mXORArray.fill(0x00, mROM->size());
 }
 
-void ROMWriter::writeAt(uint pos, char val) {
+void ROMWriteLayer::writeAt(uint pos, char val) {
 	if (pos >= mROM->size())
 		return;
 	mXORArray[pos] = (mROM->at(pos) ^ val);
 }
 
-void ROMWriter::writeAt(uint pos, QByteArray data) {
+void ROMWriteLayer::writeAt(uint pos, QByteArray data) {
 	if (pos + data.size() >= mROM->size())
 		return;
 
@@ -28,7 +28,7 @@ void ROMWriter::writeAt(uint pos, QByteArray data) {
 		(*xorIt++) = (*romIt++) ^ (*dataIt++);
 }
 
-void ROMWriter::writeBits(quint64 bitOffset, quint64 bitSize, quint64 value) {
+void ROMWriteLayer::writeBits(quint64 bitOffset, quint64 bitSize, quint64 value) {
 	value <<= (bitOffset & 0x7);
 	quint64 mask = ((0x1 << bitSize)-1) << (bitOffset & 0x7);
 
@@ -41,7 +41,7 @@ void ROMWriter::writeBits(quint64 bitOffset, quint64 bitSize, quint64 value) {
 	}
 }
 
-void ROMWriter::outputToFile(QString fileName) const {
+void ROMWriteLayer::outputToFile(QString fileName) const {
 	QByteArray output;
 	output.reserve(mROM->size());
 
