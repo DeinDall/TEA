@@ -1,5 +1,5 @@
-#ifndef TEA_ABSTRACTSTATEMENT_H
-#define TEA_ABSTRACTSTATEMENT_H
+#ifndef TEA_ASTATEMENT_H
+#define TEA_ASTATEMENT_H
 
 #include <QObject>
 #include <QList>
@@ -10,9 +10,10 @@
 
 namespace tea {
 
-class AbstractStatement : public QObject {
+class AStatement : public QObject {
 public:
-	AbstractStatement(QObject* parent);
+	inline AStatement(QObject* parent)
+		: QObject(parent) {}
 
 	virtual PrintHint printHint() const = 0;
 
@@ -22,4 +23,4 @@ public:
 
 } // namespace tea
 
-#endif // TEA_ABSTRACTSTATEMENT_H
+#endif // TEA_ASTATEMENT_H

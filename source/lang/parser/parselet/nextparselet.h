@@ -1,7 +1,7 @@
 #ifndef TEA_NEXTPARSELET_H
 #define TEA_NEXTPARSELET_H
 
-#include "lang/core/expression/abstractexpression.h"
+#include "lang/core/expression/aexpression.h"
 
 namespace tea {
 
@@ -11,7 +11,7 @@ class NextParselet {
 public:
 	virtual ~NextParselet();
 
-	virtual AbstractExpression* parseExpression(AbstractExpression* previous, Token token, Parser* parser) const = 0;
+	virtual AExpression* parseExpression(AExpression* previous, Token token, Parser* parser) const = 0;
 	virtual int precedence() const = 0;
 };
 

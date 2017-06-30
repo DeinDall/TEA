@@ -1,13 +1,13 @@
 #ifndef TEA_TUPLEEXPRESSION_H
 #define TEA_TUPLEEXPRESSION_H
 
-#include "abstractexpression.h"
+#include "aexpression.h"
 
 namespace tea {
 
-class TupleExpression : public AbstractExpression {
+class TupleExpression : public AExpression {
 public:
-	TupleExpression(QList<AbstractExpression*> parameters, QObject* parent);
+	TupleExpression(QList<AExpression*> parameters, QObject* parent);
 
 	QList<Token> toTokens() const;
 
@@ -15,7 +15,7 @@ public:
 	quint64 compute(CodeAssembler* assembler) const;
 
 private:
-	QList<AbstractExpression*> mParameters;
+	QList<AExpression*> mParameters;
 };
 
 } // namespace tea

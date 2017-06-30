@@ -8,7 +8,7 @@ namespace tea {
 
 ValueParselet::ValueParselet() {}
 
-AbstractExpression* ValueParselet::parseExpression(Token token, Parser* parser) const {
+AExpression* ValueParselet::parseExpression(Token token, Parser* parser) const {
 	if (token.type == Token::Identifier)
 		return new ValueExpression(token.data.toString(), parser);
 	return nullptr;

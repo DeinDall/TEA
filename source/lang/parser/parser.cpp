@@ -43,7 +43,7 @@ void Parser::parseStatement() {
 			if (mCurrentTokens.size() != 1)
 				emit parseError("Called org without/with too many argument(s)");
 			else {
-				AbstractExpression* exp = parseExpression();
+				AExpression* exp = parseExpression();
 
 				if (exp)
 					emit statementReady(new OrgStatement(exp, returnParent()));
@@ -52,9 +52,9 @@ void Parser::parseStatement() {
 			}
 		}
 	} else if (first.type == Token::Identifier) {
-		QList<AbstractExpression*> arguments;
+		QList<AExpression*> arguments;
 
-		while (AbstractExpression* exp = parseExpression())
+		while (AExpression* exp = parseExpression())
 			arguments.append(exp);
 
 		QString codeName = first.data.toString();
@@ -98,13 +98,13 @@ QObject* Parser::returnParent() {
 	return this;
 }
 
-AbstractExpression* Parser::parseExpression(int precedence) {
+AExpression* Parser::parseExpression(int precedence) {
 	StartParselet* startParselet = nullptr;
 
 	if (!(startParselet = mStartParselets.value(peekNext().type, nullptr)))
 		return nullptr;
 
-	AbstractExpression* expression = startParselet->parseExpression(removeNext(), this);
+	AExpression* expression = startParselet->parseExpression(removeNext(), this);
 
 	NextParselet* nextParselet = nullptr;
 

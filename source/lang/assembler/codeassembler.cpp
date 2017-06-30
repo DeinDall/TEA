@@ -2,8 +2,8 @@
 
 #include "core/rom/romutil.h"
 
-#include "lang/core/expression/abstractexpression.h"
-#include "lang/core/statement/abstractstatement.h"
+#include "lang/core/expression/aexpression.h"
+#include "lang/core/statement/astatement.h"
 
 #include <QFile>
 
@@ -15,7 +15,7 @@ CodeAssembler::CodeAssembler(const ROM* rom, ValueLibrary* valLib, QObject* pare
 		mValueLibrary = ValueLibrary(*valLib);
 }
 
-void CodeAssembler::markExpressionUsage(quint64 offset, quint64 size, AbstractExpression* expression) {
+void CodeAssembler::markExpressionUsage(quint64 offset, quint64 size, AExpression* expression) {
 	mMarkedExpression[offset] = { size, expression };
 }
 
@@ -62,7 +62,7 @@ void CodeAssembler::outputToFile(QString fileName) {
 	mWriter.outputToFile(fileName);
 }
 
-void CodeAssembler::handleStatement(AbstractStatement* statement) {
+void CodeAssembler::handleStatement(AStatement* statement) {
 	statement->compute(this);
 	statement->deleteLater();
 }

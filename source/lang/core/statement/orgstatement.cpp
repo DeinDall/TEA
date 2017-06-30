@@ -4,8 +4,8 @@
 
 namespace tea {
 
-OrgStatement::OrgStatement(AbstractExpression* expression, QObject* parent)
-	: AbstractStatement(parent), mExpression(expression) {}
+OrgStatement::OrgStatement(AExpression* expression, QObject* parent)
+	: AStatement(parent), mExpression(expression) {}
 
 PrintHint OrgStatement::printHint() const {
 	return PrintHint(PrintHint::ResetScope, PrintHint::OpenScope);

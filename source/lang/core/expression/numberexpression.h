@@ -1,11 +1,11 @@
 #ifndef TEA_NUMBEREXPRESSION_H
 #define TEA_NUMBEREXPRESSION_H
 
-#include "abstractexpression.h"
+#include "aexpression.h"
 
 namespace tea {
 
-class NumberExpression : public AbstractExpression {
+class NumberExpression : public AExpression {
 public:
 	NumberExpression(quint64 value, QObject* parent);
 

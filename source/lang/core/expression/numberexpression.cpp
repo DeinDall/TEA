@@ -5,7 +5,7 @@
 namespace tea {
 
 NumberExpression::NumberExpression(quint64 value, QObject* parent)
-	: AbstractExpression(parent), mValue(value) {}
+	: AExpression(parent), mValue(value) {}
 
 QList<Token> NumberExpression::toTokens() const {
 	return QList<Token>({ Token { Token::NumberLiteral, QVariant((qint64) mValue) } });

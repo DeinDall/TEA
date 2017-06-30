@@ -12,7 +12,7 @@
 #include "lang/core/expression/tupleexpression.h"
 
 #include "lang/core/statement/orgstatement.h"
-#include "lang/core/statement/abstractstatement.h"
+#include "lang/core/statement/astatement.h"
 
 namespace tea {
 
@@ -44,7 +44,7 @@ bool CodeDisassembler::disassemble(uint offset, QString type, DisassemblerState&
 
 		atLeastOne = true;
 
-		QList<AbstractExpression*> expressions;
+		QList<AExpression*> expressions;
 
 		for (const CodeTemplate::Parameter& parameter : codeTemplate.parameters()) {
 			quint64 value = parameter.readBits(ref);
@@ -52,7 +52,7 @@ bool CodeDisassembler::disassemble(uint offset, QString type, DisassemblerState&
 			handlePossiblePointer(state, parameter, value);
 
 			if (parameter.isTuple) {
-				QList<AbstractExpression*> tupleExpressions;
+				QList<AExpression*> tupleExpressions;
 
 				for (int i=0; i<8; ++i)
 					if (((value>>(8*i)) & 0xFF))
@@ -76,8 +76,8 @@ bool CodeDisassembler::disassemble(uint offset, QString type, DisassemblerState&
 	return true;
 }
 
-QList<AbstractStatement*> CodeDisassembler::makeStatements() {
-	QMap<uint, QList<AbstractStatement*>> mappedResult;
+QList<AStatement*> CodeDisassembler::makeStatements() {
+	QMap<uint, QList<AStatement*>> mappedResult;
 
 	for (auto it = mLabelMap.cbegin(); it != mLabelMap.cend(); ++it)
 		mappedResult[it.key()].append(it.value());
@@ -90,9 +90,9 @@ QList<AbstractStatement*> CodeDisassembler::makeStatements() {
 		nextOffset = it.key() + it.value()->codeTemplate()->size();
 	}
 
-	QList<AbstractStatement*> result;
+	QList<AStatement*> result;
 
-	for (QList<AbstractStatement*> statements : mappedResult)
+	for (QList<AStatement*> statements : mappedResult)
 		result.append(statements);
 
 	return result;
@@ -136,7 +136,7 @@ void CodeDisassembler::handleLabel(QString name, uint offset) {
 	mValueLibrary.addValue(labelName, "pointer", snes::loRomPointerFromOffset(offset));
 }
 
-AbstractExpression* CodeDisassembler::makeExpression(CodeParameterType type, quint64 value) {
+AExpression* CodeDisassembler::makeExpression(CodeParameterType type, quint64 value) {
 	if (const Value& libValue = mValueLibrary.findValue(type, value))
 		return new ValueExpression(libValue.name(), returnParent());
 	else

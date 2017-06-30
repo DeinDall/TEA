@@ -11,9 +11,9 @@ namespace tea {
 
 class CodeAssembler;
 
-class AbstractExpression : public QObject {
+class AExpression : public QObject {
 public:
-	AbstractExpression(QObject* parent);
+	AExpression(QObject* parent);
 
 	virtual QList<Token> toTokens() const = 0;
 

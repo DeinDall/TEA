@@ -1,13 +1,13 @@
 #include "codestatement.h"
 
-#include "lang/core/expression/abstractexpression.h"
+#include "lang/core/expression/aexpression.h"
 
 #include "core/rom/romutil.h"
 
 namespace tea {
 
-CodeStatement::CodeStatement(const CodeTemplate* codeTemplate, QList<AbstractExpression*> parameters, QObject* parent)
-	: AbstractStatement(parent), mCodeTemplate(codeTemplate), mParameters(parameters) {}
+CodeStatement::CodeStatement(const CodeTemplate* codeTemplate, QList<AExpression*> parameters, QObject* parent)
+	: AStatement(parent), mCodeTemplate(codeTemplate), mParameters(parameters) {}
 
 PrintHint CodeStatement::printHint() const {
 	return mCodeTemplate->printHint();
@@ -18,7 +18,7 @@ QList<Token> CodeStatement::toTokens() const {
 
 	result.append({ Token::Identifier, QVariant(mCodeTemplate->name()) });
 
-	for (AbstractExpression* exp : mParameters)
+	for (AExpression* exp : mParameters)
 		result.append(exp->toTokens());
 
 	return result;

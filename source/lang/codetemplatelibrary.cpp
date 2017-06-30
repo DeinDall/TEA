@@ -19,6 +19,7 @@ void CodeTemplateLibrary::loadFromDir(QString path) {
 		for (QFileInfo fileInfo : dir.entryInfoList())
 			if (fileInfo.completeSuffix() == "code.json")
 				addFromJsonFile_(fileInfo.absoluteFilePath());
+
 	sort_();
 }
 
@@ -71,8 +72,16 @@ void CodeTemplateLibrary::addFromJsonFile_(QString fileName) {
 	if (!file.open(QIODevice::ReadOnly))
 		return;
 
-	QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+	QJsonParseError* err = new QJsonParseError;
+
+	QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), err);
 	file.close();
+
+	if (err->error != QJsonParseError::NoError) {
+		throw std::runtime_error(std::string("error while parsing json file ")
+							 .append(fileName.toStdString()).append(" at pos ").append(std::to_string(err->offset))
+							 .append(": ").append(err->errorString().toStdString()));
+	}
 
 	if (doc.isArray()) {
 		for (QJsonValue value : doc.array()) {

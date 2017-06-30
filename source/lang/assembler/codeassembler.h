@@ -9,21 +9,21 @@
 
 namespace tea {
 
-class AbstractStatement;
-class AbstractExpression;
+class AStatement;
+class AExpression;
 
 class CodeAssembler : public QObject {
 	Q_OBJECT
 public:
 	struct MarkedExpression {
 		quint64 bitSize;
-		AbstractExpression* expression;
+		AExpression* expression;
 	};
 
 public:
 	CodeAssembler(const ROM* rom, ValueLibrary* valLib, QObject* parent = nullptr);
 
-	void markExpressionUsage(quint64 offset, quint64 size, AbstractExpression* expression);
+	void markExpressionUsage(quint64 offset, quint64 size, AExpression* expression);
 	void writeData(const QByteArray data);
 
 	void defineValue(QString name, quint64 value);
@@ -37,7 +37,7 @@ public:
 	void outputToFile(QString fileName);
 
 public slots:
-	void handleStatement(AbstractStatement* statement);
+	void handleStatement(AStatement* statement);
 
 private:
 	uint mCurrentOffset;

@@ -1,11 +1,11 @@
 #ifndef TEA_VALUEEXPRESSION_H
 #define TEA_VALUEEXPRESSION_H
 
-#include "abstractexpression.h"
+#include "aexpression.h"
 
 namespace tea {
 
-class ValueExpression : public AbstractExpression {
+class ValueExpression : public AExpression {
 public:
 	ValueExpression(QString valueName, QObject* parent);
 

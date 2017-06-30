@@ -14,7 +14,6 @@ SOURCES += \
     lang/codetemplatelibrary.cpp \
     lang/core/value/value.cpp \
     lang/valuelibrary.cpp \
-    lang/core/expression/abstractexpression.cpp \
     lang/core/expression/valueexpression.cpp \
     lang/core/expression/numberexpression.cpp \
     lang/disassembler/codedisassembler.cpp \
@@ -25,7 +24,6 @@ SOURCES += \
     lang/core/keywords.cpp \
     lang/disassembler/disassemblerstate.cpp \
     lang/core/code/codeparametertype.cpp \
-    lang/core/statement/abstractstatement.cpp \
     lang/core/statement/codestatement.cpp \
     lang/core/statement/orgstatement.cpp \
     lang/core/statement/labelstatement.cpp \
@@ -36,7 +34,16 @@ SOURCES += \
     lang/parser/parselet/numberparselet.cpp \
     lang/parser/parselet/valueparselet.cpp \
     lang/parser/parselet/nextparselet.cpp \
-    lang/parser/parselet/tupleparselet.cpp
+    lang/parser/parselet/tupleparselet.cpp \
+    lang/lexer/lexelets/ilexelet.cpp \
+    lang/core/location/istringsource.cpp \
+    lang/core/location/filestringsource.cpp \
+    lang/core/location/generatedstringsource.cpp \
+    lang/core/statement/astatement.cpp \
+    lang/lexer/lexelets/exactmatchlexelet.cpp \
+    lang/core/expression/aexpression.cpp \
+    lang/core/itokensource.cpp \
+    lang/core/istringsource.cpp
 
 HEADERS += \
     core/rom/rom.h \
@@ -47,7 +54,6 @@ HEADERS += \
     lang/codetemplatelibrary.h \
     lang/core/value/value.h \
     lang/valuelibrary.h \
-    lang/core/expression/abstractexpression.h \
     lang/core/expression/valueexpression.h \
     lang/core/expression/numberexpression.h \
     lang/disassembler/codedisassembler.h \
@@ -59,7 +65,6 @@ HEADERS += \
     lang/core/keywords.h \
     lang/disassembler/disassemblerstate.h \
     lang/core/code/codeparametertype.h \
-    lang/core/statement/abstractstatement.h \
     lang/core/statement/codestatement.h \
     lang/core/statement/orgstatement.h \
     lang/core/statement/labelstatement.h \
@@ -69,4 +74,13 @@ HEADERS += \
     lang/parser/parselet/numberparselet.h \
     lang/parser/parselet/valueparselet.h \
     lang/parser/parselet/nextparselet.h \
-    lang/parser/parselet/tupleparselet.h
+    lang/parser/parselet/tupleparselet.h \
+    lang/lexer/lexelets/ilexelet.h \
+    lang/core/location/istringsource.h \
+    lang/core/location/filestringsource.h \
+    lang/core/location/generatedstringsource.h \
+    lang/core/statement/astatement.h \
+    lang/lexer/lexelets/exactmatchlexelet.h \
+    lang/core/expression/aexpression.h \
+    lang/core/itokensource.h \
+    lang/core/istringsource.h

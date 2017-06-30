@@ -1,11 +1,11 @@
 #ifndef TEA_LABELSTATEMENT_H
 #define TEA_LABELSTATEMENT_H
 
-#include "abstractstatement.h"
+#include "astatement.h"
 
 namespace tea {
 
-class LabelStatement : public AbstractStatement {
+class LabelStatement : public AStatement {
 public:
 	LabelStatement(QString labelName, QObject* parent);
 

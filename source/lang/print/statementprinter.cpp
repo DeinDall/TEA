@@ -4,10 +4,10 @@ namespace tea {
 
 StatementPrinter::StatementPrinter() {}
 
-void StatementPrinter::printStatements(QTextStream& output, QList<AbstractStatement*> statements) {
+void StatementPrinter::printStatements(QTextStream& output, QList<AStatement*> statements) {
 	int currentScopeDepth = 0;
 
-	for (AbstractStatement* statement : statements) {
+	for (AStatement* statement : statements) {
 		PrintHint hint = statement->printHint();
 
 		if (hint.beforeHint() == PrintHint::IgnoreScope)

@@ -4,14 +4,23 @@
 #include <QString>
 #include <QObject>
 
-#include "lang/core/token.h"
+#include "lang/core/itokensource.h"
+#include "lexelets/ilexelet.h"
 
 namespace tea {
 
-class Lexer : public QObject {
+class Lexer : public QObject/*, public ITokenSource*/ {
 	Q_OBJECT
+
 public:
-	Lexer();
+	using charCheckFunc_t = bool(*)(QChar);
+
+public:
+	Lexer(QObject* parent = nullptr);
+	~Lexer();
+
+	// Token nextToken();
+	// Token peekToken();
 
 	void tokenize(QStringRef ref);
 
@@ -30,6 +39,7 @@ public slots:
 	void debugToken(Token token);
 
 private:
+//	QVector<QPair<charCheckFunc_t, ILexelet*>> mLexelets;
 };
 
 } // namespace tea

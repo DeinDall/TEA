@@ -5,7 +5,7 @@
 namespace tea {
 
 LabelStatement::LabelStatement(QString labelName, QObject* parent)
-	: AbstractStatement(parent), mLabelName(labelName) {}
+	: AStatement(parent), mLabelName(labelName) {}
 
 PrintHint LabelStatement::printHint() const {
 	return PrintHint(PrintHint::ResetScope, PrintHint::OpenScope);

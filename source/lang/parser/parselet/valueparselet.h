@@ -8,7 +8,7 @@ namespace tea {
 class ValueParselet : public StartParselet {
 public:
 	ValueParselet();
-	AbstractExpression* parseExpression(Token token, Parser* parser) const;
+	AExpression* parseExpression(Token token, Parser* parser) const;
 };
 
 } // namespace tea

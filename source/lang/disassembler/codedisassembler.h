@@ -6,7 +6,7 @@
 #include "lang/codetemplatelibrary.h"
 #include "lang/valuelibrary.h"
 
-#include "lang/core/expression/abstractexpression.h"
+#include "lang/core/expression/aexpression.h"
 
 #include "lang/core/statement/codestatement.h"
 #include "lang/core/statement/labelstatement.h"
@@ -21,13 +21,13 @@ public:
 	CodeDisassembler(const ROM* rom, const CodeTemplateLibrary* library, ValueLibrary* valLib, QObject* parent);
 
 	bool disassemble(uint offset, QString type, DisassemblerState& state);
-	QList<AbstractStatement*> makeStatements();
+	QList<AStatement*> makeStatements();
 
 protected:
 	void handlePossiblePointer(DisassemblerState& state, const CodeTemplate::Parameter& paramter, quint64 value);
 	void handleLabel(QString name, uint offset);
 
-	AbstractExpression* makeExpression(CodeParameterType type, quint64 value);
+	AExpression* makeExpression(CodeParameterType type, quint64 value);
 
 	QObject* returnParent();
 

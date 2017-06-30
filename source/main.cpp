@@ -48,11 +48,28 @@ int main(int argc, char** argv) {
 	tea::ROM rom;
 	rom.loadFromFile(romFile);
 
+	if (rom.size() == 0) {
+		qDebug() << QString("Couldn't open ROM file at").append(romFile);
+		return 1;
+	}
+
 	tea::CodeTemplateLibrary lib;
-	lib.loadFromDir("./code/");
+
+	try {
+		lib.loadFromDir("./code/");
+	} catch (std::exception& e) {
+		qDebug() << QString("err... ").append(e.what());
+		return 1;
+	}
 
 	tea::ValueLibrary valLib;
-	valLib.loadFromDir("./code/");
+
+	try {
+		valLib.loadFromDir("./code/");
+	} catch (std::exception& e) {
+		qDebug() << QString("err... ").append(e.what());
+		return 1;
+	}
 
 	if (decompMode) {
 		tea::CodeDisassembler disassembler(&rom, &lib, &valLib, nullptr);

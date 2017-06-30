@@ -8,9 +8,9 @@ namespace tea {
 
 TupleParselet::TupleParselet() {}
 
-AbstractExpression* TupleParselet::parseExpression(Token token, Parser* parser) const {
+AExpression* TupleParselet::parseExpression(Token token, Parser* parser) const {
 	if (token.type == Token::OpenSquareBracket) {
-		QList<AbstractExpression*> parameters;
+		QList<AExpression*> parameters;
 
 		while (!parser->checkNext(Token::CloseSquareBracket)) {
 			parameters.append(parser->parseExpression());

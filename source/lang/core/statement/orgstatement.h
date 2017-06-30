@@ -1,14 +1,14 @@
 #ifndef TEA_ORGSTATEMENT_H
 #define TEA_ORGSTATEMENT_H
 
-#include "abstractstatement.h"
-#include "lang/core/expression/abstractexpression.h"
+#include "astatement.h"
+#include "lang/core/expression/aexpression.h"
 
 namespace tea {
 
-class OrgStatement : public AbstractStatement {
+class OrgStatement : public AStatement {
 public:
-	OrgStatement(AbstractExpression* expression, QObject* parent);
+	OrgStatement(AExpression* expression, QObject* parent);
 
 	PrintHint printHint() const;
 
@@ -16,7 +16,7 @@ public:
 	void compute(CodeAssembler* assembler) const;
 
 private:
-	AbstractExpression* mExpression;
+	AExpression* mExpression;
 };
 
 } // namespace tea

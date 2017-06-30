@@ -8,7 +8,7 @@ namespace tea {
 
 NumberParselet::NumberParselet() {}
 
-AbstractExpression* NumberParselet::parseExpression(Token token, Parser* parser) const {
+AExpression* NumberParselet::parseExpression(Token token, Parser* parser) const {
 	if (token.type == Token::NumberLiteral)
 		return new NumberExpression(token.data.toLongLong(), parser);
 	return nullptr;

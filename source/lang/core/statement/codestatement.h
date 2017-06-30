@@ -1,15 +1,15 @@
 #ifndef TEA_CODESTATEMENT_H
 #define TEA_CODESTATEMENT_H
 
-#include "abstractstatement.h"
+#include "astatement.h"
 
 #include "lang/core/code/codetemplate.h"
 
 namespace tea {
 
-class CodeStatement : public AbstractStatement {
+class CodeStatement : public AStatement {
 public:
-	CodeStatement(const CodeTemplate* codeTemplate, QList<AbstractExpression*> parameters, QObject* parent);
+	CodeStatement(const CodeTemplate* codeTemplate, QList<AExpression*> parameters, QObject* parent);
 
 	PrintHint printHint() const;
 
@@ -20,7 +20,7 @@ public:
 
 private:
 	const CodeTemplate* mCodeTemplate;
-	QList<AbstractExpression*> mParameters;
+	QList<AExpression*> mParameters;
 };
 
 } // namespace tea

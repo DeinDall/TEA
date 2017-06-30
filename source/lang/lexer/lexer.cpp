@@ -7,8 +7,26 @@
 
 namespace tea {
 
-Lexer::Lexer() {
+static bool numberCheck(QChar chr) {
+	return chr.isNumber();
+}
+
+static bool identifierCheck(QChar chr) {
+	return chr.isLetter();
+}
+
+template<char C>
+static bool charCheck(QChar chr) {
+	return (chr == C);
+}
+
+Lexer::Lexer(QObject* parent)
+	: QObject(parent) {
 	QObject::connect(this, &tokenReady, this, &debugToken);
+}
+
+Lexer::~Lexer() {
+	//
 }
 
 void Lexer::tokenize(QStringRef ref) {

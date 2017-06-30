@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QVector>
 
-#include "lang/core/statement/abstractstatement.h"
+#include "lang/core/statement/astatement.h"
 #include "lang/core/token.h"
 
 #include "parselet/startparselet.h"
@@ -25,7 +25,7 @@ public:
 	Token peekNext() const;
 	bool checkNext(Token::TokenType type) const;
 
-	AbstractExpression* parseExpression(int precedence = 0);
+	AExpression* parseExpression(int precedence = 0);
 
 protected:
 	void parseLabel();
@@ -37,7 +37,7 @@ public slots:
 	void handleToken(Token token);
 
 signals:
-	void statementReady(AbstractStatement* statement);
+	void statementReady(AStatement* statement);
 	void parseError(QString what);
 
 private:

@@ -1,7 +1,7 @@
 #ifndef TEA_STATEMENTPRINTER_H
 #define TEA_STATEMENTPRINTER_H
 
-#include "lang/core/statement/abstractstatement.h"
+#include "lang/core/statement/astatement.h"
 
 #include <QTextStream>
 
@@ -11,7 +11,7 @@ class StatementPrinter {
 public:
 	StatementPrinter();
 
-	void printStatements(QTextStream& output, QList<AbstractStatement*> statements);
+	void printStatements(QTextStream& output, QList<AStatement*> statements);
 	void printTokens(QTextStream& output, QList<Token> tokens);
 };
 
