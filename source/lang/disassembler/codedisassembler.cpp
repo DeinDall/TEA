@@ -39,7 +39,7 @@ bool CodeDisassembler::disassemble(uint offset, QString type, DisassemblerState&
 
 		if (!codeTemplate.isValid()) {
 			qDebug() << ("Couldn't disassemble " % type % " at 0x" % QString::number(offset, 16) % " (next byte: 0x" % QString::number((quint8) ref.at(0), 16) % ")");
-			return false;
+			return atLeastOne;
 		}
 
 		atLeastOne = true;
