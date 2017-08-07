@@ -16,6 +16,8 @@ public:
 	QStringList parameterValues(QString parameter) const;
 	const QMap<QString, QStringList>& parameters() const;
 
+	inline bool hasParameterType(QString parameter) const { return mArguments.contains(parameter); }
+
 protected:
 	CodeParameterType(QString name);
 

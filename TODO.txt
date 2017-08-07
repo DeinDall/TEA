@@ -1,5 +1,8 @@
 
 
 TODO:
-	- support for arg:<var>=<val> (in pointer component type) and $<var>=<default> (in component type and next)
-	- support for bitfields
+	- better support for state-aware disassembly
+	- better support for non inter-bank & relative pointer
+	- better error handling
+	- better printing
+	- better everything really
