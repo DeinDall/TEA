@@ -20,6 +20,8 @@ class CodeDisassembler : public QObject {
 public:
 	CodeDisassembler(const ROM* rom, const CodeTemplateLibrary* library, ValueLibrary* valLib, QObject* parent);
 
+	inline void setPrintOffsets(bool doINow) { mPrintOffsets = doINow; }
+
 	bool disassemble(uint offset, QString type, DisassemblerState& state);
 	QList<AStatement*> makeStatements();
 
@@ -39,6 +41,8 @@ private:
 
 	QMap<uint, CodeStatement*> mCodeMap;
 	QMap<uint, LabelStatement*> mLabelMap;
+
+	bool mPrintOffsets;
 };
 
 } // namespace tea

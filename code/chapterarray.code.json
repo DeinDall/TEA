@@ -8,43 +8,43 @@
 		
 		"components": [
 			{
-				"name": "openingEventDefitions",
+				"name": "openingEventDefinitions",
 				"type": "pointer to:eventDefinition",
 				"size": 3
 			}, {
-				"name": "turnEventDefitions",
+				"name": "turnEventDefinitions",
 				"type": "pointer to:eventDefinition",
 				"size": 3
 			}, {
-				"name": "talkEventDefitions",
+				"name": "talkEventDefinitions",
 				"type": "pointer to:eventDefinition",
 				"size": 3
 			}, {
-				"name": "locationEventDefitions",
+				"name": "locationEventDefinitions",
 				"type": "pointer to:eventDefinition",
 				"size": 3
 			}, {
-				"name": "unknown1",
-				"type": "pointer",
+				"name": "beforeActionEventDefinitions",
+				"type": "pointer to:eventDefinition",
 				"size": 3
 			}, {
 				"name": "shopEventDefinitons",
 				"type": "pointer to:eventDefinition arg:target=shopCode",
 				"size": 3
 			}, {
-				"name": "unknown2",
-				"type": "pointer",
+				"name": "battleEventDefinitions",
+				"type": "pointer to:eventDefinition",
 				"size": 3
 			}, {
-				"name": "unknown3",
-				"type": "pointer",
+				"name": "endingEventDefinitions",
+				"type": "pointer to:eventDefinition",
 				"size": 3
 			}, {
-				"name": "unknown4",
-				"type": "pointer",
+				"name": "afterActionEventDefinitions",
+				"type": "pointer to:eventDefinition",
 				"size": 3
 			}, {
-				"name": "unknown5",
+				"name": "prepEvents",
 				"type": "pointer",
 				"size": 3
 			}

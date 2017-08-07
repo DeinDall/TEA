@@ -17,7 +17,7 @@
 namespace tea {
 
 CodeDisassembler::CodeDisassembler(const ROM* rom, const CodeTemplateLibrary* library, ValueLibrary* valLib, QObject* parent)
-	: QObject(parent), mROM(rom), mLibrary(library) {
+	: QObject(parent), mROM(rom), mLibrary(library), mPrintOffsets(false) {
 	if (valLib)
 		mValueLibrary = (*valLib);
 }
@@ -67,7 +67,12 @@ bool CodeDisassembler::disassemble(uint offset, QString type, DisassemblerState&
 				expressions.append(makeExpression(parameter.type, value));
 		}
 
-		mCodeMap.insert(ref.offset(), new CodeStatement(&codeTemplate, expressions, returnParent()));
+		CodeStatement* newStatement = new CodeStatement(&codeTemplate, expressions, returnParent());
+
+		if (mPrintOffsets)
+			newStatement->setComment(QString("[real: ") % QString::number(offset, 16) % "; mapped: " % QString::number(snes::loRomPointerFromOffset(offset), 16) % "]");
+
+		mCodeMap.insert(ref.offset(), newStatement);
 
 		ref = ref.mid(codeTemplate.size());
 		type = state.parseArgument(codeTemplate.nextType());
@@ -86,6 +91,7 @@ QList<AStatement*> CodeDisassembler::makeStatements() {
 	for (auto it = mCodeMap.cbegin(); it != mCodeMap.cend(); ++it) {
 		if (nextOffset != it.key())
 			mappedResult[it.key()].prepend(new OrgStatement(new NumberExpression(it.key(), returnParent()), returnParent()));
+
 		mappedResult[it.key()].append(it.value());
 		nextOffset = it.key() + it.value()->codeTemplate()->size();
 	}

@@ -36,6 +36,9 @@ void StatementPrinter::printStatements(QTextStream& output, QList<AStatement*> s
 			printTokens(output, statement->toTokens());
 		}
 
+		if (!statement->comment().isEmpty())
+			output << " // " << statement->comment();
+
 		switch (hint.afterHint()) {
 		case PrintHint::OpenScope:
 			++currentScopeDepth;

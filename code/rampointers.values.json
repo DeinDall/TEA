@@ -15,5 +15,13 @@
 		"name": "pCurrentPhase",
 		"type": "pointer",
 		"value": "0xe15"
+	}, {
+		"name": "pCurrentChapter",
+		"type": "pointer"
+		"value": "0xE11"
+	}, {
+		"name": "pCurrentCharacter",
+		"type": "pointer"
+		"value": "0xE6F"
 	}
 ]

@@ -19,6 +19,7 @@ int main(int argc, char** argv) {
 	Q_UNUSED(app);
 
 	bool decompMode = true;
+	bool printOffsets = false;
 	QString romFile = "FE5_J_UNHEADERED.sfc";
 	quint64 offset = 0x65561;
 	QString decompType = "chapterEventPointers";
@@ -40,7 +41,12 @@ int main(int argc, char** argv) {
 				decompType = list[++i];
 			else if (list[i] == "-file")
 				fileName = list[++i];
+			else if (list[i] == "-printOffsets")
+				printOffsets = true;
 		}
+
+		if (list.last() == "-printOffsets")
+			printOffsets = true;
 	}
 
 	QFile file(fileName);
@@ -49,7 +55,7 @@ int main(int argc, char** argv) {
 	rom.loadFromFile(romFile);
 
 	if (rom.size() == 0) {
-		qDebug() << QString("Couldn't open ROM file at").append(romFile);
+		qDebug() << QString("Couldn't open ROM file at ").append(romFile);
 		return 1;
 	}
 
@@ -75,6 +81,7 @@ int main(int argc, char** argv) {
 		tea::CodeDisassembler disassembler(&rom, &lib, &valLib, nullptr);
 		tea::DisassemblerState state;
 
+		disassembler.setPrintOffsets(printOffsets);
 		disassembler.disassemble(offset, decompType, state);
 
 		if (!file.open(QIODevice::WriteOnly))

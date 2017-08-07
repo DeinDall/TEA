@@ -19,6 +19,12 @@ public:
 
 	virtual QList<Token> toTokens() const = 0;
 	virtual void compute(CodeAssembler* assembler) const = 0;
+
+	inline QString comment() const { return mComment; }
+	inline void setComment(QString str) { mComment = str; }
+
+private:
+	QString mComment;
 };
 
 } // namespace tea

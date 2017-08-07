@@ -1,6 +1,28 @@
 [
 	{
-		"name": "checkTalk",
+		"name": "checkCharacters1",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 5,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x00",
+				"size": 1
+			}, {
+				"name": "charId1",
+				"type": "index of:character",
+				"size": 2
+			}, {
+				"name": "charId2",
+				"type": "index of:character",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "checkCharacters2",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
@@ -22,11 +44,29 @@
 			}
 		]
 	}, {
-		"name": "checkUnknownPtrAgain",
+		"name": "checkSingleCharacter",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
-		"size": 4,
+		"size": 3,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x02",
+				"size": 1
+			}, {
+				"name": "charId",
+				"type": "index of:character",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "compareBits",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 5,
 		
 		"components": [
 			{
@@ -37,10 +77,14 @@
 				"name": "position",
 				"type": "pointer",
 				"size": 3
+			}, {
+				"name": "value",
+				"type": "raw",
+				"size": 1
 			}
 		]
 	}, {
-		"name": "checkByte",
+		"name": "compareByte",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
@@ -62,7 +106,7 @@
 			}
 		]
 	}, {
-		"name": "checkShort",
+		"name": "compareShort",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
@@ -84,7 +128,29 @@
 			}
 		]
 	}, {
-		"name": "checkShortUnknown",
+		"name": "compareLong",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 7,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x07",
+				"size": 1
+			}, {
+				"name": "position",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "value",
+				"type": "raw",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "compareShortFalse",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
@@ -100,12 +166,13 @@
 				"type": "pointer",
 				"size": 3
 			}, {
-				"name": "arg",
+				"name": "value",
+				"type": "raw",
 				"size": 2
 			}
 		]
 	}, {
-		"name": "checkPointer",
+		"name": "compareByteAt",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
@@ -127,7 +194,81 @@
 			}
 		]
 	}, {
-		"name": "checkEventInactive",
+		"name": "compareShortAt",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 7,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0A",
+				"size": 1
+			}, {
+				"name": "position1",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "position2",
+				"type": "pointer",
+				"size": 3
+			}
+		]
+	}, {
+		"name": "compareRangeByte",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 6,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0B",
+				"size": 1
+			}, {
+				"name": "position",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "value1",
+				"type": "raw",
+				"size": 1
+			}, {
+				"name": "value2",
+				"type": "raw",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "compareRangeShort",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 8,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0C",
+				"size": 1
+			}, {
+				"name": "position",
+				"type": "pointer",
+				"size": 3
+			}, {
+				"name": "value1",
+				"type": "raw",
+				"size": 2
+			}, {
+				"name": "value2",
+				"type": "raw",
+				"size": 2
+			}
+		]
+	}, {
+		"name": "testIDSet",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
@@ -139,8 +280,46 @@
 				"value": "0x0D",
 				"size": 1
 			}, {
-				"name": "arg",
+				"name": "eventID",
+				"type": "index of:event",
 				"size": 1
+			}
+		]
+	}, {
+		"name": "testIDUnset",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 2,
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0E",
+				"size": 1
+			}, {
+				"name": "eventID",
+				"type": "index of:event",
+				"size": 1
+			}
+		]
+	}, {
+		"name": "runASM",
+		"type": "eventComponent",
+		"next": "eventComponent",
+		
+		"size": 4,
+		"printHint": "endPart",
+		
+		"components": [
+			{
+				"fixed": true,
+				"value": "0x0F",
+				"size": 1
+			}, {
+				"name": "asmPointer",
+				"type": "pointer to:asm",
+				"size": 3
 			}
 		]
 	}, {
@@ -164,61 +343,7 @@
 			}
 		]
 	}, {
-		"name": "checkUnknown11",
-		"type": "eventComponent",
-		"next": "eventComponent",
-		
-		"size": 5,
-		
-		"components": [
-			{
-				"fixed": true,
-				"value": "0x11",
-				"size": 1
-			}, {
-				"name": "arg",
-				"size": 2
-			}, {
-				"name": "arg2",
-				"size": 2
-			}
-		]
-	}, {
-		"name": "checkUnknown1A",
-		"type": "eventComponent",
-		"next": "eventComponent",
-		
-		"size": 3,
-		
-		"components": [
-			{
-				"fixed": true,
-				"value": "0x1A",
-				"size": 1
-			}, {
-				"name": "arg",
-				"size": 2
-			}
-		]
-	}, {
-		"name": "checkUnknown16",
-		"type": "eventComponent",
-		"next": "eventComponent",
-		
-		"size": 4,
-		
-		"components": [
-			{
-				"fixed": true,
-				"value": "0x16",
-				"size": 1
-			}, {
-				"name": "arg",
-				"size": 3
-			}
-		]
-	}, {
-		"name": "checkUnknown17",
+		"name": "checkNumberUnits",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
@@ -230,43 +355,17 @@
 				"value": "0x17",
 				"size": 1
 			}, {
-				"name": "arg",
-				"size": 3
-			}
-		]
-	}, {
-		"name": "checkUnknown18",
-		"type": "eventComponent",
-		"next": "eventComponent",
-		
-		"size": 2,
-		
-		"components": [
-			{
-				"fixed": true,
-				"value": "0x18",
-				"size": 1
+				"name": "charId",
+				"type": "index of:character",
+				"size": 2
 			}, {
-				"name": "arg",
+				"name": "number",
+				"type": "raw",
 				"size": 1
 			}
 		]
 	}, {
-		"name": "checkUnknown19",
-		"type": "eventComponent",
-		"next": "eventComponent",
-		
-		"size": 1,
-		
-		"components": [
-			{
-				"fixed": true,
-				"value": "0x19",
-				"size": 1
-			}
-		]
-	}, {
-		"name": "checkUnknown14",
+		"name": "checkDead",
 		"type": "eventComponent",
 		"next": "eventComponent",
 		
@@ -275,70 +374,12 @@
 		"components": [
 			{
 				"fixed": true,
-				"value": "0x14",
+				"value": "0x1A",
 				"size": 1
 			}, {
-				"name": "arg",
+				"name": "charId",
+				"type": "index of:character",
 				"size": 2
-			}
-		]
-	}, {
-		"name": "checkShortBounds",
-		"type": "eventComponent",
-		"next": "eventComponent",
-		
-		"size": 8,
-		
-		"components": [
-			{
-				"fixed": true,
-				"value": "0x0C",
-				"size": 1
-			}, {
-				"name": "position",
-				"type": "pointer",
-				"size": 3
-			}, {
-				"name": "arg",
-				"size": 2
-			}, {
-				"name": "arg2",
-				"size": 2
-			}
-		]
-	}, {
-		"name": "checkEventActive",
-		"type": "eventComponent",
-		"next": "eventComponent",
-		
-		"size": 2,
-		
-		"components": [
-			{
-				"fixed": true,
-				"value": "0x0E",
-				"size": 1
-			}, {
-				"name": "eventId",
-				"type": "index of:event",
-				"size": 1
-			}
-		]
-	}, {
-		"name": "checkUnknownPtr",
-		"type": "eventComponent",
-		"next": "eventComponent",
-		
-		"size": 4,
-		
-		"components": [
-			{
-				"fixed": true,
-				"value": "0x0F",
-				"size": 1
-			}, {
-				"name": "argument",
-				"size": 3
 			}
 		]
 	}, {
