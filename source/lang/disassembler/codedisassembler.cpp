@@ -70,7 +70,7 @@ bool CodeDisassembler::disassemble(uint offset, QString type, DisassemblerState&
 		CodeStatement* newStatement = new CodeStatement(&codeTemplate, expressions, returnParent());
 
 		if (mPrintOffsets)
-			newStatement->setComment(QString("[real: ") % QString::number(offset, 16) % "; mapped: " % QString::number(snes::loRomPointerFromOffset(offset), 16) % "]");
+			newStatement->setComment(QString("[real: ") % QString::number(ref.offset(), 16) % "; mapped: " % QString::number(snes::loRomPointerFromOffset(ref.offset()), 16) % "]");
 
 		mCodeMap.insert(ref.offset(), newStatement);
 
