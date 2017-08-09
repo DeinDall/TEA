@@ -92,6 +92,8 @@ int main(int argc, char** argv) {
 
 		file.close();
 	} else {
+		qDebug() << "ERROR: Assembly isn't supported in this version anymore (sorry)";
+		/*
 		if (!file.open(QIODevice::ReadOnly))
 			return 1;
 
@@ -120,6 +122,7 @@ int main(int argc, char** argv) {
 #else
 		assembler.outputToFile(romFile + ".debug.sfc");
 #endif
+		*/
 	}
 
 	return 0;

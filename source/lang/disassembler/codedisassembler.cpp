@@ -26,7 +26,7 @@ bool CodeDisassembler::disassemble(uint offset, QString type, DisassemblerState&
 	if (mCodeMap.contains(offset))
 		return false; // Already decompiled given offset
 
-	qDebug() << ("Called disassembler at 0x" % QString::number(offset, 16) % " for type " % type);
+	// qDebug() << ("Called disassembler at 0x" % QString::number(offset, 16) % " for type " % type);
 
 	if (offset >= mROM->size())
 		return false;
@@ -49,7 +49,7 @@ bool CodeDisassembler::disassemble(uint offset, QString type, DisassemblerState&
 		for (const CodeTemplate::Parameter& parameter : codeTemplate.parameters()) {
 			quint64 value = parameter.readBits(ref);
 
-			handlePossiblePointer(state, parameter, value);
+			handlePossiblePointer(state, parameter, ref.offset(), value);
 
 			if (parameter.isTuple) {
 				QList<AExpression*> tupleExpressions;
@@ -104,7 +104,7 @@ QList<AStatement*> CodeDisassembler::makeStatements() {
 	return result;
 }
 
-void CodeDisassembler::handlePossiblePointer(DisassemblerState& state, const CodeTemplate::Parameter& paramter, quint64 value) {
+void CodeDisassembler::handlePossiblePointer(DisassemblerState& state, const CodeTemplate::Parameter& paramter, uint currentOffset, quint64 value) {
 	if (!snes::isLoRomPointer(value))
 		return;
 
@@ -130,6 +130,11 @@ void CodeDisassembler::handlePossiblePointer(DisassemblerState& state, const Cod
 		newState.setArgument(split.at(0), split.at(1));
 	}
 
+	if (type.hasParameterType("inbank")) {
+		// qDebug() << "inbank";
+		value = (snes::loRomPointerFromOffset(currentOffset) & 0xFFFF0000) | (value & 0xFFFF);
+	}
+
 	if (disassemble(snes::offsetFromLoRomPointer(value), target, newState))
 		handleLabel(paramter.name, snes::offsetFromLoRomPointer(value));
 }
@@ -138,7 +143,10 @@ void CodeDisassembler::handleLabel(QString name, uint offset) {
 	static uint counter = 10;
 	QString labelName(name % QString::number(counter++));
 
-	mLabelMap.insert(offset, new LabelStatement(labelName, returnParent()));
+	LabelStatement* statement = new LabelStatement(labelName, returnParent());
+	statement->setComment(QString("[real: ") % QString::number(offset, 16) % "; mapped: " % QString::number(snes::loRomPointerFromOffset(offset), 16) % "]");
+
+	mLabelMap.insert(offset, statement);
 	mValueLibrary.addValue(labelName, "pointer", snes::loRomPointerFromOffset(offset));
 }
 

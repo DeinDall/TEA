@@ -26,7 +26,7 @@ public:
 	QList<AStatement*> makeStatements();
 
 protected:
-	void handlePossiblePointer(DisassemblerState& state, const CodeTemplate::Parameter& paramter, quint64 value);
+	void handlePossiblePointer(DisassemblerState& state, const CodeTemplate::Parameter& paramter, uint currentOffset, quint64 value);
 	void handleLabel(QString name, uint offset);
 
 	AExpression* makeExpression(CodeParameterType type, quint64 value);
